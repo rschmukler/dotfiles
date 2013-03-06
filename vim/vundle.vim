@@ -15,9 +15,14 @@ Bundle 'uggedal/go-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'darthdeus/vim-slim'
 
+"
+
 
 " Utilities
 
+Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
+Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/Align'
 Bundle 'mattn/zencoding-vim'
@@ -25,5 +30,4 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-surround'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-
+Bundle 'ervandew/supertab'
