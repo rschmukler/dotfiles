@@ -3,6 +3,9 @@ source ~/.vim/plugin_config.vim
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
+" Line Numbers
+set number
+
 " Tab Indents
 set smartindent
 set tabstop=2
