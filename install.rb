@@ -7,3 +7,9 @@ Dir['*'].each do |file|
   target = File.join(home, ".#{file}")
   `ln -s #{File.expand_path file} #{target}`
 end
+
+
+vim_tmp = File.join(home, '.vim-tmp')
+unless File.exists? vim_tmp
+  `mkdir #{vim_tmp}`
+end
