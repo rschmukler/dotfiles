@@ -15,11 +15,10 @@ Bundle 'uggedal/go-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'darthdeus/vim-slim'
 
-"
-
 
 " Utilities
 
+Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'

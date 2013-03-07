@@ -3,6 +3,10 @@ source ~/.vim/plugin_config.vim
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
+" Store Temp Files Elsewhere
+set backupdir=/tmp/vim
+set directory=/tmp/vim
+
 " Line Numbers
 set number
 
