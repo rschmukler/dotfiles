@@ -26,13 +26,12 @@
       "beforeEach",       // Used by mocha
       "after",            // Used by mocha
       "afterEach",        // Used by mocha
-      "sinon",            // Used by mocha
-      "debugger"          // Used by Node
+      "sinon"             // Used by mocha
     ],
 
 
     // Development.
-    "debug"         : false,  // Allow debugger statements e.g. browser breakpoints.
+    "debug"         : true,  // Allow debugger statements e.g. browser breakpoints.
     "devel"         : true,   // Allow development statements e.g. `console.log();`.
 
 
