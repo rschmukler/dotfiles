@@ -26,7 +26,7 @@
       "beforeEach",       // Used by mocha
       "after",            // Used by mocha
       "afterEach",        // Used by mocha
-      "sinon"             // Used by mocha
+      "sinon",            // Used by mocha
       "debugger"          // Used by Node
     ],
 
