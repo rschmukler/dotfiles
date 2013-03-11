@@ -3,7 +3,7 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<D-S-t>
 endif
 
-let g:ctrlp_map = '<D-t>'
+let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap <D-t> :CtrlP<CR>
 
