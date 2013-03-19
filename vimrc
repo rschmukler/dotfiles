@@ -7,8 +7,8 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set nowrap
 
 " Store Temp Files Elsewhere
-set backupdir=/tmp/vim
-set directory=/tmp/vim
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
 
 " Line Numbers
 set number

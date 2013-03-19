@@ -5,6 +5,9 @@ endif
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '(*node_modules*|\.(git|hg|svn))$',
+  \ }
 nnoremap <D-t> :CtrlP<CR>
 let g:ctrlp_working_path_mode = 'ra'
 
