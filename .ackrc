@@ -1,0 +1,4 @@
+--type-add=js=.coffee
+--type-add=css=.scss
+--type-add=css=.styl
+--type-add=html=.slim
