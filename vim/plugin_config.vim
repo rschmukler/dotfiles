@@ -6,6 +6,7 @@ endif
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap <D-t> :CtrlP<CR>
+let g:ctrlp_working_path_mode = 'ra'
 
 " Indent Guides
 let g:indent_guides_start_level = 2

@@ -91,5 +91,8 @@ alias zrr='zeus rake routes'
 alias zdb='zeus rake db:migrate; zeus rake db:test:prepare'
 alias zts='zeus test spec'
 
+# Mocha Aliases
+alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
+
 PATH=$PATH:$HOME/.rvm/bin:/usr/local/share/npm/bin # Add RVM to PATH for scripting and also NPM bin
 NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib

@@ -1,9 +1,10 @@
 source ~/.vim/vundle.vim
 source ~/.vim/plugin_config.vim
+source ~/.vim/filetype_settings.vim
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
-set autochdir
+set nowrap
 
 " Store Temp Files Elsewhere
 set backupdir=/tmp/vim
