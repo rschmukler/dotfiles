@@ -19,13 +19,14 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Open directories if argument
+au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif
 
-"Color Theming Stuff
+" Color Theming Stuff
 set t_Co=256
 set background=dark
 color base16-tomorrow
 
-let g:ctrlp_working_path_mode = 2
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
@@ -35,3 +36,8 @@ set ofu=syntaxcomplete#Complete
 
 filetype plugin indent on
 syntax on
+
+" Some Handy Remappings
+
+" Underline the current line with '='
+nmap <silent> <leader>ul :t.<CR>Vr=
