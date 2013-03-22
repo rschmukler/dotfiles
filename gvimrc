@@ -1,6 +1,6 @@
+" Resize Splits on Vim Resize
 source ~/.vim/plugin_config.vim
 
-" Resize Splits on Vim Resize
 if has("gui_running")
   autocmd VimResized * wincmd =
 end
