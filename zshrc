@@ -50,6 +50,10 @@ export WOMSTREET_EMAIL="ryan@womstreet.com"
 #Load RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
+#Load NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
+
 function define_vim_wrappers()
 {
   vim_commands=(
@@ -67,6 +71,12 @@ function define_vim_wrappers()
 
 #Additional Customizations
 define_vim_wrappers
+
+# GitHub Goodness
+
+alias git=hub
+export GITHUB_USER=rschmukler
+
 alias ls="/usr/local/bin/gls --color=auto -hF"
 alias cgrep="grep --color=auto"
 alias :q="exit"
