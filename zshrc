@@ -74,7 +74,6 @@ define_vim_wrappers
 
 # GitHub Goodness
 
-alias git=hub
 export GITHUB_USER=rschmukler
 
 alias ls="/usr/local/bin/gls --color=auto -hF"
