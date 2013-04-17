@@ -11,6 +11,15 @@ def symlink_files
       `ln -s #{File.expand_path file} #{target}`
     end
   end
+
+
+  install_files = Dir['install/{.**,**}/**/*'].reject{ |x| x =~ /(\.\.|\.$)/ }.reject{ |x| File.directory?(x) }
+  install_files.each do |f|
+    install_path = f[8..-1]
+    target = File.join(home, install_path)
+    `mkdir -p #{File.dirname(target)}`
+    `ln -s #{File.expand_path f} #{target}`
+  end
 end
 
 def make_vim_tmp
@@ -21,12 +30,22 @@ def make_vim_tmp
 end
 
 def update_submodules
-  `git submodule init`
-  `git submodule update`
-  `git submodule foreach git pull origin master`
+  submodules = ['oh-my-zsh', 'vim/bundle/vundle']
+  submodules.each do |s|
+    `git submodule init #{s}`
+    `git submodule update #{s}`
+  end
+end
+
+def install_vim_plugins
+  `vim -u #{File.expand_path('~/.vim/vundle.vim')} +BundleInstall +q`
 end
 
 
 symlink_files
 make_vim_tmp
 update_submodules
+install_vim_plugins
+
+
+exec 'zsh'

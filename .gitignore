@@ -1,3 +1,5 @@
 vim/bundle/*/
 vim/bundle/*
+vim/bundle/Align
+vim/bundle/The-NERD-Commenter
 !vim/bundle/vundle
