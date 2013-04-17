@@ -42,9 +42,9 @@ def install_vim_plugins
 end
 
 
+update_submodules
 symlink_files
 make_vim_tmp
-update_submodules
 install_vim_plugins
 
 
