@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+
+os=`uname`
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -79,7 +82,10 @@ define_vim_wrappers
 
 export GITHUB_USER=rschmukler
 
-alias ls="/usr/local/bin/gls --color=auto -hF"
+if [[ "$os" == 'Darwin' ]]; then
+  alias ls="/usr/local/bin/gls --color=auto -hF"
+fi
+
 alias cgrep="grep --color=auto"
 alias :q="exit"
 alias :wq="exit"
