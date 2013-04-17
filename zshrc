@@ -10,6 +10,9 @@ ZSH_THEME="rs"
 #Enable vim keybindings
 bindkey -v
 
+# Set ulimit for component
+ulimit -n 10240
+
 
 ## Set up ruby for patched version
 RUBY_HEAP_MIN_SLOTS=1000000
@@ -74,7 +77,6 @@ define_vim_wrappers
 
 # GitHub Goodness
 
-alias git=hub
 export GITHUB_USER=rschmukler
 
 alias ls="/usr/local/bin/gls --color=auto -hF"
