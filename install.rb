@@ -21,6 +21,8 @@ def make_vim_tmp
 end
 
 def update_submodules
+  `git submodule init`
+  `git submodule update`
   `git submodule foreach git pull origin master`
 end
 
