@@ -17,8 +17,10 @@ def symlink_files
   install_files.each do |f|
     install_path = f[8..-1]
     target = File.join(HOME, install_path)
-    `mkdir -p #{File.dirname(target)}`
-    `ln -s #{File.expand_path f} #{target}`
+    unless File.exists?(target)
+      `mkdir -p #{File.dirname(target)}`
+      `ln -s #{File.expand_path f} #{target}`
+    end
   end
 end
 
@@ -37,15 +39,8 @@ def update_submodules
   end
 end
 
-def install_vim_plugins
-  `vim -u #{File.expand_path('~/.vim/vundle.vim')} +BundleInstall +q`
-end
-
-
 update_submodules
 symlink_files
 make_vim_tmp
-install_vim_plugins
 
-
-exec 'zsh'
+exec "vim -u #{File.expand_path('~/.vim/vundle.vim')} +BundleInstall +q +q; zsh"
