@@ -20,6 +20,11 @@ def make_vim_tmp
   end
 end
 
+def update_submodules
+  `git submodule foreach git pull origin master`
+end
+
 
 symlink_files
 make_vim_tmp
+update_submodules
