@@ -19,6 +19,7 @@ Bundle 'kchmck/vim-coffee-script'
 
 " Utilities
 
+Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
