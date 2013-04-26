@@ -19,6 +19,8 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'darthdeus/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
 
+Bundle 'gblock0/vim-chino'
+
 
 " Utilities
 
