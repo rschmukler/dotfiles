@@ -3,7 +3,7 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<D-S-t>
 endif
 
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov
 
 let g:ctrlp_working_path_mode = 2
 

@@ -112,5 +112,5 @@ alias zts='zeus test spec'
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
 
-PATH=$PATH:$HOME/.rvm/bin:/usr/local/share/npm/bin # Add RVM to PATH for scripting and also NPM bin
+PATH=$HOME/.rvm/bin:/usr/local/share/npm/bin:$PATH # Add RVM to PATH for scripting and also NPM bin
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
