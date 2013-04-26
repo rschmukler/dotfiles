@@ -7,6 +7,9 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+" Themes
+Bundle 'chriskempson/base16-vim'
+
 " Syntax Plugins
 Bundle 'pangloss/vim-javascript'
 Bundle 'wavded/vim-stylus'
