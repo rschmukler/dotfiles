@@ -9,6 +9,8 @@ Bundle 'gmarik/vundle'
 
 " Themes
 Bundle 'chriskempson/base16-vim'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'nanotech/jellybeans.vim'
 
 " Syntax Plugins
 Bundle 'pangloss/vim-javascript'
