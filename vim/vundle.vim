@@ -20,12 +20,13 @@ Bundle 'uggedal/go-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'darthdeus/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'ap/vim-css-color'
 
 Bundle 'gblock0/vim-chino'
 
 
 " Utilities
-
+Bundle 'FredKSchott/CoVim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'

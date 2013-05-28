@@ -19,6 +19,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Disable that damn auto-commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " Open directories if argument
 au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif
 
@@ -38,3 +41,7 @@ syntax on
 
 " Underline the current line with '='
 nmap <silent> <leader>ul :t.<CR>Vr=
+
+" Custom commands
+command -nargs=1 Diredit :e `dirname %`/<args>
+command -nargs=1 DE :e `dirname %`/<args>
