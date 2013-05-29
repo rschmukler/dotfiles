@@ -1,3 +1,7 @@
+" Basic color stuff
+set t_Co=256
+let g:hybrid_use_Xresources = 1
+
 source ~/.vim/vundle.vim
 source ~/.vim/plugin_config.vim
 source ~/.vim/filetype_settings.vim
@@ -26,9 +30,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif
 
 " Color Theming Stuff
-set t_Co=256
-set background=dark
-color base16-tomorrow
+color hybrid
 
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
@@ -41,6 +43,10 @@ syntax on
 
 " Underline the current line with '='
 nmap <silent> <leader>ul :t.<CR>Vr=
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
 
 " Custom commands
 command -nargs=1 Diredit :e `dirname %`/<args>

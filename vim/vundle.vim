@@ -8,9 +8,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Themes
+Bundle 'cseelus/sleepwalker-vim'
+Bundle 'ap/vim-css-color'
 Bundle 'chriskempson/base16-vim'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'w0ng/vim-hybrid'
 
 " Syntax Plugins
 Bundle 'pangloss/vim-javascript'
@@ -20,7 +23,6 @@ Bundle 'uggedal/go-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'darthdeus/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'ap/vim-css-color'
 
 Bundle 'gblock0/vim-chino'
 
