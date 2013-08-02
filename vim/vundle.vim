@@ -28,7 +28,6 @@ Bundle 'gblock0/vim-chino'
 
 
 " Utilities
-Bundle 'FredKSchott/CoVim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
