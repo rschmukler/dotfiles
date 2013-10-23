@@ -75,6 +75,10 @@ function define_vim_wrappers()
   done
 }
 
+function port() {
+  lsof -i ":${1:-80}"
+}
+
 #Additional Customizations
 define_vim_wrappers
 
