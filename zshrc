@@ -103,6 +103,7 @@ alias rehash='hash -r'
 
 # Git Aliases
 alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias 'git setref'="git config --add branch.`git branch | grep '*' | sed 's/* //'`.references"
 alias gsr='git setref'
 alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
