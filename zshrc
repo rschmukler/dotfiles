@@ -13,9 +13,13 @@ ZSH_THEME="rs2"
 #Enable vim keybindings
 bindkey -v
 
-# Set ulimit for component
-ulimit -n 10240
 
+source $ZSH/oh-my-zsh.sh
+
+plugins=(brew git heroku osx rvm)
+
+# Customize to your needs...
+export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:usr/X11/bin
 
 ## Set up ruby for patched version
 RUBY_HEAP_MIN_SLOTS=1000000
@@ -45,10 +49,7 @@ RUBY_HEAP_FREE_MIN=500000
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew git heroku osx rvm)
 
-source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 # WomStreet Variables
 export WOMSTREET_EMAIL="ryan@womstreet.com"
@@ -80,7 +81,7 @@ function port() {
 }
 
 #Additional Customizations
-define_vim_wrappers
+define_vim_wrappers()
 
 # GitHub Goodness
 
@@ -88,6 +89,8 @@ export GITHUB_USER=rschmukler
 
 if [[ "$os" == 'Darwin' ]]; then
   alias ls="/usr/local/bin/gls --color=auto -hF"
+  # Set ulimit for component
+  ulimit -n 10240
 fi
 
 alias cgrep="grep --color=auto"

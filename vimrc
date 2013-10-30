@@ -26,6 +26,14 @@ set expandtab
 " Disable that damn auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" System specific config
+if has("unix")
+  let s:uname = system("uname -s")
+  if(s:uname == "Darwin")
+  endif
+endif
+set clipboard=unnamed
+
 " Open directories if argument
 au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif
 
