@@ -14,12 +14,12 @@ ZSH_THEME="rs2"
 bindkey -v
 
 
-source $ZSH/oh-my-zsh.sh
 
+source $ZSH/oh-my-zsh.sh
 plugins=(brew git heroku osx rvm)
 
 # Customize to your needs...
-export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:usr/X11/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:usr/X11/bin
 
 ## Set up ruby for patched version
 RUBY_HEAP_MIN_SLOTS=1000000
@@ -47,7 +47,6 @@ RUBY_HEAP_FREE_MIN=500000
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git heroku osx rvm)
 
 
 
@@ -106,7 +105,6 @@ alias rehash='hash -r'
 
 # Git Aliases
 alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias 'git setref'="git config --add branch.`git branch | grep '*' | sed 's/* //'`.references"
 alias gsr='git setref'
 alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
