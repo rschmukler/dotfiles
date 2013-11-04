@@ -32,7 +32,10 @@ if has("unix")
   if(s:uname == "Darwin")
   endif
 endif
+
+" Clipboard and Backspace
 set clipboard=unnamed
+set backspace=indent,eol,start
 
 " Open directories if argument
 au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif

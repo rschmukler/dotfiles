@@ -1,0 +1,32 @@
+#!/bin/zsh
+
+SESSION_NAME=spotlight
+SESSION_DIR=~/Dev/spotlight/spotlight
+
+# Check if session exists
+tmux has-session -t $SESSION_NAME 2>/dev/null
+
+if [ "$?" -eq 1 ]; then
+  TMUX= tmux new-session -d -s $SESSION_NAME -n Vim
+  tmux new-window -t$SESSION_NAME:1 -n Shell
+  tmux new-window -t$SESSION_NAME:2 -n Dev
+  tmux new-window -t$SESSION_NAME:3 -n Dev-DB
+  tmux new-window -t$SESSION_NAME:4 -n Prod
+  tmux new-window -t$SESSION_NAME:5 -n DB
+
+  tmux send-keys -t$SESSION_NAME:0 "cd $SESSION_DIR; vim" "C-m"
+  tmux send-keys -t$SESSION_NAME:1 "cd $SESSION_DIR; clear" "C-m"
+  tmux send-keys -t$SESSION_NAME:2 "cd $SESSION_DIR; grunt" "C-m"
+  tmux select-window -t$SESSION_NAME:2
+  tmux split-window -h
+  tmux send-keys -t$SESSION_NAME:2 "make dev-server" "C-m"
+  tmux send-keys -t$SESSION_NAME:3 "cd $SESSION_DIR; sleep 1; mongo spotlight-dev" "C-m"
+  tmux send-keys -t$SESSION_NAME:4 "cd $SESSION_DIR; ssh spotlight.fm" "C-m"
+  tmux send-keys -t$SESSION_NAME:5 "cd $SESSION_DIR; clear" "C-m"
+
+  tmux select-window -t$SESSION_NAME:0
+else
+  echo "Session found. Connection"
+fi
+
+tmux -2 attach -t $SESSION_NAME

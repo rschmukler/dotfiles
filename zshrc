@@ -13,13 +13,13 @@ ZSH_THEME="rs2"
 #Enable vim keybindings
 bindkey -v
 
-
-
-source $ZSH/oh-my-zsh.sh
 plugins=(brew git heroku osx rvm)
+source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:usr/X11/bin
+export PATH=/usr/local/bin:$PATH
+
+
+
 
 ## Set up ruby for patched version
 RUBY_HEAP_MIN_SLOTS=1000000
@@ -53,12 +53,6 @@ RUBY_HEAP_FREE_MIN=500000
 # WomStreet Variables
 export WOMSTREET_EMAIL="ryan@womstreet.com"
 
-#Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
-
-#Load NVM
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
 
 function define_vim_wrappers()
 {
@@ -121,5 +115,11 @@ alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib
 # Add Homebrew Cask options
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-PATH=$HOME/.rvm/bin:/usr/local/share/npm/bin:$PATH # Add RVM to PATH for scripting and also NPM bin
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
+
+#Load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+#Load NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
