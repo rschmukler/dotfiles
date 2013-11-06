@@ -123,3 +123,5 @@ export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
 #Load NVM
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
