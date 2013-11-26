@@ -4,3 +4,4 @@
 --type-add=html=.slim
 
 --ignore-dir=node_modules
+--ignore-dir=public
