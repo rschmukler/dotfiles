@@ -1,4 +1,14 @@
 """""""""""""""""""""""""""
+" Powerline
+"""""""""""""""""""""""""""
+if isdirectory("/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/")
+	python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages")
+	python from powerline.vim import setup as powerline_setup
+	python powerline_setup()
+	python del powerline_setup
+endif
+
+"""""""""""""""""""""""""""
 " Ctags
 """""""""""""""""""""""""""
 nnoremap <leader>c :TagbarToggle<CR>

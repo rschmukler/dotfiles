@@ -8,10 +8,6 @@ source ~/.vim/filetype_settings.vim
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
-python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages")
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 set nowrap
 

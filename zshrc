@@ -117,11 +117,10 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
 
-#Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
-
 #Load NVM
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#Load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
