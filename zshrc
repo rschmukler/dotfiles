@@ -97,6 +97,23 @@ alias spec=rspec
 alias cleardns='sudo dscacheutil -flushcache'
 alias rehash='hash -r'
 
+# Tmux Aliases
+function tn() {
+  tmux new -s "$1"
+}
+
+function ta() {
+  tmux attach -t "$1"
+}
+
+function tt() {
+  if tmux has-session -t "$1"; then
+    tmux attach -t "$1"
+  else
+    tmux new -s "$1"
+  fi
+}
+
 # Git Aliases
 alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gsr='git setref'
