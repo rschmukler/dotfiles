@@ -111,22 +111,31 @@ function tt() {
     tmux attach -t "$1"
   else
     tmux_script=~/.dotfiles/files/tmux-scripts/$1
-    echo "Looking for $tmux_script"
     if [[ -e $tmux_script ]]; then
-      echo "It exists!"
       zsh "$tmux_script"
     else
-      echo "Not found"
       tmux new -s "$1"
     fi
   fi
 }
 
-function tls() {
+function _tls() {
   reply=( $(tmux list-sessions | cut -d: -f1) )
 }
 
-compctl -K tls tt
+function _tscripts() {
+  reply=( $(tmux list-sessions | cut -d: -f1) )
+  reply+=( $(ls ~/.dotfiles/files/tmux-scripts) )
+}
+
+function tk() {
+  tmux kill-session -t $1
+}
+
+compctl -K _tls tk
+compctl -K _tscripts tt
+
+alias tls="tmux list-sessions";
 
 # Git Aliases
 alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
