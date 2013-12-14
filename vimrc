@@ -60,6 +60,11 @@ map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
 
+" Set up view dir for folds and whatnot
+let &viewdir = expand("$HOME") . "/.vim/view"
+autocmd BufWrite * mkview
+autocmd BufNewFile,BufRead * silent loadview
+
 " Custom commands
 command -nargs=1 Diredit :e `dirname %`/<args>
 command -nargs=1 DE :e `dirname %`/<args>
