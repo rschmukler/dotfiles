@@ -83,7 +83,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%!pyeval('powerline.statusline(2)')
+setlocal statusline=%!pyeval('powerline.statusline(49)')
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -100,13 +100,25 @@ setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-10,92fold
-let s:l = 8 - ((1 * winheight(0) + 36) / 72)
+36,76fold
+80,121fold
+125,170fold
+174,202fold
+206,244fold
+248,248fold
+248,280fold
+284,359fold
+363,392fold
+248
+normal! zo
+248
+normal! zc
+let s:l = 30 - ((22 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 0
+30
+normal! 09|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

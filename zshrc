@@ -114,7 +114,16 @@ function tt() {
     if [[ -e $tmux_script ]]; then
       zsh "$tmux_script"
     else
-      tmux new -s "$1"
+      tmux new -d -s "$1"
+      tmux_search_paths=( ~/Dev ~/Dev/node )
+      for searches in $tmux_search_paths; do
+        dir=$searches/$1
+        if [[ -d $dir ]]; then
+          tmux send-keys -t "${1}" "cd $dir; clear" "C-m"
+          break
+        fi
+      done
+      tmux attach -t "$1"
     fi
   fi
 }
