@@ -106,6 +106,8 @@ function ta() {
   tmux attach -t "$1"
 }
 
+tmux_search_paths=( ~/Dev ~/Dev/node )
+
 function tt() {
   if tmux has-session -t "$1" 2> /dev/null; then
     tmux attach -t "$1"
@@ -115,7 +117,6 @@ function tt() {
       zsh "$tmux_script"
     else
       tmux new -d -s "$1"
-      tmux_search_paths=( ~/Dev ~/Dev/node )
       for searches in $tmux_search_paths; do
         dir=$searches/$1
         if [[ -d $dir ]]; then
@@ -129,12 +130,15 @@ function tt() {
 }
 
 function _tls() {
-  reply=( $(tmux list-sessions | cut -d: -f1) )
+  reply=( $(tmux list-sessions 2> /dev/null | cut -d: -f1) )
 }
 
 function _tscripts() {
-  reply=( $(tmux list-sessions | cut -d: -f1) )
+  reply=( $(tmux list-sessions 2> /dev/null | cut -d: -f1) )
   reply+=( $(ls ~/.dotfiles/files/tmux-scripts) )
+  for dir in $tmux_search_paths; do
+    reply+=( $(ls $dir/*/) )
+  done
 }
 
 function tk() {
