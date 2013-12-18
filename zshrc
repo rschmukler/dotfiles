@@ -145,7 +145,12 @@ function tk() {
   tmux kill-session -t $1
 }
 
+function tm() {
+  tmux new-session -t $1
+}
+
 compctl -K _tls tk
+compctl -K _tls tm
 compctl -K _tscripts tt
 
 alias tls="tmux list-sessions";
