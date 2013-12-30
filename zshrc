@@ -124,6 +124,7 @@ function tt() {
           break
         fi
       done
+      unset searches
       unset tmux_scripts
       unset dir
       tmux attach -t "$1"
