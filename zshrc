@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+export SPOTLIGHT_EMAIL='ryan@spotlight.fm'
 
 
 os=`uname`
