@@ -110,9 +110,7 @@ function ta() {
 tmux_search_paths=( ~/Dev ~/Dev/node )
 
 function tt() {
-  if tmux has-session -t "$1" 2> /dev/null; then
-    tmux attach -t "$1"
-  else
+  if ! tmux has-session -t "$1" 2> /dev/null; then
     tmux_script=~/.dotfiles/files/tmux-scripts/$1
     if [[ -e $tmux_script ]]; then
       zsh "$tmux_script"
@@ -128,8 +126,12 @@ function tt() {
       unset searches
       unset tmux_scripts
       unset dir
-      tmux attach -t "$1"
     fi
+  fi
+  if [[ -n "$TMUX" ]]; then
+    tmux switch-client -t "$1"
+  else
+    tmux attach -t "$1"
   fi
 }
 
