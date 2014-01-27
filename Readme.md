@@ -37,7 +37,7 @@ name a few of the lesser knowns.
 
 - `ackrc` - config for [Ack](https://github.com/petdance/ack2). Useful for searching through projects for folders.
   Also see [ack.vim](https://github.com/mileszs/ack.vim).
-- `jshintrc` - config for [JSHunt](https://github.com/jshint/jshint) a lint-like
+- `jshintrc` - config for [JSHint](https://github.com/jshint/jshint) a lint-like
   tool for Javascript.
 
 
