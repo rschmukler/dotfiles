@@ -55,8 +55,6 @@ let NERDTreeIgnore=['^components/', '^node_modules/']
 """""""""""""""""""""""""""
 " Supertab
 """""""""""""""""""""""""""
-let g:SuperTabDefaultCompletionType = "context"
-set ofu=syntaxcomplete#Complete
 
 """""""""""""""""""""""""""
 " PowerLine
