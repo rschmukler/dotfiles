@@ -115,7 +115,11 @@ function tt() {
     if [[ -e $tmux_script ]]; then
       zsh "$tmux_script"
     else
-      tmux new -d -s "$1"
+      oldTMUX=$TMUX
+      unset TMUX
+      tmux new -d -s $1
+      export TMUX=$oldTMUX
+      unset oldTMUX
       for searches in $tmux_search_paths; do
         dir=$searches/$1
         if [[ -d $dir ]]; then
@@ -128,10 +132,10 @@ function tt() {
       unset dir
     fi
   fi
-  if [[ -n "$TMUX" ]]; then
-    tmux switch-client -t "$1"
+  if [[ -n $TMUX ]]; then
+    tmux switch-client -t $1
   else
-    tmux attach -t "$1"
+    tmux attach -t $1
   fi
 }
 

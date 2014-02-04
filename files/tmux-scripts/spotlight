@@ -11,7 +11,7 @@ tmux new-window -t$SESSION_NAME:4 -n Prod -c $SESSION_DIR
 tmux new-window -t$SESSION_NAME:5 -n DB -c $SESSION_DIR
 
 tmux send-keys -t$SESSION_NAME:0 "cd $SESSION_DIR; vim" "C-m"
-tmux send-keys -t$SESSION_NAME:2 "grunt" "C-m"
+tmux send-keys -t$SESSION_NAME:2 "gulp" "C-m"
 tmux select-window -t$SESSION_NAME:2
 tmux split-window -h -c $SESSION_DIR
 tmux send-keys -t$SESSION_NAME:2 "make dev-server" "C-m"
