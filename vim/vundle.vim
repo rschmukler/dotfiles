@@ -15,8 +15,13 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'w0ng/vim-hybrid'
 
-" Syntax Plugins
+
+" Js plugins...
 Bundle 'pangloss/vim-javascript'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'marijnh/tern_for_vim'
+
+" Syntax Plugins
 Bundle 'wavded/vim-stylus'
 Bundle 'othree/html5.vim'
 Bundle 'uggedal/go-vim'

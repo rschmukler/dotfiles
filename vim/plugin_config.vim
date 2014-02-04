@@ -65,3 +65,10 @@ let g:Powerline_symbols = 'fancy'
 " Markdown
 """""""""""""""""""""""""""
 let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'styl=stylus']
+
+"""""""""""""""""""""""""""
+" Javascript plugins
+"""""""""""""""""""""""""""
+
+"au FileType javascript call JavaScriptFold()
+let g:used_javascript_libs = 'lodash,angularjs,jquery'
