@@ -24,6 +24,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Paste toggle
+set pastetoggle=<leader>p
+
 " Disable that damn auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
