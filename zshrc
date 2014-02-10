@@ -2,6 +2,8 @@
 ZSH=$HOME/.oh-my-zsh
 export SPOTLIGHT_EMAIL='ryan@spotlight.fm'
 
+# Disable ZSH annoying auto-update-prompt. Manually do it w/ upgrade_oh_my_zsh
+DISABLE_AUTO_UPDATE=true
 
 os=`uname`
 
