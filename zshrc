@@ -20,6 +20,7 @@ plugins=(brew git heroku osx rvm)
 source $ZSH/oh-my-zsh.sh
 
 export PATH=./node_modules/.bin:/usr/local/bin:$PATH
+export GOPATH=~/Dev/go
 
 
 
