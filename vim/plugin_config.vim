@@ -51,6 +51,8 @@ let NERDTreeIgnore=['^components/', '^node_modules/']
 " Supertab
 """""""""""""""""""""""""""
 
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
 """""""""""""""""""""""""""
 " PowerLine
 """""""""""""""""""""""""""
