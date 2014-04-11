@@ -110,7 +110,7 @@ function ta() {
   tmux attach -t "$1"
 }
 
-tmux_search_paths=( ~/Dev ~/Dev/node )
+tmux_search_paths=( ~/Dev ~/Dev/node ~/Dev/go/src/github.com/rschmukler )
 
 function tt() {
   if ! tmux has-session -t "$1" 2> /dev/null; then

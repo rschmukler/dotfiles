@@ -22,7 +22,7 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'marijnh/tern_for_vim'
 
 " Go plugins
-Bundle 'fatih/vim-go'
+" Bundle 'fatih/vim-go'
 
 " Syntax Plugins
 Bundle 'wavded/vim-stylus'
