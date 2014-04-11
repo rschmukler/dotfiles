@@ -169,6 +169,7 @@ compctl -K _tscripts tt
 alias tls="tmux list-sessions";
 
 # Git Aliases
+alias 'git clean'='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gsr='git setref'
 alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
