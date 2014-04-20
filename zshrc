@@ -174,7 +174,9 @@ alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset
 alias gsr='git setref'
 alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
+# Stupid aliases
 alias 'lol'='echo "Haha, what is so god damn funny?"'
+alias 'letsgo'='cd /Users/ryan/Dev/go/src/github.com/rschmukler'
 
 # Zeus Aliases
 alias zrr='zeus rake routes'
