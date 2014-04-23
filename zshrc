@@ -19,7 +19,7 @@ bindkey -v
 plugins=(brew git heroku osx rvm)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=./node_modules/.bin:/usr/local/bin:`go env GOROOT`/bin/:$PATH
+export PATH=./node_modules/.bin:/usr/local/bin:`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
 export GOPATH=~/Dev/go
 
 
