@@ -114,3 +114,9 @@ alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib
 
 PATH=$HOME/.rvm/bin:/usr/local/share/npm/bin:$PATH # Add RVM to PATH for scripting and also NPM bin
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
+
+# Useful functions
+
+function port() {
+ lsof -i ":${1:-80}"
+}
