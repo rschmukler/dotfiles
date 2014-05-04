@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+export SPOTLIGHT_EMAIL='ryan@spotlight.fm'
 
+# Disable ZSH annoying auto-update-prompt. Manually do it w/ upgrade_oh_my_zsh
+DISABLE_AUTO_UPDATE=true
 
 os=`uname`
 
@@ -13,8 +16,13 @@ ZSH_THEME="rs2"
 #Enable vim keybindings
 bindkey -v
 
-# Set ulimit for component
-ulimit -n 10240
+plugins=(brew git heroku osx rvm)
+source $ZSH/oh-my-zsh.sh
+
+export PATH=./node_modules/.bin:/usr/local/bin:`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
+export GOPATH=~/Dev/go
+
+
 
 
 ## Set up ruby for patched version
@@ -43,22 +51,12 @@ RUBY_HEAP_FREE_MIN=500000
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git heroku osx rvm)
 
-source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 # WomStreet Variables
 export WOMSTREET_EMAIL="ryan@womstreet.com"
 
-#Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
-
-#Load NVM
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
 
 function define_vim_wrappers()
 {
@@ -75,8 +73,12 @@ function define_vim_wrappers()
   done
 }
 
+function port() {
+  lsof -i ":${1:-80}"
+}
+
 #Additional Customizations
-define_vim_wrappers
+define_vim_wrappers()
 
 # GitHub Goodness
 
@@ -84,6 +86,8 @@ export GITHUB_USER=rschmukler
 
 if [[ "$os" == 'Darwin' ]]; then
   alias ls="/usr/local/bin/gls --color=auto -hF"
+  # Set ulimit for component
+  ulimit -n 10240
 fi
 
 alias cgrep="grep --color=auto"
@@ -97,12 +101,82 @@ alias spec=rspec
 alias cleardns='sudo dscacheutil -flushcache'
 alias rehash='hash -r'
 
+# Tmux Aliases
+function tn() {
+  tmux new -s "$1"
+}
+
+function ta() {
+  tmux attach -t "$1"
+}
+
+tmux_search_paths=( ~/Dev ~/Dev/node ~/Dev/go/src/github.com/rschmukler )
+
+function tt() {
+  if ! tmux has-session -t "$1" 2> /dev/null; then
+    tmux_script=~/.dotfiles/files/tmux-scripts/$1
+    if [[ -e $tmux_script ]]; then
+      zsh "$tmux_script"
+    else
+      oldTMUX=$TMUX
+      unset TMUX
+      tmux new -d -s $1
+      export TMUX=$oldTMUX
+      unset oldTMUX
+      for searches in $tmux_search_paths; do
+        dir=$searches/$1
+        if [[ -d $dir ]]; then
+          tmux send-keys -t "${1}" "cd $dir; clear" "C-m"
+          break
+        fi
+      done
+      unset searches
+      unset tmux_scripts
+      unset dir
+    fi
+  fi
+  if [[ -n $TMUX ]]; then
+    tmux switch-client -t $1
+  else
+    tmux attach -t $1
+  fi
+}
+
+function _tls() {
+  reply=( $(tmux list-sessions 2> /dev/null | cut -d: -f1) )
+}
+
+function _tscripts() {
+  reply=( $(tmux list-sessions 2> /dev/null | cut -d: -f1) )
+  reply+=( $(ls ~/.dotfiles/files/tmux-scripts) )
+  for dir in $tmux_search_paths; do
+    reply+=( $(ls $dir/*/) )
+  done
+}
+
+function tk() {
+  tmux kill-session -t $1
+}
+
+function tm() {
+  tmux new-session -t $1
+}
+
+compctl -K _tls tk
+compctl -K _tls tm
+compctl -K _tscripts tt
+
+alias tls="tmux list-sessions";
+
 # Git Aliases
+alias 'git clean'='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gsr='git setref'
 alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
+# Stupid aliases
 alias 'lol'='echo "Haha, what is so god damn funny?"'
+alias 'letsgo'='cd /Users/ryan/Dev/go/src/github.com/rschmukler'
 
 # Zeus Aliases
 alias zrr='zeus rake routes'
@@ -112,7 +186,9 @@ alias zts='zeus test spec'
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
 
-PATH=$HOME/.rvm/bin:/usr/local/share/npm/bin:$PATH # Add RVM to PATH for scripting and also NPM bin
+# Add Homebrew Cask options
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
 
 # Useful functions
@@ -120,3 +196,10 @@ export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
 function port() {
  lsof -i ":${1:-80}"
 }
+
+#Load NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
+
+#Load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.

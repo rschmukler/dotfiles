@@ -8,6 +8,7 @@ source ~/.vim/filetype_settings.vim
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
+
 set nowrap
 
 " Store Temp Files Elsewhere
@@ -23,8 +24,22 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Paste toggle
+set pastetoggle=<leader>p
+
 " Disable that damn auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" System specific config
+if has("unix")
+  let s:uname = system("uname -s")
+  if(s:uname == "Darwin")
+  endif
+endif
+
+" Clipboard and Backspace
+set clipboard=unnamed
+set backspace=indent,eol,start
 
 " Open directories if argument
 au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif
@@ -47,6 +62,11 @@ map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
+
+" Set up view dir for folds and whatnot
+let &viewdir = expand("$HOME") . "/.vim/view"
+autocmd BufWrite * mkview
+autocmd BufNewFile,BufRead * silent loadview
 
 " Custom commands
 command -nargs=1 Diredit :e `dirname %`/<args>

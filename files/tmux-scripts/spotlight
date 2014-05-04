@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+SESSION_NAME=spotlight
+SESSION_DIR=~/Dev/spotlight/spotlight
+
+TMUX= tmux new-session -d -s $SESSION_NAME -n Vim
+tmux new-window -t$SESSION_NAME:1 -n Shell -c $SESSION_DIR
+tmux new-window -t$SESSION_NAME:2 -n Dev -c $SESSION_DIR
+tmux new-window -t$SESSION_NAME:3 -n Test -c $SESSION_DIR
+tmux new-window -t$SESSION_NAME:4 -n Dev-DB -c $SESSION_DIR
+tmux new-window -t$SESSION_NAME:5 -n Prod -c $SESSION_DIR
+tmux new-window -t$SESSION_NAME:6 -n DB -c $SESSION_DIR
+
+tmux send-keys -t$SESSION_NAME:0 "cd $SESSION_DIR; vim" "C-m"
+tmux send-keys -t$SESSION_NAME:2 "gulp" "C-m"
+tmux select-window -t$SESSION_NAME:2
+tmux split-window -h -c $SESSION_DIR
+tmux send-keys -t$SESSION_NAME:2 "make dev-server" "C-m"
+tmux send-keys -t$SESSION_NAME:3 "clear" "C-m"
+tmux send-keys -t$SESSION_NAME:4 "sleep 2; mongo spotlight-dev" "C-m"
+tmux send-keys -t$SESSION_NAME:5 "clear" "C-m"
+tmux send-keys -t$SESSION_NAME:6 "clear" "C-m"
+
+tmux select-window -t$SESSION_NAME:0
+tmux -2 attach -t $SESSION_NAME

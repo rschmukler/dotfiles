@@ -44,7 +44,7 @@
     "asi"           : false,  // Tolerate Automatic Semicolon Insertion (no semicolons).
     "laxbreak"      : true,   // Tolerate unsafe line breaks e.g. `return [\n] x` without semicolons.
     "bitwise"       : true,   // Prohibit bitwise operators (&, |, ^, etc.).
-    "boss"          : false,  // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
+    "boss"          : true,  // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
     "curly"         : false,  // Require {} for every new block or scope.
     "eqeqeq"        : false,  // Require triple equals i.e. `===`.
     "eqnull"        : false,  // Tolerate use of `== null`.
@@ -60,7 +60,7 @@
     "scripturl"     : true,   // Tolerate script-targeted URLs.
     "shadow"        : true,  // Allows re-define variables later in code e.g. `var x=1; x=2;`.
     "supernew"      : false,  // Tolerate `new function () { ... };` and `new Object;`.
-    "undef"         : false,   // Prohibit all non-global variables be declared before they are used.
+    "undef"         : true,   // Prohibit all non-global variables be declared before they are used.
 
 
     // Persone styling prefrences.
