@@ -101,6 +101,16 @@ alias spec=rspec
 alias cleardns='sudo dscacheutil -flushcache'
 alias rehash='hash -r'
 
+# Programming Aliases
+
+alias 'letsgo'='cd ~/Dev/go/src/github.com/rschmukler'
+alias 'swift'='xcrun swift'
+
+# Zeus Aliases
+alias zrr='zeus rake routes'
+alias zdb='zeus rake db:migrate; zeus rake db:test:prepare'
+alias zts='zeus test spec'
+
 # Tmux Aliases
 function tn() {
   tmux new -s "$1"
@@ -177,15 +187,6 @@ alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 # Stupid aliases
 alias 'lol'='echo "Haha, what is so god damn funny?"'
 
-# Programming Aliases
-
-alias 'letsgo'='cd ~/Dev/go/src/github.com/rschmukler'
-alias 'swift'='xcrun swift'
-
-# Zeus Aliases
-alias zrr='zeus rake routes'
-alias zdb='zeus rake db:migrate; zeus rake db:test:prepare'
-alias zts='zeus test spec'
 
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
