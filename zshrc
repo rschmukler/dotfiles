@@ -176,7 +176,11 @@ alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 # Stupid aliases
 alias 'lol'='echo "Haha, what is so god damn funny?"'
-alias 'letsgo'='cd /Users/ryan/Dev/go/src/github.com/rschmukler'
+
+# Programming Aliases
+
+alias 'letsgo'='cd ~/Dev/go/src/github.com/rschmukler'
+alias 'swift'='xcrun swift'
 
 # Zeus Aliases
 alias zrr='zeus rake routes'
