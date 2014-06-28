@@ -104,6 +104,9 @@ alias rehash='hash -r'
 # Programming Aliases
 
 alias 'letsgo'='cd ~/Dev/go/src/github.com/rschmukler'
+
+alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
+alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
 alias 'swift'='xcrun swift'
 
 # Zeus Aliases
