@@ -88,6 +88,9 @@ if [[ "$os" == 'Darwin' ]]; then
   alias ls="/usr/local/bin/gls --color=auto -hF"
   # Set ulimit for component
   ulimit -n 10240
+
+  # add boot2docker support
+  export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
 fi
 
 alias cgrep="grep --color=auto"
