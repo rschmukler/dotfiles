@@ -104,6 +104,11 @@ alias spec=rspec
 alias cleardns='sudo dscacheutil -flushcache'
 alias rehash='hash -r'
 
+# Disable autocorrect for things commonly found in ./
+alias mocha='nocorrect mocha'
+alias karma='nocorrect karma'
+alias gulp='nocorrect gulp'
+
 # Programming Aliases
 
 alias 'letsgo'='cd ~/Dev/go/src/github.com/rschmukler'
