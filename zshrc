@@ -5,7 +5,6 @@ export SPOTLIGHT_EMAIL='ryan@spotlight.fm'
 # Disable ZSH annoying auto-update-prompt. Manually do it w/ upgrade_oh_my_zsh
 DISABLE_AUTO_UPDATE=true
 
-os=`uname`
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -82,12 +81,20 @@ function port() {
 #Additional Customizations
 define_vim_wrappers()
 
-# GitHub Goodness
-
 export GITHUB_USER=rschmukler
 
+os=`uname`
 if [[ "$os" == 'Darwin' ]]; then
   alias ls="/usr/local/bin/gls --color=auto -hF"
+  alias cleardns='sudo dscacheutil -flushcache'
+  alias updatedb='sudo /usr/libexec/locate.updatedb'
+  alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
+  alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
+  alias 'swift'='xcrun swift'
+
+  # Add Homebrew Cask options
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
   # Set ulimit for component
   ulimit -n 10240
 
@@ -101,9 +108,7 @@ alias :wq="exit"
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias mg_start='sudo mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf'
-alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias spec=rspec
-alias cleardns='sudo dscacheutil -flushcache'
 alias rehash='hash -r'
 
 # Disable autocorrect for things commonly found in ./
@@ -114,10 +119,6 @@ alias gulp='nocorrect gulp'
 # Programming Aliases
 
 alias 'letsgo'='cd ~/Dev/go/src/github.com/rschmukler'
-
-alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
-alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
-alias 'swift'='xcrun swift'
 
 # Zeus Aliases
 alias zrr='zeus rake routes'
@@ -203,9 +204,6 @@ alias 'lol'='echo "Haha, what is so god damn funny?"'
 
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
-
-# Add Homebrew Cask options
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
 
