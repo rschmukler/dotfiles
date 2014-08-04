@@ -24,7 +24,8 @@ if hash go 2>/dev/null; then
 fi
 
 
-
+# export phantomjs
+export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 
 ## Set up ruby for patched version
 RUBY_HEAP_MIN_SLOTS=1000000
