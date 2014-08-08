@@ -2,6 +2,7 @@
 --type-add=css=.scss
 --type-add=css=.styl
 --type-add=html=.slim
+--type-add=html=.jade
 
 --ignore-dir=node_modules
 --ignore-dir=public
