@@ -21,7 +21,9 @@
       "google",           // Google API variable.
       "Android",          // PhoneGap variable.
       "describe",         // Used by mocha
+      "ddescribe",         // Used by mocha
       "it",               // Used by mocha
+      "iit",               // Used by mocha
       "before",           // Used by mocha
       "beforeEach",       // Used by mocha
       "after",            // Used by mocha
