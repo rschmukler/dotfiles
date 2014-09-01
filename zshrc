@@ -126,6 +126,10 @@ alias zrr='zeus rake routes'
 alias zdb='zeus rake db:migrate; zeus rake db:test:prepare'
 alias zts='zeus test spec'
 
+function path() {
+  type -p "$1" | cut -d ' ' -f 3
+}
+
 # Tmux Aliases
 function tn() {
   tmux new -s "$1"
