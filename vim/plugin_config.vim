@@ -23,7 +23,7 @@ if has("gui_macvim")
   macmenu &File.New\ Tab key=<D-S-t>
 endif
 
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist
 
 let g:ctrlp_working_path_mode = 2
 
@@ -45,7 +45,7 @@ let g:indent_guides_enable_on_vim_startup=1
 nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw = 0
 autocmd vimenter * if !argc() | NERDTree | wincmd l | endif
-let NERDTreeIgnore=['^components/', '^node_modules/', '^bower_components/']
+let NERDTreeIgnore=['^components/', '^node_modules/', '^bower_components/', '^dist/']
 
 """""""""""""""""""""""""""
 " Supertab
