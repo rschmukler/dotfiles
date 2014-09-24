@@ -41,17 +41,14 @@ function appIsOpen(name) {
 
 var focus_apps = {
   f: 'iTerm',
-  t: 'Messages',
+  m: 'Messages',
   h: 'HipChat',
   x: 'Xcode',
-  s: 'iOS Simulator',
-  m: 'iTunes',
-  n: 'Spotify',
-  d: 'Google Chrome',
-  a: 'Safari',
-  r: 'Google Chrome Canary',
-  v: 'DEVONthink Pro Office',
-  p: 'Pandora'
+  i: 'iOS Simulator',
+  p: 'Spotify',
+  c: 'Google Chrome',
+  s: 'Safari',
+  b: 'Google Chrome Canary'
 };
 
 _(focus_apps).forEach(function(app, key) {
