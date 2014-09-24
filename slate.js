@@ -48,7 +48,8 @@ var focus_apps = {
   p: 'Spotify',
   c: 'Google Chrome',
   s: 'Safari',
-  b: 'Google Chrome Canary'
+  b: 'Google Chrome Canary',
+  l: 'Flowdock'
 };
 
 _(focus_apps).forEach(function(app, key) {
