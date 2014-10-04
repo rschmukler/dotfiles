@@ -2,15 +2,6 @@
 // Forked from ajoslin/dotfiles
 // Hotkeys for quickly opening apps & changing window size
 
-// Window size /position shortcuts
-// ctrl+shift+h = use left half of screen. 
-// ctrl+shift+l = right half, hjkl 
-// ctrl+shift+m = use full window
-//
-// Binds modal key + {char} to focus different open apps
-// ctrl-s + h = focus hipchat
-// ctrl-s + f = focus iterm
-// etc, see below
 
 var modal_key = ":s,ctrl";
 
@@ -21,6 +12,11 @@ S.cfga({
   "checkDefaultsOnLoad" : true,
   "focusCheckWidthMax" : 3000
 });
+
+// Window size /position shortcuts
+// ctrl+shift+h = use left half of screen. 
+// ctrl+shift+l = right half, hjkl 
+// ctrl+shift+m = use full window
 
 S.bnda({
   // Push Bindings
@@ -39,6 +35,12 @@ function appIsOpen(name) {
   return isOpen;
 }
 
+
+// Binds modal key + {char} to focus different open apps
+// ctrl-s + h = focus hipchat
+// ctrl-s + f = focus iterm
+// etc, see below
+
 var focus_apps = {
   f: 'iTerm',
   m: 'Messages',
@@ -53,6 +55,7 @@ var focus_apps = {
   k: 'Slack',
   b: 'Mailbox (Beta)'
 };
+
 
 _(focus_apps).forEach(function(app, key) {
   S.bind(key + modal_key, S.op("focus", {app: app}));
