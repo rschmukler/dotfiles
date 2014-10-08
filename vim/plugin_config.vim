@@ -69,3 +69,8 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'javascript', 'js=javascript
 
 "au FileType javascript call JavaScriptFold()
 let g:used_javascript_libs = 'lodash,angularjs,jquery'
+
+"""""""""""""""""""""""""""
+" Goyo
+"""""""""""""""""""""""""""
+nnoremap <Leader>g :Goyo<CR>
