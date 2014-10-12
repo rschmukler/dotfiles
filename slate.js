@@ -20,11 +20,11 @@ S.cfga({
 
 S.bnda({
   // Push Bindings
-  "l:ctrl;shift" : S.op("push", { "direction" : "right", "style" : "bar-resize:screenSizeX/2" }),
-  "h:ctrl;shift" : S.op("push", { "direction" : "left", "style" : "bar-resize:screenSizeX/2" }),
-  "k:ctrl;shift" : S.op("push", { "direction" : "up", "style" : "bar-resize:screenSizeY/2" }),
-  "j:ctrl;shift" : S.op("push", { "direction" : "down", "style" : "bar-resize:screenSizeY/2" }),
-  "m:ctrl;shift" : S.op("push", { "direction": "left", "style": "bar-resize:screenSizeX" }),
+  "l:ctrl;shift" : S.op("move", { "x": "screenSizeX/2 + screenOriginX+20", "y": "screenOriginY+20", "width": "screenSizeX*0.5 - 40", "height": "screenSizeY-100" }),
+  "h:ctrl;shift" : S.op("move", { "x": "screenOriginX+20", "y": "screenOriginY+20", "width": "screenSizeX*0.5 - 40", "height": "screenSizeY-100" }),
+  "k:ctrl;shift" : S.op("move", { "x": "screenOriginX+20", "y": "screenOriginY+20", "width": "screenSizeX - 40", "height": "screenSizeY/2 - 20" }),
+  "j:ctrl;shift" : S.op("move", { "x": "screenOriginX+20", "y": "screenSizeY/2 + screenOriginY+20", "width": "screenSizeX - 40", "height": "screenSizeY/2 - 40" }),
+  "m:ctrl;shift" : S.op("move", { "x": "screenOriginX+20", "y": "screenOriginY+20", "width": "screenSizeX - 40", "height": "screenSizeY - 40" }),
 });
 
 function appIsOpen(name) {
