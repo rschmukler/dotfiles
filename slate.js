@@ -1,3 +1,4 @@
+/* globals S,slate,_ */
 // Bindings for slate.
 // Forked from ajoslin/dotfiles
 // Hotkeys for quickly opening apps & changing window size
@@ -27,6 +28,10 @@ S.bnda({
   "m:ctrl;shift" : S.op("move", { "x": "screenOriginX+20", "y": "screenOriginY+20", "width": "screenSizeX - 40", "height": "screenSizeY - 40" }),
 });
 
+
+
+// Split dev layout
+
 function appIsOpen(name) {
   var isOpen = false;
   slate.eachApp(function(app) {
@@ -50,7 +55,6 @@ var focus_apps = {
   p: 'Spotify',
   c: 'Google Chrome',
   s: 'Safari',
-  b: 'Google Chrome Canary',
   l: 'Flowdock',
   k: 'Slack',
   b: 'Mailbox (Beta)'
