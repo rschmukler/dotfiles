@@ -202,6 +202,7 @@ alias 'git clean'='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gsr='git setref'
 alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias gprom='git pull --rebase origin master'
 
 # Stupid aliases
 alias 'lol'='echo "Haha, what is so god damn funny?"'
