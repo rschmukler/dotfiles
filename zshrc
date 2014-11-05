@@ -203,6 +203,7 @@ alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset
 alias gsr='git setref'
 alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias gprom='git pull --rebase origin master'
+alias gcom='git checkout master'
 
 # Stupid aliases
 alias 'lol'='echo "Haha, what is so god damn funny?"'
