@@ -27,6 +27,7 @@ S.bnda({
   "j:ctrl;shift" : S.op("move", { "x": "screenOriginX+20", "y": "screenSizeY/2 + screenOriginY+20", "width": "screenSizeX - 40", "height": "screenSizeY/2 - 40" }),
   "m:ctrl;shift" : S.op("move", { "x": "screenOriginX+20", "y": "screenOriginY+20", "width": "screenSizeX - 40", "height": "screenSizeY - 100" }),
   "n:ctrl;shift" : S.op("move", { "x": "screenOriginX+screenSizeX/6", "y": "screenOriginY+20", "width": "2*screenSizeX/3", "height": "screenSizeY - 100" }),
+  "b:ctrl;shift" : S.op("move", { "x": "screenOriginX+screenSizeX/4", "y": "screenOriginY+20", "width": "screenSizeX/2", "height": "screenSizeY - 100" }),
 });
 
 
