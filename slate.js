@@ -56,6 +56,7 @@ var focus_apps = {
   i: 'iOS Simulator',
   p: 'Spotify',
   c: 'Google Chrome',
+  g: 'Google Chrome',
   s: 'Safari',
   l: 'Flowdock',
   k: 'Slack',
