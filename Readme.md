@@ -39,6 +39,7 @@ name a few of the lesser knowns.
   Also see [ack.vim](https://github.com/mileszs/ack.vim).
 - `jshintrc` - config for [JSHint](https://github.com/jshint/jshint) a lint-like
   tool for Javascript.
+- `slate.js` - config for [slate](https://github.com/jigish/slate)
 
 
 #### Files
