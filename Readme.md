@@ -29,18 +29,17 @@ ruby install.rb
 
 Enjoy!
 
-## What's included?
+## What's included? / Tools
 
 I am a big proponent of workflow optimization. Ultimately my dotfiles contain
-config for the tools that I rely on most. Most of them are obvious, but I'll
+configs for the tools that I rely on most. Most of them are obvious, but I'll
 name a few of the lesser knowns.
 
-- `ackrc` - config for [Ack](https://github.com/petdance/ack2). Useful for searching through projects for folders.
-  Also see [ack.vim](https://github.com/mileszs/ack.vim).
 - `jshintrc` - config for [JSHint](https://github.com/jshint/jshint) a lint-like
   tool for Javascript.
 - `slate.js` - config for [slate](https://github.com/jigish/slate)
-
+- `ag` - a faster replacement of ack. Doesn't support configs yet, but still is
+  better. See [the silver searcher](https://github.com/ggreer/the_silver_searcher)
 
 #### Files
 
