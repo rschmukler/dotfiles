@@ -3,6 +3,9 @@ set term=screen-256color
 set t_Co=256
 let g:hybrid_use_Xresources = 1
 
+" Global replace by default
+set gdefault
+
 source ~/.vim/vundle.vim
 source ~/.vim/plugin_config.vim
 source ~/.vim/filetype_settings.vim
