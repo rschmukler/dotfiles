@@ -32,7 +32,7 @@
 
 
     // Development.
-    "debug"         : true,  // Allow debugger statements e.g. browser breakpoints.
+    "debug"         : false,  // Allow debugger statements e.g. browser breakpoints.
     "devel"         : true,   // Allow development statements e.g. `console.log();`.
 
 
