@@ -31,7 +31,6 @@ S.bnda({
 });
 
 
-
 // Split dev layout
 
 function appIsOpen(name) {

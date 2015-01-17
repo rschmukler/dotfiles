@@ -74,3 +74,10 @@ let g:used_javascript_libs = 'lodash,angularjs,jquery'
 " Goyo
 """""""""""""""""""""""""""
 nnoremap <Leader>g :Goyo<CR>
+
+"""""""""""""""""""""""""""
+" Syntastic
+"""""""""""""""""""""""""""
+let g:syntastic_always_populate_loc_list = 1
+nnoremap <Leader>{ :lprev<CR>
+nnoremap <Leader>} :lnext<CR>
