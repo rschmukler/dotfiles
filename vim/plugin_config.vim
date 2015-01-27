@@ -79,5 +79,6 @@ nnoremap <Leader>g :Goyo<CR>
 " Syntastic
 """""""""""""""""""""""""""
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_html_checkers = []
 nnoremap <Leader>{ :lprev<CR>
 nnoremap <Leader>} :lnext<CR>
