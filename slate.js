@@ -59,7 +59,8 @@ var focus_apps = {
   s: 'Safari',
   l: 'Flowdock',
   k: 'Slack',
-  b: 'Mailbox (Beta)'
+  b: 'Mailbox (Beta)',
+  d: 'Markdown Pro'
 };
 
 
