@@ -36,8 +36,6 @@ Bundle 'toyamarinyon/vim-swift'
 Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'klen/python-mode'
 
-Bundle 'gblock0/vim-chino'
-
 
 " Utilities
 Bundle 'tpope/vim-fugitive'
