@@ -28,6 +28,7 @@
       "beforeEach",       // Used by mocha
       "after",            // Used by mocha
       "afterEach"         // Used by mocha
+      "angular"
     ],
 
 
