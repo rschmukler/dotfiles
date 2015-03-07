@@ -206,6 +206,8 @@ alias gprom='git pull --rebase origin master'
 alias gcom='git checkout master'
 alias gre='git reset --hard'
 
+# Docker Aliases
+alias dm='docker-machine'
 
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
