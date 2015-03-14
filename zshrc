@@ -210,6 +210,7 @@ alias gre='git reset --hard'
 alias dm='docker-machine'
 alias dme='$(docker-machine env)'
 alias dip='docker-machine ip'
+alias dls='docker-machine ls'
 $(dm env)
 
 # Mocha Aliases
