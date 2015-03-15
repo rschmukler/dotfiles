@@ -99,8 +99,8 @@ if [[ "$os" == 'Darwin' ]]; then
   # Set ulimit for component
   ulimit -n 10240
 
-  # add boot2docker support
-  export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+  # add docker support
+  '$(docker-machine env)'
 fi
 
 alias cgrep="grep --color=auto"
@@ -211,7 +211,6 @@ alias dm='docker-machine'
 alias dme='$(docker-machine env)'
 alias dip='docker-machine ip'
 alias dls='docker-machine ls'
-$(dm env)
 
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
