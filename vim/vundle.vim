@@ -37,6 +37,7 @@ Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'klen/python-mode'
 Bundle 'vim-scripts/nimrod.vim'
 Bundle 'vim-scripts/SQLComplete.vim'
+Bundle 'ekalinin/Dockerfile.vim'
 
 
 " Utilities
