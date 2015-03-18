@@ -100,7 +100,7 @@ if [[ "$os" == 'Darwin' ]]; then
   ulimit -n 10240
 
   # add docker support
-  '$(docker-machine env)'
+  $(docker-machine env)
 fi
 
 alias cgrep="grep --color=auto"
