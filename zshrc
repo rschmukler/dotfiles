@@ -212,6 +212,10 @@ alias dme='$(docker-machine env)'
 alias dip='docker-machine ip'
 alias dls='docker-machine ls'
 
+function dclean() {
+  docker stop "$1"; docker rm "$1";
+}
+
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
 
