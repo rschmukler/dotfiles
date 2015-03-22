@@ -212,7 +212,7 @@ alias dme='$(docker-machine env)'
 alias dip='docker-machine ip'
 alias dls='docker-machine ls'
 
-function dclean() {
+function drm() {
   docker stop "$1"; docker rm "$1";
 }
 
