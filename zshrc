@@ -211,6 +211,8 @@ alias dm='docker-machine'
 alias dme='$(docker-machine env)'
 alias dip='docker-machine ip'
 alias dls='docker-machine ls'
+alias dma='docker-machine active'
+alias dc='docker-compose'
 
 function drm() {
   docker stop "$1"; docker rm "$1";
