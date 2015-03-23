@@ -208,11 +208,14 @@ alias gre='git reset --hard'
 
 # Docker Aliases
 alias dm='docker-machine'
-alias dme='$(docker-machine env)'
 alias dip='docker-machine ip'
 alias dls='docker-machine ls'
 alias dma='docker-machine active'
 alias dc='docker-compose'
+
+function dme() {
+  eval $(docker-machine env $1 $2)
+}
 
 function drm() {
   docker stop "$1"; docker rm "$1";
