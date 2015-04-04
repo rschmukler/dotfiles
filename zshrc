@@ -5,6 +5,7 @@ export SPOTLIGHT_EMAIL='ryan@spotlight.fm'
 # Disable ZSH annoying auto-update-prompt. Manually do it w/ upgrade_oh_my_zsh
 DISABLE_AUTO_UPDATE=true
 
+autoload zmv
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
