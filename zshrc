@@ -216,6 +216,7 @@ alias dc='docker-compose'
 alias dps='docker ps'
 
 function dme() {
+  docker-machine active $1
   eval $(docker-machine env $1 $2)
 }
 
