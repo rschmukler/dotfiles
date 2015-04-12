@@ -80,6 +80,10 @@ function port() {
   lsof -i ":${1:-80}"
 }
 
+function kport() {
+  kill -9 `port $1 | tail -n 1 | cut -d' ' -f 5`
+}
+
 #Additional Customizations
 define_vim_wrappers()
 
