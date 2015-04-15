@@ -108,8 +108,7 @@ if [[ "$os" == 'Darwin' ]]; then
   eval $(docker-machine env)
 fi
 
-alias cgrep="grep --color=auto"
-alias :q="exit"
+\alias :q="exit"
 alias :wq="exit"
 alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
