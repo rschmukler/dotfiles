@@ -72,6 +72,10 @@ let &viewdir = expand("$HOME") . "/.vim/view"
 autocmd BufWrite * mkview
 autocmd BufNewFile,BufRead * silent loadview
 
+" Hide autocomplete on cursor move
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
 " Custom commands
 command -nargs=1 Diredit :e `dirname %`/<args>
 command -nargs=1 DE :e `dirname %`/<args>

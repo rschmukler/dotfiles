@@ -1,0 +1,18 @@
+{
+  ecmaFeatures: { 
+    modules: true 
+  },
+  env: {
+    browser: true,
+    node: true,
+    mocha: true,
+    jasmine: true,
+    es6: true
+  },
+  rules: {
+    "strict": false,
+    "quotes": false,
+    "curly": false,
+    "eqeqeq": false
+  }
+}

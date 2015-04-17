@@ -16,31 +16,14 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'w0ng/vim-hybrid'
 
 
-" Js plugins...
-Bundle 'pangloss/vim-javascript'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'marijnh/tern_for_vim'
 
 " Go plugins
 Bundle 'fatih/vim-go'
 
-" Syntax Plugins
-Bundle 'wavded/vim-stylus'
-Bundle 'othree/html5.vim'
-Bundle 'uggedal/go-vim'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'darthdeus/vim-slim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mintplant/vim-literate-coffeescript'
-Bundle 'toyamarinyon/vim-swift'
-Bundle 'vim-scripts/Vim-R-plugin'
-Bundle 'klen/python-mode'
-Bundle 'vim-scripts/nimrod.vim'
-Bundle 'vim-scripts/SQLComplete.vim'
-Bundle 'ekalinin/Dockerfile.vim'
-
 
 " Utilities
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'scrooloose/syntastic'
@@ -55,3 +38,24 @@ Bundle 'ervandew/supertab'
 Bundle 'The-NERD-Commenter'
 Bundle 'junegunn/goyo.vim'
 Bundle 'tpope/vim-abolish'
+
+" Syntax Plugins
+Bundle 'wavded/vim-stylus'
+Bundle 'othree/html5.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'darthdeus/vim-slim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'mintplant/vim-literate-coffeescript'
+Bundle 'toyamarinyon/vim-swift'
+Bundle 'vim-scripts/Vim-R-plugin'
+Bundle 'klen/python-mode'
+Bundle 'vim-scripts/nimrod.vim'
+Bundle 'vim-scripts/SQLComplete.vim'
+Bundle 'ekalinin/Dockerfile.vim'
+
+" Js plugins...
+" Bundle 'pangloss/vim-javascript'
+" Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'othree/yajs.vim'
+Bundle 'vim-scripts/SyntaxComplete'
+Bundle 'marijnh/tern_for_vim'
