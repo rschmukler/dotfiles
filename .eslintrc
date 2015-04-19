@@ -10,9 +10,11 @@
     es6: true
   },
   rules: {
-    "strict": false,
-    "quotes": false,
-    "curly": false,
-    "eqeqeq": false
+    strict: false,
+    quotes: false,
+    curly: false,
+    eqeqeq: false,
+    "no-use-before-define": false,
+    "no-underscore-dangle": false
   }
 }
