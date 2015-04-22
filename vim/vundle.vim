@@ -54,8 +54,8 @@ Bundle 'vim-scripts/SQLComplete.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 
 " Js plugins...
-" Bundle 'pangloss/vim-javascript'
-" Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'othree/yajs.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'rschmukler/pangloss-vim-indent'
 Bundle 'vim-scripts/SyntaxComplete'
 Bundle 'marijnh/tern_for_vim'

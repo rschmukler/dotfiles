@@ -1,4 +1,7 @@
 {
+  globals: {
+    angular: true
+  },
   ecmaFeatures: { 
     modules: true 
   },
@@ -15,6 +18,10 @@
     curly: false,
     eqeqeq: false,
     "no-use-before-define": false,
-    "no-underscore-dangle": false
+    "no-cond-assign": false,
+    "no-underscore-dangle": false,
+    "no-return-assign": false,
+    "no-extra-strict": false,
+    "comma-spacing": false
   }
 }
