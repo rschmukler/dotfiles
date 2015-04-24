@@ -1,6 +1,14 @@
 vim/bundle/*
 vim/bunlde
+vim/bundle/*
 vim/bundle/Align
 vim/bundle/The-NERD-Commenter
 !vim/bundle/vundle
 vim/view
+nvim/plugged/*
+nvim/plugged
+nvim/plugged/*
+nvim/plugged/Align
+nvim/plugged/The-NERD-Commenter
+!nvim/plugged/vundle
+nvim/view
