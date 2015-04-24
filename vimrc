@@ -14,6 +14,7 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 
 set nowrap
+set lazyredraw
 
 " Store Temp Files Elsewhere
 set backupdir=~/.vim-tmp

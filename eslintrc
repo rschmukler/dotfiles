@@ -1,6 +1,9 @@
 {
   globals: {
-    angular: true
+    angular: true,
+    inject: true,
+    iit: true,
+    ddescribe: true
   },
   ecmaFeatures: { 
     modules: true 
