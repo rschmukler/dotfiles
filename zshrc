@@ -64,6 +64,7 @@ if [[ "$os" == 'Darwin' ]]; then
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
   alias 'swift'='xcrun swift'
+  alias 'vim'='nvim'
 
   # Add Homebrew Cask options
   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
