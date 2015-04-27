@@ -104,11 +104,45 @@ nnoremap <Leader>g :Goyo<CR>
 """""""""""""""""""""""""""
 " Syntastic
 """""""""""""""""""""""""""
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_html_checkers = []
-let g:syntastic_javascript_checkers = ['eslint']
-nnoremap <Leader>{ :lprev<CR>
-nnoremap <Leader>} :lnext<CR>
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_html_checkers = []
+" let g:syntastic_javascript_checkers = ['eslint']
+" nnoremap <Leader>{ :lprev<CR>
+" nnoremap <Leader>} :lnext<CR>
+
+"""""""""""""""""""""""""""
+" Neomake
+"""""""""""""""""""""""""""
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_error_sign = {
+            \ 'text': '>>',
+            \ 'texthl': 'ErrorMsg',
+            \ }
+hi MyWarningMsg ctermbg=3 ctermfg=0
+let g:neomake_warning_sign = {
+            \ 'text': '>>',
+            \ 'texthl': 'MyWarningMsg',
+            \ }
+
+function! <SID>LocationPrevious()                       
+  try                                                   
+    lprev                                               
+  catch /^Vim\%((\a\+)\)\=:E553/                        
+    llast                                               
+  endtry                                                
+endfunction                                             
+
+function! <SID>LocationNext()                           
+  try                                                   
+    lnext                                               
+  catch /^Vim\%((\a\+)\)\=:E553/                        
+    lfirst                                              
+  endtry                                                
+endfunction                                             
+
+nnoremap <Leader>{ :call <SID>LocationPrevious()<CR>
+nnoremap <Leader>} :call <SID>LocationNext()<CR>
 
 """"""""""""""""""""
 "  SyntaxComplete
