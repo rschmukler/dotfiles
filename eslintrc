@@ -25,6 +25,7 @@
     "no-underscore-dangle": false,
     "no-return-assign": false,
     "no-extra-strict": false,
+    "no-shadow": false,
     "comma-spacing": false
   }
 }
