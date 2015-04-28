@@ -5,12 +5,14 @@ let g:hybrid_use_Xresources = 1
 " Global replace by default
 set gdefault
 
-source ~/.nvim/plugged.vim
-source ~/.nvim/plugin_config.vim
-source ~/.nvim/filetype_settings.vim
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
+let mapleader=" "
+" Leader key binds
+set pastetoggle=<leader>p
+nmap <leader>s :vsplit<CR>
+nmap <leader>S :split<CR>
 
 set nowrap
 set lazyredraw
@@ -18,6 +20,10 @@ set lazyredraw
 " Store Temp Files Elsewhere
 set backupdir=~/.nvim-tmp
 set directory=~/.nvim-tmp
+
+source ~/.nvim/plugged.vim
+source ~/.nvim/plugin_config.vim
+source ~/.nvim/filetype_settings.vim
 
 " Line Numbers
 set number
@@ -28,8 +34,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Paste toggle
-set pastetoggle=<leader>p
 
 " Disable that damn auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -57,8 +61,6 @@ let g:html_indent_style1 = "inc"
 
 filetype plugin indent on
 syntax on
-
-" Some Handy Remappings
 
 " Underline the current line with '='
 nmap <silent> <leader>ul :t.<CR>Vr=

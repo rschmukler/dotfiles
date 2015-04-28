@@ -122,7 +122,7 @@ let g:neomake_error_sign = {
 hi MyWarningMsg ctermbg=3 ctermfg=0
 let g:neomake_warning_sign = {
             \ 'text': '>>',
-            \ 'texthl': 'MyWarningMsg',
+            \ 'texthl': 'Question',
             \ }
 
 function! <SID>LocationPrevious()                       
@@ -141,8 +141,8 @@ function! <SID>LocationNext()
   endtry                                                
 endfunction                                             
 
-nnoremap <Leader>{ :call <SID>LocationPrevious()<CR>
-nnoremap <Leader>} :call <SID>LocationNext()<CR>
+nnoremap <Leader>[ :call <SID>LocationPrevious()<CR>
+nnoremap <Leader>] :call <SID>LocationNext()<CR>
 
 """"""""""""""""""""
 "  SyntaxComplete
