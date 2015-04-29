@@ -9,10 +9,9 @@ set gdefault
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 let mapleader=" "
-" Leader key binds
-set pastetoggle=<leader>p
 nmap <leader>s :vsplit<CR>
 nmap <leader>S :split<CR>
+nmap <leader>f :syntax sync fromstart<CR>
 
 set nowrap
 set lazyredraw
@@ -25,6 +24,7 @@ source ~/.nvim/plugged.vim
 source ~/.nvim/plugin_config.vim
 source ~/.nvim/filetype_settings.vim
 
+
 " Line Numbers
 set number
 
@@ -34,6 +34,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+
+" Leader key binds
+set pastetoggle=<leader>p
 
 " Disable that damn auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
