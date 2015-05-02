@@ -11,8 +11,10 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 let mapleader=" "
 nmap <leader>vs :vsplit<CR>
 nmap <leader>s :split<CR>
+nmap <leader>o :enew<CR>
 nmap <leader>f :syntax sync fromstart<CR>
 nmap <leader><leader> :b#<CR>
+
 
 set nowrap
 set lazyredraw
