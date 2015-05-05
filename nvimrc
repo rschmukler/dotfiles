@@ -14,6 +14,7 @@ nmap <leader>s :split<CR>
 nmap <leader>o :enew<CR>
 nmap <leader>f :syntax sync fromstart<CR>
 nmap <leader><leader> :b#<CR>
+map <silent> <leader>p :set paste!<CR>
 
 
 set nowrap
@@ -38,8 +39,6 @@ set shiftwidth=2
 set expandtab
 
 
-" Leader key binds
-set pastetoggle=<leader>p
 
 " Disable that damn auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
