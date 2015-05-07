@@ -1,14 +1,4 @@
 """""""""""""""""""""""""""
-" Powerline
-"""""""""""""""""""""""""""
-" if isdirectory("/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/")
-" 	python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages")
-" 	python from powerline.vim import setup as powerline_setup
-" 	python powerline_setup()
-" 	python del powerline_setup
-" endif
-
-"""""""""""""""""""""""""""
 " Airline
 """""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
@@ -22,14 +12,6 @@ let g:airline_powerline_fonts = 1
 " nmap <silent> <leader>T :TestFile<CR>
 " nmap <silent> <leader>l :TestLast<CR>
 
-
-"""""""""""""""""""""""""""
-" Ctags
-"""""""""""""""""""""""""""
-nnoremap <leader>c :TagbarToggle<CR>
-let g:tagbar_type_javascript = {
-    \ 'ctagsbin' : '/usr/local/share/npm/bin/jsctags'
-\ }
 
 """""""""""""""""""""""""""
 " Ctrl-P
