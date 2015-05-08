@@ -27,6 +27,7 @@
     "no-extra-strict": false,
     "no-shadow": 1,
     "comma-spacing": false,
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+    "consistent-return": false
   }
 }
