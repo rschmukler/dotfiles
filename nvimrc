@@ -69,10 +69,6 @@ syntax on
 
 " Underline the current line with '='
 nmap <silent> <leader>ul :t.<CR>Vr=
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
-map <C-L> :tabn<CR>
-map <C-H> :tabp<CR>
 
 " Set up view dir for folds and whatnot
 " autocmd BufWrite * mkview

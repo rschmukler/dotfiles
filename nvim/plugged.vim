@@ -11,11 +11,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'w0ng/vim-hybrid'
 
 
-
-" Go plugins
-Plug 'fatih/vim-go'
-
-
 " Utilities
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
@@ -38,6 +33,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-abolish'
 
 " Syntax Plugins
+Plug 'fatih/vim-go'
 Plug 'wavded/vim-stylus'
 Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-jade'

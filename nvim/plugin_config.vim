@@ -135,3 +135,11 @@ nnoremap <Leader>] :call <SID>LocationNext()<CR>
     \		setlocal omnifunc=syntaxcomplete#Complete |
     \	endif
 endif
+
+""""""""""""""""""""
+"  Tmux Navigator
+""""""""""""""""""""
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
