@@ -29,6 +29,7 @@
     "comma-spacing": false,
     "no-unused-vars": 1,
     "consistent-return": false,
-    "new-cap": false
+    "new-cap": false,
+    "space-after-keywords": [true, "always"]
   }
 }
