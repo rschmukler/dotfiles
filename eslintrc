@@ -30,6 +30,7 @@
     "no-unused-vars": 1,
     "consistent-return": false,
     "new-cap": false,
+    "no-process-exit": false,
     "space-after-keywords": [true, "always"]
   }
 }
