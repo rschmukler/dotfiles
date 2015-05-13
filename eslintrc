@@ -31,6 +31,7 @@
     "consistent-return": false,
     "new-cap": false,
     "no-process-exit": false,
-    "space-after-keywords": [true, "always"]
+    "space-after-keywords": [true, "always"],
+    "valid-jsdoc": true
   }
 }
