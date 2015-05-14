@@ -32,7 +32,6 @@
     "new-cap": false,
     "no-process-exit": false,
     "space-after-keywords": [true, "always"],
-    "valid-jsdoc": true,
-    "generator-star-spacing": [true, "before"]
+    "valid-jsdoc": true
   }
 }
