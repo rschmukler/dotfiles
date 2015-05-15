@@ -32,6 +32,7 @@
     "new-cap": false,
     "no-process-exit": false,
     "space-after-keywords": [true, "always"],
-    "valid-jsdoc": true
+    "valid-jsdoc": true,
+    "no-unused-expressions": false
   }
 }
