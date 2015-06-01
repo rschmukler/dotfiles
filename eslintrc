@@ -27,13 +27,13 @@
     "no-extra-strict": false,
     "no-shadow": 1,
     "comma-spacing": false,
-    "no-unused-vars": 1,
+    "no-unused-vars": false,
     "consistent-return": false,
     "new-cap": false,
     "no-process-exit": false,
     "space-after-keywords": [true, "always"],
     "valid-jsdoc": true,
     "no-unused-expressions": false,
-    "no-empty": false
+    "no-empty": false,
   }
 }
