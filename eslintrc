@@ -33,6 +33,7 @@
     "no-process-exit": false,
     "space-after-keywords": [true, "always"],
     "valid-jsdoc": true,
-    "no-unused-expressions": false
+    "no-unused-expressions": false,
+    "no-empty": false
   }
 }
