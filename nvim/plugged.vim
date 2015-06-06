@@ -33,6 +33,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-abolish'
 
 " Syntax Plugins
+Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go'
 Plug 'wavded/vim-stylus'
 Plug 'othree/html5.vim'

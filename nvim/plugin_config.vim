@@ -97,6 +97,7 @@ nnoremap <Leader>g :Goyo<CR>
 """""""""""""""""""""""""""
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_rust_enabled_makers = ['rustc']
 let g:neomake_error_sign = {
             \ 'text': '>>',
             \ 'texthl': 'ErrorMsg',
