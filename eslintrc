@@ -25,7 +25,7 @@
     "no-underscore-dangle": false,
     "no-return-assign": false,
     "no-extra-strict": false,
-    "no-shadow": 1,
+    "no-shadow": false,
     "comma-spacing": false,
     "no-unused-vars": false,
     "consistent-return": false,
@@ -34,6 +34,6 @@
     "space-after-keywords": [true, "always"],
     "valid-jsdoc": true,
     "no-unused-expressions": false,
-    "no-empty": false,
+    "no-empty": false
   }
 }
