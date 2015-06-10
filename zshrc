@@ -15,7 +15,7 @@ ZSH_THEME="rs2"
 #Enable vim keybindings
 bindkey -v
 
-plugins=(brew git heroku osx rvm)
+plugins=(brew git heroku osx rvm npm)
 source $ZSH/oh-my-zsh.sh
 
 if hash go 2>/dev/null; then
