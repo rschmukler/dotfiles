@@ -47,6 +47,7 @@ Plug 'klen/python-mode'
 Plug 'vim-scripts/nimrod.vim'
 Plug 'vim-scripts/SQLComplete.vim'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'elzr/vim-json'
 
 " Js plugins...
 Plug 'othree/yajs.vim'
