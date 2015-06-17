@@ -14,7 +14,8 @@
     node: true,
     mocha: true,
     jasmine: true,
-    es6: true
+    es6: true,
+    applescript: true
   },
   rules: {
     strict: false,
