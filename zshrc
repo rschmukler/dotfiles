@@ -16,6 +16,7 @@ bindkey -v
 
 plugins=(brew git heroku osx rvm npm)
 source $ZSH/oh-my-zsh.sh
+source ~/.dotfiles/private.crypt
 
 if hash go 2>/dev/null; then
   export PATH=./node_modules/.bin:/usr/local/bin:`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
