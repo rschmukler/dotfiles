@@ -1,3 +1,5 @@
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings
+
 """""""""""""""""""""""""""
 " Airline
 """""""""""""""""""""""""""
@@ -24,10 +26,9 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''built'' --ignore ''typings'' --hidden -g ""'
 endif
 
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist
 
 let g:ctrlp_working_path_mode = 2
 
@@ -92,6 +93,19 @@ nnoremap <Leader>g :Goyo<CR>
 " Neomake
 """""""""""""""""""""""""""
 autocmd! BufWritePost * Neomake
+
+let g:neomake_typescript_tsc_maker= {
+  \ 'args': [
+  \ '--noEmit', '-t', 'ES6'
+  \ ],
+  \ 'errorformat':
+  \ '%E%f %#(%l\,%c): error %m,' .
+  \ '%E%f %#(%l\,%c): %m,' .
+  \ '%Eerror %m,' .
+  \ '%C%\s%\+%m'
+\ }
+
+let g:neomake_typescript_enabled_makers = ['tsc']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_rust_enabled_makers = ['rustc']
 let g:neomake_error_sign = {
@@ -140,3 +154,15 @@ map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 map <C-L> :tabn<CR>
 map <C-H> :tabp<CR>
+
+""""""""""""""""""""
+"  Tern
+""""""""""""""""""""
+let g:tern_map_keys=1
+
+""""""""""""""""""""
+"  Tsuquyomi
+""""""""""""""""""""
+autocmd FileType typescript setlocal completeopt+=menu,preview
+autocmd FileType typescript nmap <buffer> <Space>t : <C-u>echo tsuquyomi#hint()<CR>
+let g:tsuquyomi_disable_quickfix = 1
