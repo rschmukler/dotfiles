@@ -1,9 +1,3 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Disable ZSH annoying auto-update-prompt. Manually do it w/ upgrade_oh_my_zsh
-DISABLE_AUTO_UPDATE=true
-
 autoload zmv
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -14,9 +8,8 @@ ZSH_THEME="rs2"
 #Enable vim keybindings
 bindkey -v
 
-plugins=(brew git heroku osx rvm npm)
-source $ZSH/oh-my-zsh.sh
-source ~/.dotfiles/private.crypt
+source ~/.dotfiles/zsh/load-antigen.zsh
+source ~/.dotfiles/zsh/private-env.crypt.sh
 
 if hash go 2>/dev/null; then
   export PATH=./node_modules/.bin:/usr/local/bin:`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
