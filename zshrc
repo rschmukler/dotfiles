@@ -209,25 +209,8 @@ function port() {
  lsof -i ":${1:-80}"
 }
 
-#Load NVM
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . /Users/ryan/.nvm/nvm.sh  # This loads NVM
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # This gives me tab completion
-
-#Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-### Add auto-envfile sourcing
-autoload -U add-zsh-hook
-load-local-env() {
-     # check file exists, is regular file and is readable:
-     if [[ -f .env && -r .env ]]; then
-       source .env
-     fi
-}
-add-zsh-hook chpwd load-local-env
 
 ###-begin-npm-completion-###
 #
