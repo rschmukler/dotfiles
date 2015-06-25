@@ -107,7 +107,8 @@ function ta() {
 tmux_search_paths=( ~/Dev ~/Dev/node ~/Dev/go/src/github.com/rschmukler ~/Dev/angular ~/Dev/consulting ~/Dev/offmarket )
 
 function tt() {
-  if ! tmux has-session -t "$1" 2> /dev/null; then
+  sessionName=`echo "$1" | nip "return line.match(/\w*\.?\w*$/)[0].replace(/\./g,'-')"`
+  if ! tmux has-session -t "$sessionName" 2> /dev/null; then
     tmux_script=~/.dotfiles/files/tmux-scripts/$1
     if [[ -e $tmux_script ]]; then
       zsh "$tmux_script"
@@ -130,9 +131,9 @@ function tt() {
     fi
   fi
   if [[ -n $TMUX ]]; then
-    tmux switch-client -t $1
+    tmux switch-client -t $sessionName
   else
-    tmux attach -t $1
+    tmux attach -t $sessionName
   fi
 }
 
