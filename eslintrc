@@ -34,7 +34,7 @@
     "new-cap": [0],
     "no-process-exit": [0],
     "space-after-keywords": [1, "always"],
-    "valid-jsdoc": [1],
+    "valid-jsdoc": [0],
     "no-unused-expressions": [0],
     "no-empty": [0]
   }
