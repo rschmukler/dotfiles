@@ -15,5 +15,6 @@ antigen bundle rvm
 antigen bundle docker
 antigen bundle git
 antigen bundle bower
+antigen bundle sudo
 
 antigen-apply
