@@ -58,6 +58,6 @@ Plug 'marijnh/tern_for_vim'
 
 Plug 'Shougo/vimproc.vim'
 Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
+Plug 'rschmukler/typescript-vim'
 
 call plug#end()
