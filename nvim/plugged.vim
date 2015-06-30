@@ -60,4 +60,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'rschmukler/typescript-vim'
 
+" Other plugins
+Plug 'mattn/emmet-vim'
+
 call plug#end()
