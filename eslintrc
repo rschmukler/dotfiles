@@ -15,7 +15,8 @@
     mocha: true,
     jasmine: true,
     es6: true,
-    applescript: true
+    applescript: true,
+    mongo: true
   },
   rules: {
     strict: [0],
