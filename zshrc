@@ -178,6 +178,7 @@ alias dip='docker-machine ip'
 alias dls='docker-machine ls'
 alias dma='docker-machine active'
 alias dc='docker-compose'
+alias rc='rancher-compose'
 alias dps='docker ps'
 
 function dme() {
