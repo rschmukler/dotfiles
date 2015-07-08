@@ -5,6 +5,8 @@ autoload zmv
 # time that oh-my-zsh is loaded.
 ZSH_THEME="rs2"
 
+export EDITOR=nvim
+
 #Enable vim keybindings
 bindkey -v
 
