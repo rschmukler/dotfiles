@@ -30,6 +30,7 @@ Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'ervandew/supertab'
 Plug 'The-NERD-Commenter'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish'
 
 " Syntax Plugins
