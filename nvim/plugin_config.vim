@@ -80,6 +80,12 @@ let g:used_javascript_libs = 'lodash,angularjs,jquery'
 """""""""""""""""""""""""""
 nnoremap <Leader>g :Goyo<CR>
 
+""""""""""""""""""""
+"  Limelight
+""""""""""""""""""""
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 """""""""""""""""""""""""""
 " Syntastic
 """""""""""""""""""""""""""
@@ -166,3 +172,4 @@ let g:tern_map_keys=1
 autocmd FileType typescript setlocal completeopt+=menu,preview
 autocmd FileType typescript nmap <buffer> <Space>t : <C-u>echo tsuquyomi#hint()<CR>
 let g:tsuquyomi_disable_quickfix = 1
+
