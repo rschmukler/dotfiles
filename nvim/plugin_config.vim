@@ -14,14 +14,6 @@ let g:airline_powerline_fonts = 1
 " nmap <silent> <leader>T :TestFile<CR>
 " nmap <silent> <leader>l :TestLast<CR>
 
-
-"""""""""""""""""""""""""""
-" Ctrl-P
-"""""""""""""""""""""""""""
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<D-S-t>
-endif
-
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
