@@ -5,15 +5,6 @@ set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_compo
 """""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
-"""""""""""""""""""""""""""
-" Vim-Test
-"""""""""""""""""""""""""""
-" let test#strategy = "neovim"
-" let test#javascript#mocha#executable = 'NODE_ENV=test ./node_modules/.bin/mocha --harmony_arrow_functions --harmony_classes'
-" nmap <silent> <leader>t :TestNearest<CR>
-" nmap <silent> <leader>T :TestFile<CR>
-" nmap <silent> <leader>l :TestLast<CR>
-
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
