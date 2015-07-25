@@ -57,7 +57,7 @@ var focus_apps = {
   c: 'Google Chrome',
   g: 'Google Chrome',
   s: 'Safari',
-  l: 'Flowdock',
+  l: 'LimeChat',
   k: 'Slack',
   n: 'Marxico'
 };
