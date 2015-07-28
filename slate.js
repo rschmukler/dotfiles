@@ -50,7 +50,6 @@ function appIsOpen(name) {
 var focus_apps = {
   f: 'iTerm',
   m: 'Messages',
-  h: 'HipChat',
   x: 'Xcode',
   i: 'iOS Simulator',
   p: 'Spotify',
