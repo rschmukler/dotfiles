@@ -31,16 +31,5 @@ def make_vim_tmp
   end
 end
 
-def update_submodules
-  submodules = ['oh-my-zsh', 'vim/bundle/vundle']
-  submodules.each do |s|
-    `git submodule init #{s}`
-    `git submodule update #{s}`
-  end
-end
-
-update_submodules
 symlink_files
 make_vim_tmp
-
-exec "vim -u #{File.expand_path('~/.vim/vundle.vim')} +BundleInstall +q +q; zsh"
