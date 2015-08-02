@@ -60,9 +60,6 @@ Running `install.rb` will do the following:
 - Symlink Files
   * Symlink all files in the directory into `~/.name`. For example:
     `dotfiles/vimrc` symlinks to `~/.vimrc`.
-  * Symlink `install/*` to `~/name`. I use this to keep stuff like zsh themes in
-    sync. For example: `install/.oh-my-zsh/themes/rs.zsh-theme` will symlink
-    that file to `~/.oh-my-zsh/themes/rs.zsh-theme`.
 - Create vim tmp dir. Vim by default places `swp` and `tmp` files in the working
   dir. If it doesn't close properly this leads to dirty git repos. We make a
   directory for it to house all its junk. See my `vimrc` for example of how to
