@@ -50,6 +50,7 @@ Plug 'vim-scripts/SQLComplete.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'derekwyatt/vim-scala'
+Plug 'veegee/cql-vim'
 
 " Js plugins...
 Plug 'othree/yajs.vim'
