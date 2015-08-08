@@ -21,8 +21,8 @@ set nowrap
 set lazyredraw
 
 " Store Temp Files Elsewhere
-set backupdir=~/.nvim-tmp
-set directory=~/.nvim-tmp
+set backupdir=~/.nvim-tmp//
+set directory=~/.nvim-tmp//
 
 source ~/.nvim/plugged.vim
 source ~/.nvim/plugin_config.vim
