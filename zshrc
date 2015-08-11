@@ -18,21 +18,6 @@ fi
 export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 
 
-function define_vim_wrappers()
-{
-  vim_commands=(
-    eview evim gview gvim gvimdiff gvimtutor rgview
-    rgvim rview rvim vim vimdiff vimtutor xxd mvim
-  )
-
-  for cmd in ${vim_commands[@]}; do
-    cmd_path=`/usr/bin/env which -a "${cmd}" 2>/dev/null | grep '^/'`
-    if [ -x "${cmd_path}" ]; then
-      eval "function ${cmd} () { (unset GEM_HOME; unset GEM_PATH; $cmd_path \$@) }"
-    fi
-  done
-}
-
 function port() {
   lsof -i ":${1:-80}"
 }
@@ -42,7 +27,6 @@ function kport() {
 }
 
 #Additional Customizations
-define_vim_wrappers()
 
 export GITHUB_USER=rschmukler
 
