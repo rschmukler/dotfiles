@@ -12,6 +12,8 @@ Plug 'w0ng/vim-hybrid'
 
 
 " Utilities
+Plug 'SirVer/ultisnips'
+Plug 'godlygeek/tabular'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 Plug 'tpope/vim-fugitive'
