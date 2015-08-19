@@ -13,6 +13,7 @@ nmap <leader>v :vsplit<CR>
 nmap <leader>s :split<CR>
 nmap <leader>o :enew<CR>
 nmap <leader>f :syntax sync fromstart<CR>
+nmap <leader>h :nohlsearch<CR>
 nmap <leader><leader> :b#<CR>
 map <silent> <leader>p :set paste!<CR>
 
