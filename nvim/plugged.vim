@@ -9,6 +9,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'nanotech/jellybeans.vim'
 Plug 'w0ng/vim-hybrid'
+Plug 'mhumeSF/one-dark.vim'
 
 
 " Utilities
