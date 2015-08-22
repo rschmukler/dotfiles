@@ -137,6 +137,11 @@ nnoremap <Leader>] :call <SID>LocationNext()<CR>
 endif
 
 """"""""""""""""""""
+"  Tablular
+""""""""""""""""""""
+nmap <leader>a :Tab<CR>
+
+""""""""""""""""""""
 "  Tmux Navigator
 """"""""""""""""""""
 map <C-J> :bnext<CR>
