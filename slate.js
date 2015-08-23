@@ -48,7 +48,7 @@ function appIsOpen(name) {
 // etc, see below
 
 var focus_apps = {
-  f: 'iTerm',
+  f: 'iTerm2',
   m: 'Messages',
   x: 'Xcode',
   i: 'iOS Simulator',
