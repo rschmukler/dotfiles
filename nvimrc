@@ -1,6 +1,6 @@
 " Basic color stuff
-set t_Co=256
-let g:hybrid_use_Xresources = 1
+" set t_Co=256
+" let g:hybrid_use_Xresources = 1
 
 " Global replace by default
 set gdefault
@@ -58,8 +58,6 @@ set backspace=indent,eol,start
 " Open directories if argument
 au VimEnter * if argc() && isdirectory(expand('%')) | cd % | NERDTree | wincmd l | new | wincmd j | q | endif
 
-" Color Theming Stuff
-color hybrid
 
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
@@ -103,3 +101,6 @@ function! HLNext (blinktime)
     call matchdelete(ring)
     redraw
 endfunction
+
+" Color Theming Stuff
+autocmd VimEnter * color hybrid
