@@ -193,5 +193,10 @@ function port() {
  lsof -i ":${1:-80}"
 }
 
+function pk() {
+  local killport=`lsof -i ":${1:-80}" | tail -n1 | awk '{print $2}'`
+  kill -9 $killport
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
