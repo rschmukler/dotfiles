@@ -103,4 +103,5 @@ function! HLNext (blinktime)
 endfunction
 
 " Color Theming Stuff
-autocmd VimEnter * color hybrid
+let g:enable_bold_font = 1
+autocmd VimEnter * color hybrid_material
