@@ -1,5 +1,6 @@
 {
   parser: "babel-eslint",
+  extends: "eslint:recommended",
   globals: {
     angular: true,
     inject: true,
@@ -40,6 +41,7 @@
     "no-empty": [0],
     "no-undef": [2],
     "no-unused-vars": [1],
-    "no-debugger": 1
+    "no-debugger": 1,
+    "semi": [2, "always"]
   }
 }
