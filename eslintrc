@@ -42,6 +42,8 @@
     "no-undef": [2],
     "no-unused-vars": [1],
     "no-debugger": 1,
-    "semi": [2, "always"]
+    "semi": [2, "always"],
+    "arrow-spacing": [2],
+    "no-const-assign": [2]
   }
 }
