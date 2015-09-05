@@ -44,6 +44,9 @@
     "no-debugger": 1,
     "semi": [2, "always"],
     "arrow-spacing": [2],
-    "no-const-assign": [2]
+    "no-const-assign": [2],
+    "prefer-template": [1],
+    "prefer-spread": [1]
+
   }
 }
