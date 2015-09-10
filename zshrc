@@ -49,6 +49,8 @@ if [[ "$os" == 'Darwin' ]]; then
 
   # add docker support
   eval $(docker-machine env)
+
+  alias ssh='TERM=xterm ssh'
 fi
 
 alias :q="exit"
@@ -155,7 +157,7 @@ alias gcom='git checkout master'
 alias gre='git reset --hard'
 
 # Docker Aliases
-alias dm='docker-machine'
+alias dm='TERM=xterm docker-machine'
 alias dip='docker-machine ip'
 alias dls='docker-machine ls'
 alias dma='docker-machine active'
