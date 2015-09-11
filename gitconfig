@@ -1,0 +1,31 @@
+[user]
+	name = Ryan Schmukler
+	email = rschmukler@gmail.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+ 
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+ 
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+ 
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+ 
+[alias]
+  setref = !sh -c 'git config --add branch.`git branch | grep \"*\" | sed \"s/* //\"`.references $1' -
+  clearref = !sh -c 'git config --unset-all branch.`git branch | grep \"*\" | sed \"s/* //\"`.references' -
+[push]
+  default = simple
+[github]
+	user = rschmukler
