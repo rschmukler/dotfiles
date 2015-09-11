@@ -26,6 +26,6 @@
   setref = !sh -c 'git config --add branch.`git branch | grep \"*\" | sed \"s/* //\"`.references $1' -
   clearref = !sh -c 'git config --unset-all branch.`git branch | grep \"*\" | sed \"s/* //\"`.references' -
 [push]
-  default = simple
+  default = upstream
 [github]
 	user = rschmukler
