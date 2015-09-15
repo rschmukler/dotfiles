@@ -61,6 +61,7 @@ Plug 'othree/yajs.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'rschmukler/pangloss-vim-indent'
+" Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/SyntaxComplete'
 Plug 'marijnh/tern_for_vim'
 
