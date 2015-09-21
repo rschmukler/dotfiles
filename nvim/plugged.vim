@@ -64,6 +64,7 @@ Plug 'rschmukler/pangloss-vim-indent'
 " Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/SyntaxComplete'
 Plug 'marijnh/tern_for_vim'
+Plug 'facebook/vim-flow'
 
 Plug 'Shougo/vimproc.vim'
 Plug 'Quramy/tsuquyomi'

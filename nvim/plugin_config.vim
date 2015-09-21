@@ -1,5 +1,6 @@
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings
 
+
 """""""""""""""""""""""""""
 " Airline
 """""""""""""""""""""""""""
@@ -19,6 +20,11 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap π :CtrlPCurFil<CR>
 let g:ctrlp_working_path_mode = 'ra'
+
+"""""""""""""""""""""""""""
+" Flow
+"""""""""""""""""""""""""""
+let g:flow#enable = 0
 
 """""""""""""""""""""""""""
 " Indent Guides
