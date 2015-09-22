@@ -13,6 +13,12 @@ if executable("ag")
     let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''built'' --ignore ''typings'' --hidden -g ""'
 endif
 
+if executable("sift")
+  set grepprg=sift\ --no-color
+  let g:agprg="sift --line-number --binary-skip"
+  let g:agformat="%f:%l:%m"
+endif
+
 
 let g:ctrlp_working_path_mode = 2
 
