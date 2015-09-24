@@ -200,5 +200,14 @@ function pk() {
   kill -9 $killport
 }
 
+function upgradeNode() {
+  local oldVersion=`nvm current`;
+  nvm install $1;
+  nvm alias default $1;
+  nvm use default;
+  nvm reinstall-packages $oldVersion
+  nvm uninstall $oldVersion
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
