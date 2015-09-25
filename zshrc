@@ -48,7 +48,7 @@ if [[ "$os" == 'Darwin' ]]; then
   ulimit -n 10240
 
   # add docker support
-  eval $(docker-machine env)
+  eval $(docker-machine env dev)
 
   alias ssh='TERM=xterm ssh'
 fi
@@ -166,7 +166,6 @@ alias rc='rancher-compose'
 alias dps='docker ps'
 
 function dme() {
-  docker-machine active $1
   eval $(docker-machine env $1 $2)
 }
 
