@@ -137,6 +137,8 @@ function tk() {
   tmux kill-session -t $1
 }
 
+alias tka='tmux kill-server';
+
 function tm() {
   tmux new-session -t $1
 }
