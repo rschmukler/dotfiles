@@ -97,7 +97,7 @@ autocmd! BufWritePost * Neomake
 
 let g:neomake_typescript_tsc_maker= {
   \ 'args': [
-  \ '--noEmit', '-t', 'ES6'
+  \ '--noEmit', '-t', 'ES6', '--experimentalAsyncFunctions', '--experimentalDecorators'
   \ ],
   \ 'errorformat':
   \ '%E%f %#(%l\,%c): error %m,' .
@@ -106,7 +106,7 @@ let g:neomake_typescript_tsc_maker= {
   \ '%C%\s%\+%m'
 \ }
 
-let g:neomake_typescript_enabled_makers = ['tsc']
+let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_rust_enabled_makers = ['rustc']
 let g:neomake_error_sign = {
@@ -171,5 +171,6 @@ let g:tern_map_keys=1
 """"""""""""""""""""
 autocmd FileType typescript setlocal completeopt+=menu,preview
 autocmd FileType typescript nmap <buffer> <Space>t : <C-u>echo tsuquyomi#hint()<CR>
+nmap <Leader>d :TsuDefinition<CR>
 let g:tsuquyomi_disable_quickfix = 1
 
