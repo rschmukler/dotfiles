@@ -68,7 +68,6 @@
     "switch-default": true,
     "triple-equals": [false, "allow-null-check"],
     "typedef": [true,
-        "call-signature",
         "property-declaration",
         "member-variable-declaration"
     ],
