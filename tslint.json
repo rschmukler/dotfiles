@@ -62,7 +62,7 @@
         "check-whitespace"
     ],
     "quotemark": [true, "single", "avoid-escape"],
-    "radix": true,
+    "radix": false,
     "semicolon": true,
     "sort-object-literal-keys": false,
     "switch-default": true,
