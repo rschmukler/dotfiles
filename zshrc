@@ -8,6 +8,8 @@ bindkey -v
 source ~/.dotfiles/zsh/load-antigen.zsh
 source ~/.dotfiles/zsh/private-env.crypt.sh
 
+unalias grep
+
 if hash go 2>/dev/null; then
   export PATH=./node_modules/.bin:/usr/local/bin:`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
   export GOPATH=~/Dev/go
