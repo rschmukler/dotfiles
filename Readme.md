@@ -39,7 +39,7 @@ name a few of the lesser knowns.
   tool for Javascript.
 - `slate.js` - config for [slate](https://github.com/jigish/slate)
 - `ag` - a faster replacement of ack. Doesn't support configs yet, but still is
-  better. See [the silver searcher](https://github.com/ggreer/the_silver_searcher)
+  better. See [the silver searcher](https://github.com/ggreer/the_silver_searcher). Subsequently using [sift](https://sift-tool.org)
 
 #### Files
 
