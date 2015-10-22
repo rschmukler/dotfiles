@@ -15,8 +15,8 @@ endif
 
 if executable("sift")
   set grepprg=sift\ --no-color
-  let g:agprg="sift --line-number --binary-skip"
-  let g:agformat="%f:%l:%m"
+  let g:ag_prg="sift --line-number --binary-skip"
+  let g:ag_format="%f:%l:%m"
 endif
 
 
