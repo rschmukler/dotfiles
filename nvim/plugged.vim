@@ -39,6 +39,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish'
 
 " Syntax Plugins
+Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go'
 Plug 'wavded/vim-stylus'

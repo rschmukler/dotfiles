@@ -174,3 +174,7 @@ autocmd FileType typescript nmap <buffer> <Space>t : <C-u>echo tsuquyomi#hint()<
 nmap <Leader>d :TsuDefinition<CR>
 let g:tsuquyomi_disable_quickfix = 1
 
+"""""""""""""""""""
+"  Markdown
+"""""""""""""""""""
+let g:vim_markdown_folding_disabled=1
