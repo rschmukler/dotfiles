@@ -108,6 +108,7 @@ let g:neomake_typescript_tsc_maker= {
 
 let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_go_enabled_makers = ['go']
 let g:neomake_rust_enabled_makers = ['rustc']
 let g:neomake_error_sign = {
             \ 'text': '>>',
@@ -171,10 +172,24 @@ let g:tern_map_keys=1
 """"""""""""""""""""
 autocmd FileType typescript setlocal completeopt+=menu,preview
 autocmd FileType typescript nmap <buffer> <Space>t : <C-u>echo tsuquyomi#hint()<CR>
-nmap <Leader>d :TsuDefinition<CR>
+au FileType typescript nmap <Leader>d :TsuDefinition<CR>
 let g:tsuquyomi_disable_quickfix = 1
 
 """""""""""""""""""
 "  Markdown
 """""""""""""""""""
 let g:vim_markdown_folding_disabled=1
+
+"""""""""""""""""""
+"  vim-go
+"""""""""""""""""""
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>d <Plug>(go-def)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
