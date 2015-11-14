@@ -18,6 +18,7 @@ nmap <leader><leader> :b#<CR>
 map <silent> <leader>p :set paste!<CR>
 
 
+set hidden
 set nowrap
 set lazyredraw
 

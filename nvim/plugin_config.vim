@@ -193,3 +193,10 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+
+"""""""""""""""""""
+"  vim-racer
+"""""""""""""""""""
+let g:racer_cmd = "/Users/ryan/.cargo/bin/racer"
+au FileType rust nmap <Leader>d :call RacerGoToDefinition()<CR>

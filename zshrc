@@ -10,9 +10,18 @@ source ~/.dotfiles/zsh/private-env.crypt.sh
 
 unalias grep
 
+if hash node 2>/dev/null; then
+  export PATH=./node_modules/.bin:/usr/local/bin:$PATH
+fi
+
 if hash go 2>/dev/null; then
-  export PATH=./node_modules/.bin:/usr/local/bin:`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
+  export PATH=`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
   export GOPATH=~/Dev/go
+fi
+
+if hash cargo 2>/dev/null; then
+  export PATH=/Users/ryan/.cargo/bin:$PATH
+  export RUST_SRC_PATH=/usr/local/Cellar/rust/1.4.0/src
 fi
 
 
