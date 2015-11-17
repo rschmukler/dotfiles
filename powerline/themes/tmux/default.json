@@ -1,0 +1,24 @@
+{
+	"segments": {
+		"right": [
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.sys.cpu_load_percent",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.common.bat.battery",
+				"name": "battery"
+			},
+			{
+				"function": "powerline.segments.common.net.hostname",
+        "args": {
+          "exclude_domain": true
+        }
+			}
+		]
+	}
+}
+
