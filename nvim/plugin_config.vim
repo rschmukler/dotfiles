@@ -109,11 +109,33 @@ let g:neomake_typescript_tsc_maker= {
 let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_go_enabled_makers = ['go']
-let g:neomake_rust_enabled_makers = ['rustc']
+let g:neomake_rust_enabled_makers = ['cargo']
+
+let g:neomake_rust_cargo_maker = {
+      \ 'exe': 'cargo',
+      \ 'args': ['rustc', '--', '-Z', 'no-trans' ],
+      \ 'append_file': 0,
+      \ 'errorformat':
+      \ '%-G%f:%s:,' .
+      \ '%f:%l:%c: %trror: %m,' .
+      \ '%f:%l:%c: %tarning: %m,' .
+      \ '%f:%l:%c: %m,'.
+      \ '%f:%l: %trror: %m,'.
+      \ '%f:%l: %tarning: %m,'.
+      \ '%f:%l: %m',
+      \ }
+
+if filereadable("Cargo.toml")
+  let g:neomake_rust_enabled_makers = ['cargo']
+else
+  let g:neomake_rust_enabled_makers = ['rustc']
+endif
+
 let g:neomake_error_sign = {
             \ 'text': '>>',
             \ 'texthl': 'ErrorMsg',
             \ }
+
 hi MyWarningMsg ctermbg=3 ctermfg=0
 let g:neomake_warning_sign = {
             \ 'text': '>>',
