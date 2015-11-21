@@ -9,8 +9,17 @@
 				"priority": 50
 			},
 			{
-				"function": "powerline.segments.common.bat.battery",
-				"name": "battery"
+				"function": "powerline.segments.common.players.spotify",
+        "name": "spotify",
+        "args": {
+          "format": "{state_symbol} {artist} - {title}",
+          "state_symbols": {
+            "play": "[>]",
+            "pause": "[ ]",
+            "stop": "[ ]",
+            "unknown": "?"
+          }
+        }
 			},
 			{
 				"function": "powerline.segments.common.net.hostname",

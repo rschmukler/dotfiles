@@ -1,5 +1,7 @@
 {
   "common": {
-    "term_truecolor": true
+    "term_escape_style": "xterm",
+    "term_truecolor": true,
+    "additional_escapes": "tmux"
   }
 }
