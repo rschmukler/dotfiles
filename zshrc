@@ -20,8 +20,8 @@ if hash go 2>/dev/null; then
 fi
 
 if hash cargo 2>/dev/null; then
-  export PATH=/Users/ryan/.multirust/toolchains/beta/cargo/bin:$PATH
-  export RUST_SRC_PATH=/usr/local/src/rust/beta/
+  export PATH=/Users/ryan/.multirust/toolchains/nightly/cargo/bin:$PATH
+  export RUST_SRC_PATH=/usr/local/src/rust/nightly/
 fi
 
 
@@ -220,6 +220,16 @@ function upgradeNode() {
   nvm reinstall-packages $oldVersion
   nvm uninstall $oldVersion
 }
+
+function upgradeRust() {
+  multirust update nightly && \
+  curl https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz > /tmp/rust-nightly.tar.gz && \
+  rm -rfy /usr/local/src/rust/nightly && \
+  mkdir -p /usr/local/src/rust/nightly && \
+  tar -xzf /tmp/rust-nightly.tar.gz -C /usr/local/src/rust/nightly --strip-components=2 rustc-nightly/src && \
+  rm -rf /tmp/rust-nightly.tar.gz 
+}
+
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
