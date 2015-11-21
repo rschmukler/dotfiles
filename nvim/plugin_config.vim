@@ -110,19 +110,20 @@ let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_go_enabled_makers = ['go']
 let g:neomake_rust_enabled_makers = ['cargo']
+let g:neomake_open_list = 2
 
 let g:neomake_rust_cargo_maker = {
       \ 'exe': 'cargo',
       \ 'args': ['rustc', '--', '-Z', 'no-trans' ],
       \ 'append_file': 0,
       \ 'errorformat':
-      \ '%A%f:%l:%c: %\\d%\\+:%\\d%\\+ %tarning: %m:,' .
-      \ '%A%f:%l:%c: %\\d%\\+:%\\d%\\+ %trror: %m:,' .
-      \ '%C %# %m,' .
-      \ '%Z %# %m,' .
-      \ '%-G%f: %s:,' .
-      \ '%f:%l:%c: %\\d%\\+:%\\d%\\+ %tarning: %m,' .
-      \ '%f:%l:%c: %\\d%\\+:%\\d%\\+ %trror: %m'
+        \ '%A%f:%l:%c: %\\d%\\+:%\\d%\\+ %tarning: %m:,' .
+        \ '%A%f:%l:%c: %\\d%\\+:%\\d%\\+ %trror: %m:,' .
+        \ '%C %# %m,' .
+        \ '%-Z%.%#,' .
+        \ '%-G%f: %s:,' .
+        \ '%f:%l:%c: %\\d%\\+:%\\d%\\+ %tarning: %m,' .
+        \ '%f:%l:%c: %\\d%\\+:%\\d%\\+ %trror: %m'
       \ }
 
 if filereadable("Cargo.toml")
@@ -218,11 +219,13 @@ let g:go_highlight_build_constraints = 1
 
 
 """""""""""""""""""
-"  vim-racer
+"  Rust and Vim Racer
 """""""""""""""""""
-let g:racer_cmd = "/Users/ryan/.cargo/bin/racer"
+let g:racer_cmd = "/Users/ryan/.multirust/toolchains/beta/cargo/bin/racer"
+let $RUST_SRC_PATH="/usr/local/src/rust/beta"
 au FileType rust nmap <Leader>d :call RacerGoToDefinition()<CR>
 let g:rustfmt_autosave = 1
 
 au FileType rust command Nofmt set paste | normal O#[cfg_attr(rustfmt, rustfmt_skip)]<ESC>:set nopaste<CR>^j
 au FileType rust nmap <Leader>i :Nofmt<CR>
+au FileType rust nmap <Leader>r :RustRun<CR>

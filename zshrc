@@ -20,8 +20,8 @@ if hash go 2>/dev/null; then
 fi
 
 if hash cargo 2>/dev/null; then
-  export PATH=/Users/ryan/.cargo/bin:/Users/ryan/.multirust/toolchains/nightly/cargo/bin:$PATH
-  export RUST_SRC_PATH=/usr/local/src/rust/1.4.0/
+  export PATH=/Users/ryan/.multirust/toolchains/beta/cargo/bin:$PATH
+  export RUST_SRC_PATH=/usr/local/src/rust/beta/
 fi
 
 

@@ -74,6 +74,8 @@ nmap <silent> <leader>ul :t.<CR>Vr=
 " autocmd BufWrite * mkview
 " autocmd BufNewFile,BufRead * silent loadview
 
+set completeopt=longest,menuone,preview
+
 " Hide autocomplete on cursor move
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
