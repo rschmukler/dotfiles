@@ -224,7 +224,7 @@ function upgradeNode() {
 function upgradeRust() {
   multirust update nightly && \
   curl https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz > /tmp/rust-nightly.tar.gz && \
-  rm -rfy /usr/local/src/rust/nightly && \
+  rm -rf /usr/local/src/rust/nightly && \
   mkdir -p /usr/local/src/rust/nightly && \
   tar -xzf /tmp/rust-nightly.tar.gz -C /usr/local/src/rust/nightly --strip-components=2 rustc-nightly/src && \
   rm -rf /tmp/rust-nightly.tar.gz 
