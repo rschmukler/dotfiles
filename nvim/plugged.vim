@@ -61,6 +61,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'derekwyatt/vim-scala'
 Plug 'veegee/cql-vim'
+Plug 'guns/vim-clojure-static'
 
 " Js plugins...
 Plug 'othree/yajs.vim'
