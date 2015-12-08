@@ -59,7 +59,7 @@ if [[ "$os" == 'Darwin' ]]; then
   ulimit -n 10240
 
   # add docker support
-  eval $(docker-machine env dev)
+  eval $(docker-machine env dev 2>/dev/null )
 
   alias ssh='TERM=xterm ssh'
 fi
