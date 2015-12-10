@@ -199,6 +199,11 @@ autocmd FileType typescript nmap <buffer> <Space>t : <C-u>echo tsuquyomi#hint()<
 au FileType typescript nmap <Leader>d :TsuDefinition<CR>
 let g:tsuquyomi_disable_quickfix = 1
 
+""""""""""""""""""""
+"  Typescript
+""""""""""""""""""""
+let g:typescript_enable_domhtmlcss = 1
+
 """""""""""""""""""
 "  Markdown
 """""""""""""""""""
