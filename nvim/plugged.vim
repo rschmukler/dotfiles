@@ -62,6 +62,7 @@ Plug 'elzr/vim-json'
 Plug 'derekwyatt/vim-scala'
 Plug 'veegee/cql-vim'
 Plug 'guns/vim-clojure-static'
+Plug 'Quramy/vim-js-pretty-template'
 
 " Js plugins...
 Plug 'othree/yajs.vim'
