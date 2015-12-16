@@ -236,3 +236,9 @@ let g:rustfmt_fail_silently = 1
 au FileType rust command! Nofmt set paste | normal O#[cfg_attr(rustfmt, rustfmt_skip)]<ESC>:set nopaste<CR>^j
 au FileType rust nmap <Leader>i :Nofmt<CR>
 au FileType rust nmap <Leader>r :RustRun<CR>
+
+"""""""""""""""""""
+"  JS PrettyFormat
+"""""""""""""""""""
+au FileType typescript nmap <Leader>th :JsPreTmpl html<CR>
+au FileType typescript nmap <Leader>tc :JsPreTmpl scss<CR>
