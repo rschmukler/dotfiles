@@ -242,3 +242,5 @@ au FileType rust nmap <Leader>r :RustRun<CR>
 """""""""""""""""""
 au FileType typescript nmap <Leader>th :JsPreTmpl html<CR>
 au FileType typescript nmap <Leader>tc :JsPreTmpl scss<CR>
+au FileType javascript nmap <Leader>th :JsPreTmpl html<CR>
+au FileType javascript nmap <Leader>tc :JsPreTmpl scss<CR>
