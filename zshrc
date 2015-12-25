@@ -40,17 +40,24 @@ function kport() {
 #Additional Customizations
 
 export GITHUB_USER=rschmukler
+export NVIM_TUI_ENABLE_TRUE_COLOR=true
 
 os=`uname`
 if [[ "$os" == 'Darwin' ]]; then
+
   alias ls="/usr/local/bin/gls --color=auto -hF"
   alias cleardns='sudo dscacheutil -flushcache'
   alias updatedb='sudo /usr/libexec/locate.updatedb'
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
   alias 'swift'='xcrun swift'
-  alias 'vim'='NVIM_TUI_ENABLE_TRUE_COLOR=true nvim'
-  alias 'vi'='NVIM_TUI_ENABLE_TRUE_COLOR=true nvim'
+  alias 'vim'='nvim'
+  alias 'vi'='nvim'
+
+  if hash htop 2>/dev/null; then
+    alias top='htop'
+  fi
+
 
   # Add Homebrew Cask options
   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
