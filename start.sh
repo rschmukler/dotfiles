@@ -2,4 +2,4 @@
 
 service ssh start
 
-/bin/zsh
+su - ryan

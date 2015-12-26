@@ -6,7 +6,7 @@ export EDITOR=nvim
 bindkey -v
 
 source ~/.dotfiles/zsh/load-antigen.zsh
-source ~/.dotfiles/zsh/private-env.crypt.sh
+source ~/.dotfiles/zsh/private-env.crypt.sh &> /dev/null
 
 unalias grep
 

@@ -2,14 +2,55 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install -y software-properties-common 
 
-RUN apt-get update
-RUN apt-get install -y neovim zsh httpie ssh software-properties-common git
+RUN add-apt-repository ppa:neovim-ppa/unstable && \
+    apt-get update
 
-RUN chsh -s /bin/zsh root
-RUN service ssh start
+RUN apt-get install -y neovim zsh httpie ssh git ruby htop curl tmux
+
+
+RUN useradd -m ryan && \
+    echo "ryan ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+    chsh -s /bin/zsh ryan
+
+# Replace shell with bash so we can source files
+RUN rm /bin/sh && ln -s /bin/zsh /bin/sh
+
+
+
+ADD files/ssh/main-id_rsa.pub /home/ryan/.ssh/authorized_keys
+ADD files/ssh/docker-id_rsa.pub /home/ryan/.ssh/id_rsa.pub
+ADD files/ssh/docker-id_rsa /home/ryan/.ssh/id_rsa
+
+RUN chown -R ryan:ryan /home/ryan/.ssh
+
+USER ryan
+
+
+RUN git clone https://github.com/rschmukler/dotfiles.git ~/.dotfiles && \
+    cd ~/.dotfiles && \
+    mkdir -p ~/.dotfiles/zsh/antigen && \
+    curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.dotfiles/zsh/antigen/antigen.zsh && \
+    ./install.rb && \
+    /bin/zsh ~/.dotfiles/zsh/load-antigen.zsh && \
+    mkdir -p ~/Dev
+
+# Install nvm with node and npm
+ENV NVM_DIR /home/ryan/.nvm
+ENV NODE_VERSION 5.3
+
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
+    && source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+
+
 
 EXPOSE 22
+VOLUME /home/ryan/Dev
 
 ADD start.sh /
 
+USER root
 CMD ["/start.sh"]
