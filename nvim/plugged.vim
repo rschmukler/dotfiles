@@ -52,7 +52,9 @@ Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'darthdeus/vim-slim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'toyamarinyon/vim-swift'
+" Plug 'toyamarinyon/vim-swift'
+Plug 'apple/swift', { 'rtp': 'utils/vim' }
+
 Plug 'vim-scripts/Vim-R-plugin'
 Plug 'klen/python-mode'
 Plug 'vim-scripts/nimrod.vim'
@@ -76,7 +78,8 @@ Plug 'facebook/vim-flow'
 
 Plug 'Shougo/vimproc.vim'
 Plug 'Quramy/tsuquyomi'
-Plug 'rschmukler/typescript-vim'
+Plug 'leafgarland/typescript-vim'
+
 
 " Other plugins
 Plug 'mattn/emmet-vim'

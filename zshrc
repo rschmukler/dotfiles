@@ -24,6 +24,10 @@ if hash cargo 2>/dev/null; then
   export RUST_SRC_PATH=/usr/local/src/rust/nightly/
 fi
 
+if hash htop 2>/dev/null; then
+  alias top='htop'
+fi
+
 
 # export phantomjs
 export PHANTOMJS_BIN=/usr/local/bin/phantomjs
@@ -42,6 +46,7 @@ function kport() {
 export GITHUB_USER=rschmukler
 export NVIM_TUI_ENABLE_TRUE_COLOR=true
 
+
 os=`uname`
 if [[ "$os" == 'Darwin' ]]; then
 
@@ -50,13 +55,11 @@ if [[ "$os" == 'Darwin' ]]; then
   alias updatedb='sudo /usr/libexec/locate.updatedb'
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
-  alias 'swift'='xcrun swift'
   alias 'vim'='nvim'
   alias 'vi'='nvim'
 
-  if hash htop 2>/dev/null; then
-    alias top='htop'
-  fi
+  export PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:${PATH}"
+
 
 
   # Add Homebrew Cask options
