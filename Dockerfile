@@ -18,8 +18,6 @@ RUN rm /bin/sh && ln -s /bin/zsh /bin/sh
 
 
 ADD files/ssh/main-id_rsa.pub /home/ryan/.ssh/authorized_keys
-ADD files/ssh/docker-id_rsa.pub /home/ryan/.ssh/id_rsa.pub
-ADD files/ssh/docker-id_rsa /home/ryan/.ssh/id_rsa
 
 RUN chown -R ryan:ryan /home/ryan/.ssh
 
@@ -32,19 +30,18 @@ RUN git clone https://github.com/rschmukler/dotfiles.git ~/.dotfiles && \
     curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.dotfiles/zsh/antigen/antigen.zsh && \
     ./install.rb && \
     /bin/zsh ~/.dotfiles/zsh/load-antigen.zsh && \
-    mkdir -p ~/Dev
+    mkdir -p ~/src
 
 # Install nvm with node and npm
 ENV NVM_DIR /home/ryan/.nvm
 ENV NODE_VERSION 5.3
+ENV IS_DOCKER true
 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
     && source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default
-
-
 
 
 EXPOSE 22

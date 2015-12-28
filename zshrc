@@ -28,6 +28,11 @@ if hash htop 2>/dev/null; then
   alias top='htop'
 fi
 
+if hash gpg2 2>/dev/null; then
+  alias gpg='gpg2'
+fi
+
+
 
 # export phantomjs
 export PHANTOMJS_BIN=/usr/local/bin/phantomjs
