@@ -2,4 +2,6 @@
 
 service ssh start
 
-su - ryan
+chown -R ryan:ryan /src
+
+sudo su - ryan

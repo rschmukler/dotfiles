@@ -32,6 +32,11 @@ if hash gpg2 2>/dev/null; then
   alias gpg='gpg2'
 fi
 
+if hash nvim 2>/dev/null; then
+  alias 'vim'='nvim'
+  alias 'vi'='nvim'
+fi
+
 
 
 # export phantomjs
@@ -53,6 +58,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=true
 
 
 os=`uname`
+
 if [[ "$os" == 'Darwin' ]]; then
 
   alias ls="/usr/local/bin/gls --color=auto -hF"
@@ -60,8 +66,6 @@ if [[ "$os" == 'Darwin' ]]; then
   alias updatedb='sudo /usr/libexec/locate.updatedb'
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
-  alias 'vim'='nvim'
-  alias 'vi'='nvim'
 
   export PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:${PATH}"
 
@@ -250,7 +254,7 @@ function upgradeRust() {
 export PATH="/usr/local/heroku/bin:$PATH"
 
 
-if [ -z "$IS_DOCKER"]; then
+if [ ! -z "$IS_DOCKER"]; then
   cd /src
   tmux new-session -A -s dev && exit
 fi
