@@ -248,3 +248,9 @@ function upgradeRust() {
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+if [ -z "$IS_DOCKER"]; then
+  cd /src
+  tmux new-session -A -s dev && exit
+fi
