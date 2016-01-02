@@ -35,8 +35,7 @@ RUN git clone https://github.com/rschmukler/dotfiles.git ~/.dotfiles && \
     mkdir -p ~/.dotfiles/zsh/antigen && \
     curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.dotfiles/zsh/antigen/antigen.zsh && \
     ./install.rb && \
-    /bin/zsh ~/.dotfiles/zsh/load-antigen.zsh && \
-    mkdir /src
+    /bin/zsh ~/.dotfiles/zsh/load-antigen.zsh
 
 # Install nvm with node and npm
 ENV NVM_DIR /home/ryan/.nvm
@@ -51,6 +50,15 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
     && npm -g install typescript tslint eslint nip \
     && cd ~/.dotfiles \
     && git reset --hard # Undo NVM install modifying zshrc
+
+# Install powerline for tmux
+RUN pip install --user powerline-status
+
+# Install nvim plugins
+
+RUN curl -fLo ~/.nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
+    nvim +PlugInstall +qall
 
 
 EXPOSE 22
