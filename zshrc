@@ -10,6 +10,8 @@ source ~/.dotfiles/zsh/private-env.crypt.sh &> /dev/null
 
 unalias grep
 
+export PATH=~/.local/bin:$PATH
+
 if hash node 2>/dev/null; then
   export PATH=./node_modules/.bin:/usr/local/bin:$PATH
 fi
