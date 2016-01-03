@@ -5,7 +5,7 @@ RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:neovim-ppa/unstable && \
     apt-get update && \
     locale-gen en_US.UTF-8 && \
-    apt-get install -y neovim zsh httpie ssh git ruby htop curl tmux gnupg2 \
+    apt-get install -y neovim zsh httpie ssh git ruby htop curl gnupg2 \
             git-crypt apt-transport-https sudo python-pip
 
 
@@ -26,16 +26,17 @@ ADD files/ssh/main-id_rsa.pub /home/ryan/.ssh/authorized_keys
 
 RUN chown -R ryan:ryan /home/ryan/.ssh
 
+
+
+# Install Dotfiles
+ADD . /home/ryan/.dotfiles
 USER ryan
-
-
-# Clone dotfiles
-RUN git clone https://github.com/rschmukler/dotfiles.git ~/.dotfiles && \
-    cd ~/.dotfiles && \
-    mkdir -p ~/.dotfiles/zsh/antigen && \
-    curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.dotfiles/zsh/antigen/antigen.zsh && \
-    ./install.rb && \
+RUN cd ~/.dotfiles && ./install.rb && \
     /bin/zsh ~/.dotfiles/zsh/load-antigen.zsh
+
+USER root
+RUN chown -R ryan:ryan /home/ryan
+USER ryan
 
 # Install nvm with node and npm
 ENV NVM_DIR /home/ryan/.nvm
@@ -53,6 +54,13 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
 
 # Install powerline for tmux
 RUN pip install --user powerline-status
+
+# Install tmux and apply a color patch
+RUN cd /tmp && git clone https://github.com/tmux/tmux.git && cd tmux && \
+    sudo apt-get install -y libevent-dev automake pkg-config libncurses5-dev && \
+    curl https://github.com/zchee/tmux/commit/2bb8ba0c9b63c492998137059fd6a01b959bd68d.patch | git am && \
+    ./autogen.sh && ./configure && make && sudo make install && \
+    rm -rf /tmp/tmux
 
 # Install nvim plugins
 
