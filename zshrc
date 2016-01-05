@@ -83,6 +83,8 @@ if [[ "$os" == 'Darwin' ]]; then
   eval $(docker-machine env dev 2>/dev/null )
 
   alias ssh='TERM=xterm ssh'
+
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
 alias :q="exit"
