@@ -55,10 +55,10 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
 # Install powerline for tmux
 RUN pip install --user powerline-status
 
-# Install tmux and apply a color patch
 RUN cd /tmp && git clone https://github.com/tmux/tmux.git && cd tmux && \
     sudo apt-get install -y libevent-dev automake pkg-config libncurses5-dev && \
-    curl https://github.com/zchee/tmux/commit/2bb8ba0c9b63c492998137059fd6a01b959bd68d.patch | git am && \
+    git reset --hard 2.0 && \
+    curl https://gist.githubusercontent.com/JohnMorales/0579990993f6dec19e83/raw/75b073e85f3d539ed24907f1615d9e0fa3e303f4/tmux-24.diff | git apply && \
     ./autogen.sh && ./configure && make && sudo make install && \
     rm -rf /tmp/tmux
 
