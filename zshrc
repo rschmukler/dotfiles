@@ -1,6 +1,7 @@
 autoload zmv
 
 export EDITOR=nvim
+export TERM=xterm-256color
 
 #Enable vim keybindings
 bindkey -v
