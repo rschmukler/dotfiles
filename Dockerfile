@@ -40,7 +40,7 @@ USER ryan
 
 # Install nvm with node and npm
 ENV NVM_DIR /home/ryan/.nvm
-ENV NODE_VERSION 5.3
+ENV NODE_VERSION 5.4
 ENV IS_DOCKER true
 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
