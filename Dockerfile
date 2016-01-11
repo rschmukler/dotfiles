@@ -64,9 +64,16 @@ RUN cd /tmp && git clone https://github.com/tmux/tmux.git && cd tmux && \
 
 # Install nvim plugins
 
-RUN curl -fLo ~/.nvim/autoload/plug.vim --create-dirs \
+RUN sudo apt-get install -y python-dev && \
+    pip2 install --user neovim
+
+
+RUN mkdir /home/ryan/.config && \
+    ln -s /home/ryan/.dotfiles/nvim /home/ryan/.config/nvim && \
+    ln -s /home/ryan/.dotfiles/nvimrc /home/ryan/.config/nvim/init.vim && \
+    curl -fLo ~/.nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-    nvim +PlugInstall +qall
+    nvim +PlugInstall +qall --headless
 
 
 EXPOSE 22

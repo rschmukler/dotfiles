@@ -41,8 +41,8 @@ Plug 'tpope/vim-abolish'
 " Syntax Plugins
 Plug 'plasticboy/vim-markdown'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
 Plug 'rhysd/vim-go-impl'
@@ -73,8 +73,8 @@ Plug 'vim-scripts/SyntaxComplete'
 Plug 'marijnh/tern_for_vim'
 Plug 'facebook/vim-flow'
 
-Plug 'Shougo/vimproc.vim'
-Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Quramy/tsuquyomi', { 'do': 'make' }
 Plug 'leafgarland/typescript-vim'
 
 
