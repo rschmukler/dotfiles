@@ -1,3 +1,5 @@
 Host dev
   ForwardAgent yes
+Host om-dev
+  ForwardAgent yes
 IdentityFile ~/.ssh/id_rsa
