@@ -20,6 +20,7 @@ fi
 if hash go 2>/dev/null; then
   export PATH=`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
   export GOPATH=~/Dev/go
+  export GO15VENDOREXPERIMENT=1
 fi
 
 if hash cargo 2>/dev/null; then
