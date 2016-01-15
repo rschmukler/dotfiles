@@ -229,7 +229,8 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <leader>d <Plug>(go-def)
+au FileType go nmap <leader>d <Plug>(go-doc)
+au FileType go nmap <leader>l <Plug>(go-def)
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
