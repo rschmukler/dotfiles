@@ -45,6 +45,8 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
+Plug 'garyburd/go-explorer', { 'do': 'go get github.com/garyburd/go-explorer/src/getool' }
+" Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.dotfiles/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'rhysd/vim-go-impl'
 Plug 'wavded/vim-stylus'
 Plug 'othree/html5.vim'

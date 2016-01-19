@@ -93,7 +93,9 @@ autocmd! User GoyoLeave Limelight!
 """""""""""""""""""""""""""
 " Neomake
 """""""""""""""""""""""""""
+
 autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 0
 
 let g:neomake_typescript_tsc_maker= {
   \ 'args': [
@@ -109,20 +111,9 @@ let g:neomake_typescript_tsc_maker= {
 let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_javascript_enabled_makers = ['eslint']
 
-let g:neomake_go_go_maker = {
-  \ 'args': [
-  \ 'build', '-o', '/tmp/go-build'
-  \ ],
-  \ 'errorformat':
-  \     '%W%f:%l: warning: %m,' .
-  \     '%E%f:%l:%c:%m,' .
-  \     '%E%f:%l:%m,' .
-  \     '%C%\s%\+%m,' .
-  \     '%-G#%.%#'
-\ }
+
 
 let g:neomake_go_enabled_makers = ['go']
-let g:neomake_open_list = 0
 
 let g:neomake_rust_cargo_maker = {
       \ 'exe': 'cargo',
@@ -236,6 +227,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_fmt_fail_silently = 1
 
 
 """""""""""""""""""
