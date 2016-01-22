@@ -222,12 +222,14 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <leader>d <Plug>(go-doc)
 au FileType go nmap <leader>l <Plug>(go-def)
+au FileType go nmap <leader>i :GoImports<CR>
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_fail_silently = 1
+
 
 
 """""""""""""""""""
