@@ -113,7 +113,7 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 
 
-let g:neomake_go_enabled_makers = ['go']
+let g:neomake_go_enabled_makers = ['go', 'govet']
 
 let g:neomake_rust_cargo_maker = {
       \ 'exe': 'cargo',
