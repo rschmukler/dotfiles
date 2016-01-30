@@ -113,7 +113,28 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 
 
-let g:neomake_go_enabled_makers = ['go', 'govet']
+let g:neomake_go_enabled_makers = ['go', 'govet', 'gotest', 'golint']
+let g:neomake_go_go_maker = {
+    \ 'exe': 'sh',
+    \ 'args': ['-c', 'go build -o ' . neomake#utils#DevNull() . ' ./\$0', '%:h'],
+    \ 'errorformat':
+        \ '%W%f:%l: warning: %m,' .
+        \ '%E%f:%l:%c:%m,' .
+        \ '%E%f:%l:%m,' .
+        \ '%C%\s%\+%m,' .
+        \ '%-G#%.%#'
+    \ }
+
+let g:neomake_go_gotest_maker = {
+    \ 'exe': 'sh',
+    \ 'args': ['-c', 'go test ./\$0', '%:h'],
+    \ 'errorformat':
+        \ '%W%f:%l: warning: %m,' .
+        \ '%E%f:%l:%c:%m,' .
+        \ '%E%f:%l:%m,' .
+        \ '%C%\s%\+%m,' .
+        \ '%-G#%.%#'
+    \ }
 
 let g:neomake_rust_cargo_maker = {
       \ 'exe': 'cargo',
