@@ -66,7 +66,7 @@ os=`uname`
 if [[ "$os" == 'Darwin' ]]; then
 
   alias ls="/usr/local/bin/gls --color=auto -hF"
-  alias cleardns='sudo dscacheutil -flushcache'
+  alias cleardns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed'
   alias updatedb='sudo /usr/libexec/locate.updatedb'
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
