@@ -211,16 +211,6 @@ function drm() {
   docker stop "$1"; docker rm -v "$1";
 }
 
-function swarm-run() {
-  machines=("${(@f)$(docker-machine ls | grep -E $1 | cut -f1 -d ' ')}")
-  shift
-  for m in "${machines[@]}"; do
-    echo =================== $m ===================
-    $(docker-machine env $m);
-    docker $@;
-  done
-}
-
 # Mocha Aliases
 alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
 
