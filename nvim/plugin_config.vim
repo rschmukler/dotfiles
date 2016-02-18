@@ -99,7 +99,7 @@ let g:neomake_open_list = 0
 
 let g:neomake_typescript_tsc_maker= {
   \ 'args': [
-  \ '--noEmit', '-t', 'ES5', '--module',  'commonjs', '--experimentalDecorators'
+  \ '--noEmit', '-t', 'ES5', '--module',  'commonjs', '--experimentalDecorators', '--allowSyntheticDefaultImports'
   \ ],
   \ 'errorformat':
   \ '%E%f %#(%l\,%c): error %m,' .
