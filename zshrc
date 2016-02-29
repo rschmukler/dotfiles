@@ -93,7 +93,9 @@ if [[ "$os" == 'Darwin' ]]; then
 
   alias ssh='TERM=xterm ssh'
 
-  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+  if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
+    . $(brew --prefix)/etc/profile.d/autojump.sh
+  fi
 fi
 
 alias :q="exit"
