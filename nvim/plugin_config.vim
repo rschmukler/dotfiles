@@ -95,6 +95,8 @@ autocmd! User GoyoLeave Limelight!
 """""""""""""""""""""""""""
 
 autocmd! BufWritePost * Neomake
+autocmd! BufWritePost *_test.go Neomake go govet gotest golint
+
 let g:neomake_open_list = 0
 
 let g:neomake_typescript_tsc_maker= {
@@ -112,7 +114,7 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 
 
-let g:neomake_go_enabled_makers = ['go', 'govet', 'gotest', 'golint']
+let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
 let g:neomake_go_go_maker = {
     \ 'exe': 'sh',
     \ 'args': ['-c', 'go build -o ' . neomake#utils#DevNull() . ' ./\$0', '%:h'],
