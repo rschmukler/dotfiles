@@ -41,6 +41,13 @@ if hash nvim 2>/dev/null; then
   alias 'vi'='nvim'
 fi
 
+if hash source-highlight 2>/dev/null; then
+  export LESSOPEN="| src-hilite-lesspipe.sh %s"
+  export LESS=" -R "
+  alias less='less -m -N -g -i -J --underline-special --SILENT'
+  alias more='less'
+fi
+
 
 
 # export phantomjs
@@ -66,7 +73,7 @@ os=`uname`
 if [[ "$os" == 'Darwin' ]]; then
 
   alias ls="/usr/local/bin/gls --color=auto -hF"
-  alias cleardns='sudo dscacheutil -flushcache'
+  alias cleardns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed'
   alias updatedb='sudo /usr/libexec/locate.updatedb'
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
@@ -86,7 +93,9 @@ if [[ "$os" == 'Darwin' ]]; then
 
   alias ssh='TERM=xterm ssh'
 
-  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+  if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
+    . $(brew --prefix)/etc/profile.d/autojump.sh
+  fi
 fi
 
 alias :q="exit"

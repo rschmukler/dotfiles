@@ -54,6 +54,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'darthdeus/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'apple/swift', { 'rtp': 'utils/vim' }
+Plug 'uarun/vim-protobuf'
 
 Plug 'vim-scripts/Vim-R-plugin'
 Plug 'klen/python-mode'

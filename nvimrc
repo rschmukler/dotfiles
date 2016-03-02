@@ -81,7 +81,6 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " Custom commands
-command -nargs=1 Diredit :e `dirname %`/<args>
 command -nargs=1 DE :e `dirname %`/<args>
 
 " Functions

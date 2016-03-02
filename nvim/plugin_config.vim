@@ -1,4 +1,4 @@
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings,vendor
 
 
 """""""""""""""""""""""""""
@@ -95,12 +95,13 @@ autocmd! User GoyoLeave Limelight!
 """""""""""""""""""""""""""
 
 autocmd! BufWritePost * Neomake
+autocmd! BufWritePost *_test.go Neomake go govet gotest golint
+
 let g:neomake_open_list = 0
 
 let g:neomake_typescript_tsc_maker= {
-  \ 'args': [
-  \ '--noEmit', '-t', 'ES5', '--module',  'commonjs', '--experimentalDecorators'
-  \ ],
+  \ 'args': [ '--noEmit' ],
+  \ 'append_file': 0,
   \ 'errorformat':
   \ '%E%f %#(%l\,%c): error %m,' .
   \ '%E%f %#(%l\,%c): %m,' .
@@ -113,7 +114,7 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 
 
-let g:neomake_go_enabled_makers = ['go', 'govet', 'gotest', 'golint']
+let g:neomake_go_enabled_makers = ['go', 'govet', 'golint']
 let g:neomake_go_go_maker = {
     \ 'exe': 'sh',
     \ 'args': ['-c', 'go build -o ' . neomake#utils#DevNull() . ' ./\$0', '%:h'],

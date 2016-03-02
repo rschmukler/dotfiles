@@ -6,7 +6,8 @@ RUN add-apt-repository ppa:neovim-ppa/unstable && \
     apt-get update && \
     locale-gen en_US.UTF-8 && \
     apt-get install -y neovim zsh httpie ssh git ruby htop curl gnupg2 \
-            git-crypt apt-transport-https sudo python-pip
+            git-crypt apt-transport-https sudo python-pip  mercurial \
+            make binutils bison gcc build-essential
 
 
 RUN useradd -m ryan && \
