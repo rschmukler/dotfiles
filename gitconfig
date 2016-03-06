@@ -22,10 +22,8 @@
   changed = green
   untracked = cyan
  
-[alias]
-  setref = !sh -c 'git config --add branch.`git branch | grep \"*\" | sed \"s/* //\"`.references $1' -
-  clearref = !sh -c 'git config --unset-all branch.`git branch | grep \"*\" | sed \"s/* //\"`.references' -
 [push]
   default = upstream
+
 [github]
 	user = rschmukler
