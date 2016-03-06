@@ -56,7 +56,6 @@ useful.
 
 Running `install.rb` will do the following:
 
-- Update init all existing submodules (`vim/bundle/vundle` and `oh-my-zsh`)
 - Symlink Files
   * Symlink all files in the directory into `~/.name`. For example:
     `dotfiles/vimrc` symlinks to `~/.vimrc`.
