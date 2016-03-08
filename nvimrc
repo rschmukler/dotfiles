@@ -104,6 +104,9 @@ function! HLNext (blinktime)
     redraw
 endfunction
 
+" Search highlighted text on double //
+vnoremap // y/<C-R>"<CR>
+
 " Color Theming Stuff
 let g:enable_bold_font = 1
 autocmd VimEnter * color hybrid_material
