@@ -29,3 +29,5 @@
 	user = rschmukler
 [url "ssh://git@code.internal.offmarket.io:10022/"]
 	insteadOf = https://code.internal.offmarket.io/
+[core]
+	quotepath = false
