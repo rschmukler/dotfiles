@@ -264,8 +264,10 @@ if [ ! -z "$IS_DOCKER"]; then
   tmux new-session -A -s dev && exit
 fi
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/usr/local/opt/google-cloud-sdk/path.zsh.inc'
+if [ -d '/usr/local/opt/google-cloud-sdk' ]; then
+  # The next line updates PATH for the Google Cloud SDK.
+  source '/usr/local/opt/google-cloud-sdk/path.zsh.inc'
 
-# The next line enables shell command completion for gcloud.
-source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
+  # The next line enables shell command completion for gcloud.
+  source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
+fi
