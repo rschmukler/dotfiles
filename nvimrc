@@ -1,6 +1,7 @@
 " Basic color stuff
 " set t_Co=256
 " let g:hybrid_use_Xresources = 1
+let g:enable_bold_font = 1
 
 " Global replace by default
 set gdefault
@@ -49,11 +50,13 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 if has("unix")
   let s:uname = system("uname -s")
   if(s:uname == "Darwin")
+    set clipboard=unnamed
+  else
+    set clipboard+=unnamedplus
   endif
 endif
 
 " Clipboard and Backspace
-set clipboard=unnamed
 set backspace=indent,eol,start
 
 " Open directories if argument
@@ -109,4 +112,6 @@ vnoremap // y/<C-R>"<CR>
 
 " Color Theming Stuff
 let g:enable_bold_font = 1
+color hybrid_material
 autocmd VimEnter * color hybrid_material
+hi Normal ctermbg=none

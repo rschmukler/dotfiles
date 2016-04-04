@@ -5,6 +5,7 @@ set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_compo
 " Airline
 """""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
+let g:airline_theme = "hybrid"
 
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
