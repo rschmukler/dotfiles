@@ -65,7 +65,7 @@ function kport() {
 #Additional Customizations
 
 export GITHUB_USER=rschmukler
-export NVIM_TUI_ENABLE_TRUE_COLOR=true
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
 os=`uname`
