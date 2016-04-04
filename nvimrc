@@ -1,7 +1,6 @@
 " Basic color stuff
 " set t_Co=256
 " let g:hybrid_use_Xresources = 1
-let g:enable_bold_font = 1
 
 " Global replace by default
 set gdefault
@@ -110,8 +109,9 @@ endfunction
 " Search highlighted text on double //
 vnoremap // y/<C-R>"<CR>
 
+
 " Color Theming Stuff
 let g:enable_bold_font = 1
 color hybrid_material
-autocmd VimEnter * color hybrid_material
+color hybrid_material
 hi Normal ctermbg=none

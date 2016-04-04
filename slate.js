@@ -52,6 +52,7 @@ var focus_apps = {
   m: 'Messages',
   x: 'Xcode',
   i: 'iOS Simulator',
+  j: 'Jira',
   p: 'Spotify',
   c: 'Google Chrome',
   g: 'Google Chrome',
