@@ -96,7 +96,7 @@ autocmd! User GoyoLeave Limelight!
 """""""""""""""""""""""""""
 
 autocmd! BufWritePost * Neomake
-autocmd! BufWritePost *_test.go Neomake go govet gotest golint
+autocmd! BufWritePost *_test.go Neomake gotest
 
 let g:neomake_open_list = 0
 
