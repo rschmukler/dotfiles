@@ -96,6 +96,10 @@ if [[ "$os" == 'Darwin' ]]; then
   if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
     . $(brew --prefix)/etc/profile.d/autojump.sh
   fi
+else
+  if [[ -s /etc/profile.d/autojump.zsh ]]; then
+    . /etc/profile.d/autojump.zsh
+  fi
 fi
 
 alias :q="exit"

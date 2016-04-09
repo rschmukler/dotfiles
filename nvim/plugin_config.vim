@@ -7,6 +7,10 @@ set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_compo
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "hybrid"
 
+
+"""""""""""""""""""""""""""
+" CtrlP + Ack
+"""""""""""""""""""""""""""
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
@@ -22,6 +26,7 @@ endif
 
 
 let g:ctrlp_working_path_mode = 2
+
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
