@@ -1,1 +1,0 @@
-/home/ryan/.dotfiles/nvimrc
