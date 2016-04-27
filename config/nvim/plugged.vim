@@ -12,9 +12,11 @@ Plug 'w0ng/vim-hybrid'
 Plug 'mhumeSF/one-dark.vim'
 Plug 'jscappini/material.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'mhartington/oceanic-next'
 
 
 " Utilities
+Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular'
 Plug 'mattn/webapi-vim'
@@ -39,6 +41,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish'
 
+Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/echodoc.vim'
+
 " Syntax Plugins
 Plug 'plasticboy/vim-markdown'
 Plug 'mustache/vim-mustache-handlebars'
@@ -47,6 +52,7 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go'
 Plug 'garyburd/go-explorer', { 'do': 'go get github.com/garyburd/go-explorer/src/getool' }
+Plug 'zchee/deoplete-go'
 " Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.dotfiles/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'rhysd/vim-go-impl'
 Plug 'wavded/vim-stylus'

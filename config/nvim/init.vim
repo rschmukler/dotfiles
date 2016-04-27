@@ -5,7 +5,6 @@
 " Global replace by default
 set gdefault
 
-
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
 let mapleader=" "
@@ -29,6 +28,14 @@ set directory=~/.nvim-tmp//
 source ~/.config/nvim/plugged.vim
 source ~/.config/nvim/plugin_config.vim
 source ~/.config/nvim/filetype_settings.vim
+
+" Color Theming Stuff
+let g:enable_bold_font = 1
+color OceanicNext
+set background=dark
+hi Normal ctermbg=none
+
+
 
 
 " Line Numbers
@@ -76,7 +83,8 @@ nmap <silent> <leader>ul :t.<CR>Vr=
 " autocmd BufWrite * mkview
 " autocmd BufNewFile,BufRead * silent loadview
 
-set completeopt=longest,menuone,preview
+set noshowmode
+set completeopt=longest,menuone
 
 " Hide autocomplete on cursor move
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -110,8 +118,3 @@ endfunction
 vnoremap // y/<C-R>"<CR>
 
 
-" Color Theming Stuff
-let g:enable_bold_font = 1
-color hybrid_material
-color hybrid_material
-hi Normal ctermbg=none

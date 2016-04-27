@@ -1,11 +1,21 @@
 set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings,vendor
 
+"""""""""""""""""""""""""""
+" Deoplete
+"""""""""""""""""""""""""""
+let g:deoplete#enable_at_startup = 1
+
+"""""""""""""""""""""""""""
+" Echodoc
+"""""""""""""""""""""""""""
+let g:echodoc_enable_at_startup = 1
+
 
 """""""""""""""""""""""""""
 " Airline
 """""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "hybrid"
+let g:airline_theme='oceanicnext'
 
 
 """""""""""""""""""""""""""
@@ -52,6 +62,11 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw = 0
 autocmd vimenter * if !argc() | NERDTree | wincmd l | endif
 let NERDTreeIgnore=['^components/', '^node_modules/', '^bower_components/', '^dist/']
+
+"""""""""""""""""""""""""""
+" Powerline
+"""""""""""""""""""""""""""
+nnoremap <leader>m :TagbarToggle<CR>
 
 """""""""""""""""""""""""""
 " Supertab
