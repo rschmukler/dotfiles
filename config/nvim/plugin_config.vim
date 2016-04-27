@@ -295,3 +295,9 @@ au FileType typescript nmap <Leader>th :JsPreTmpl html<CR>
 au FileType typescript nmap <Leader>tc :JsPreTmpl scss<CR>
 au FileType javascript nmap <Leader>th :JsPreTmpl html<CR>
 au FileType javascript nmap <Leader>tc :JsPreTmpl scss<CR>
+
+"""""""""""""""""""""""""""
+" neco-ghc
+"""""""""""""""""""""""""""
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc

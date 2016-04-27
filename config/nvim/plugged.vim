@@ -44,6 +44,9 @@ Plug 'tpope/vim-abolish'
 Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/echodoc.vim'
 
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+
 " Syntax Plugins
 Plug 'plasticboy/vim-markdown'
 Plug 'mustache/vim-mustache-handlebars'
