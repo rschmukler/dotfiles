@@ -59,7 +59,7 @@ var focus_apps = {
   s: 'Safari',
   l: 'LimeChat',
   k: 'Slack',
-  n: 'Marxico',
+  w: 'Workflowy',
   t: 'iTunes'
 };
 
