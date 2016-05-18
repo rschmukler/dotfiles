@@ -41,6 +41,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish'
 Plug 'Valloric/YouCompleteMe'
+Plug 'rizzatti/dash.vim'
 
 
 " Plug 'Shougo/deoplete.nvim'
@@ -67,6 +68,7 @@ Plug 'darthdeus/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'apple/swift', { 'rtp': 'utils/vim' }
 Plug 'uarun/vim-protobuf'
+Plug 'jparise/vim-graphql'
 
 Plug 'vim-scripts/Vim-R-plugin'
 Plug 'klen/python-mode'
