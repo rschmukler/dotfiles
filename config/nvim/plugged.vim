@@ -56,7 +56,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'cespare/vim-toml'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'garyburd/go-explorer', { 'do': 'go get github.com/garyburd/go-explorer/src/getool' }
 " Plug 'zchee/deoplete-go'
 " Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.dotfiles/nvim/plugged/gocode/nvim/symlink.sh' }
