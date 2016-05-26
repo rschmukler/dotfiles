@@ -1,3 +1,4 @@
 config/nvim/plugged/*
 nvim/view
 config/nvim/.*
+config/nvim/.netrwhist
