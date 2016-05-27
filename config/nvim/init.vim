@@ -117,4 +117,16 @@ endfunction
 " Search highlighted text on double //
 vnoremap // y/<C-R>"<CR>
 
-
+nnoremap <leader>c :call ToggleLightDark()<cr>
+function! ToggleLightDark()
+  if &background == "dark"
+    set background=light
+    let g:airline_theme='PaperColor'
+    colorscheme PaperColor
+  else
+    set background=dark
+    let g:airline_theme='gruvbox'
+    color gruvbox
+    " hi Normal ctermbg=none
+  endif
+endfunction

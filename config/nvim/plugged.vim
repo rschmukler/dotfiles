@@ -14,6 +14,7 @@ Plug 'jscappini/material.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 
 
 " Utilities
