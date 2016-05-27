@@ -13,6 +13,7 @@ Plug 'mhumeSF/one-dark.vim'
 Plug 'jscappini/material.vim'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
+Plug 'NLKNguyen/papercolor-theme'
 
 
 " Utilities
