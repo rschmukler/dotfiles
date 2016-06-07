@@ -310,3 +310,10 @@ au FileType javascript nmap <Leader>tc :JsPreTmpl scss<CR>
 """""""""""""""""""""""""""
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+"""""""""""""""""""""""""""
+" UltiSnips
+"""""""""""""""""""""""""""
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+let g:UltiSnipsExpandTrigger="<c-w>"

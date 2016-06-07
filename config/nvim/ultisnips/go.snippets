@@ -1,0 +1,15 @@
+snippet goconvey "Goconvey definition"
+package ${1:package}
+
+import (
+	"testing"
+
+  . "github.com/smartystreets/goconvey/convey"
+)
+
+func Test${2/\s(\w+)/\u$1/g}(t *testing.T) {
+  Convey("${2:What}", t, func() {
+		$0
+	})
+}
+endsnippet

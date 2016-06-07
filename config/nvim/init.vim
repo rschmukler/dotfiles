@@ -31,9 +31,12 @@ source ~/.config/nvim/filetype_settings.vim
 
 " Color Theming Stuff
 let g:enable_bold_font = 1
-color OceanicNext
-set background=dark
+" color OceanicNext
+" set background=dark
 hi Normal ctermbg=none
+set background=light
+let g:airline_theme='PaperColor'
+colorscheme PaperColor
 
 
 

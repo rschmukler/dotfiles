@@ -36,7 +36,7 @@ Plug 'janko-m/vim-test'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher', { 'do': '~/.dotfiles/nvim/plugged/ctrlp-cmatcher/install.sh' }
+Plug 'JazzCore/ctrlp-cmatcher', { 'do': '~/.config/nvim/plugged/ctrlp-cmatcher/install.sh' }
 " Plug 'ervandew/supertab'
 Plug 'The-NERD-Commenter'
 Plug 'junegunn/goyo.vim'
@@ -61,8 +61,7 @@ Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'garyburd/go-explorer', { 'do': 'go get github.com/garyburd/go-explorer/src/getool' }
 " Plug 'zchee/deoplete-go'
-" Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.dotfiles/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'rhysd/vim-go-impl'
+" Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'wavded/vim-stylus'
 Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-jade'
