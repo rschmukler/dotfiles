@@ -37,16 +37,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': '~/.config/nvim/plugged/ctrlp-cmatcher/install.sh' }
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab', { 'for': [ 'javascript', 'go', 'rust', 'html', 'css' ] }
 Plug 'The-NERD-Commenter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
 
 
-" Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'for': [ 'rust', 'go', 'html', 'javascript', 'css', 'sass', 'scss' ] }
 Plug 'Shougo/echodoc.vim'
 
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
@@ -56,12 +56,12 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'plasticboy/vim-markdown'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-" Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'garyburd/go-explorer', { 'do': 'go get github.com/garyburd/go-explorer/src/getool' }
-" Plug 'zchee/deoplete-go'
-" Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+Plug 'zchee/deoplete-go', { 'for': 'go' }
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'wavded/vim-stylus'
 Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-jade'

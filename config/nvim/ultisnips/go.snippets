@@ -13,3 +13,16 @@ func Test${2/\s(\w+)/\u$1/g}(t *testing.T) {
 	})
 }
 endsnippet
+
+snippet testify "Testify definition"
+package ${1:package}
+
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
+
+func Test${2:What}(t *testing.T) {
+}
+endsnippet
