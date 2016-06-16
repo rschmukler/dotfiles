@@ -9,6 +9,9 @@ bindkey -v
 source ~/.dotfiles/zsh/load-antigen.zsh
 source ~/.dotfiles/zsh/private-env.crypt.sh &> /dev/null
 
+export NVM_DIR="/home/ryan/.nvm"
+[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
+
 unalias grep
 
 export PATH=~/.local/bin:$PATH
@@ -20,7 +23,6 @@ fi
 if hash go 2>/dev/null; then
   export GOPATH=~/Dev/go
   export PATH=`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
-  export GO15VENDOREXPERIMENT=1
 fi
 
 if hash cargo 2>/dev/null; then
@@ -276,5 +278,3 @@ if [ -d '/usr/local/opt/google-cloud-sdk' ]; then
   source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
 fi
 
-export NVM_DIR="/home/ryan/.nvm"
-[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
