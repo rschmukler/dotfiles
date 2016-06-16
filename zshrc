@@ -275,3 +275,6 @@ if [ -d '/usr/local/opt/google-cloud-sdk' ]; then
   # The next line enables shell command completion for gcloud.
   source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
 fi
+
+export NVM_DIR="/home/ryan/.nvm"
+[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
