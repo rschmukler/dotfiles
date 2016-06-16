@@ -133,4 +133,3 @@ function! ToggleLightDark()
     " hi Normal ctermbg=none
   endif
 endfunction
-call ToggleLightDark()
