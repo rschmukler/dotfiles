@@ -37,7 +37,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'JazzCore/ctrlp-cmatcher', { 'do': '~/.config/nvim/plugged/ctrlp-cmatcher/install.sh' }
-Plug 'ervandew/supertab', { 'for': [ 'javascript', 'go', 'rust', 'html', 'css' ] }
+Plug 'ervandew/supertab', { 'for': [ 'javascript', 'go', 'rust', 'html', 'css', 'elixir' ] }
 Plug 'The-NERD-Commenter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -46,7 +46,7 @@ Plug 'Valloric/YouCompleteMe', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
 
 
-Plug 'Shougo/deoplete.nvim', { 'for': [ 'rust', 'go', 'html', 'javascript', 'css', 'sass', 'scss' ] }
+Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/echodoc.vim'
 
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
@@ -82,6 +82,11 @@ Plug 'veegee/cql-vim'
 Plug 'guns/vim-clojure-static'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
+
+" Elixir
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'thinca/vim-ref', { 'for': 'elixir' }
+Plug 'awetzel/elixir.nvim', { 'for': 'elixir', 'do': 'yes \| ./install.sh' }
 
 " Js plugins...
 Plug 'othree/yajs.vim'

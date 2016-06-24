@@ -1,4 +1,4 @@
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings,vendor
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings,vendor,_build
 
 """""""""""""""""""""""""""
 " Deoplete
@@ -25,7 +25,7 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''built'' --ignore ''typings'' --hidden -g ""'
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''_built'' --ignore ''built'' --ignore ''typings'' --hidden -g ""'
 endif
 
 " if executable("sift")
@@ -61,7 +61,7 @@ let g:indent_guides_enable_on_vim_startup=1
 nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw = 0
 autocmd vimenter * if !argc() | NERDTree | wincmd l | endif
-let NERDTreeIgnore=['^components/', '^node_modules/', '^bower_components/', '^dist/']
+let NERDTreeIgnore=['^components/', '^node_modules/', '^bower_components/', '^dist/', '^_built/']
 
 """""""""""""""""""""""""""
 " Powerline
@@ -188,6 +188,19 @@ else
   let g:neomake_rust_enabled_makers = ['rustc']
 endif
 
+let g:neomake_elixir_mix_maker = {
+      \ 'exe': 'mix',
+      \ 'args': ['compile'],
+      \ 'append_file': 0,
+      \ 'errorformat':
+      \   '%Wwarning: %m,' .
+      \   '%C%f:%l,' .
+      \   '%E** (CompileError) %f:%l: %m,' .
+      \   '%-Z%.%#'
+      \ }
+
+let g:neomake_elixir_enabled_makers = ['mix']
+
 let g:neomake_error_sign = {
             \ 'text': '>>',
             \ 'texthl': 'ErrorMsg',
@@ -288,7 +301,7 @@ let g:go_highlight_fields = 1
 """""""""""""""""""
 "  Rust and Vim Racer
 """""""""""""""""""
-let g:racer_cmd = "/Users/ryan/.multirust/toolchains/nightly/cargo/bin/racer"
+let g:racer_cmd = "~/.multirust/toolchains/nightly/cargo/bin/racer"
 let $RUST_SRC_PATH="/usr/local/src/rust/nightly"
 au FileType rust nmap <Leader>d :call RacerGoToDefinition()<CR>
 let g:rustfmt_autosave = 1
@@ -318,3 +331,12 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
 let g:UltiSnipsExpandTrigger="<c-w>"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/ultisnips"
+
+""""""""""""""""""""""""""""
+" Elixir
+""""""""""""""""""""""""""""
+let g:deoplete#ignore_sources={}
+let g:deoplete#ignore_sources.elixir=['member']
+let g:elixir_autobuild=1
+let g:elixir_showerror=0

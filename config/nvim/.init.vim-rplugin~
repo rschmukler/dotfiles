@@ -1,3 +1,15 @@
+" elixir plugins
+call remote#host#RegisterPlugin('elixir', '/home/ryan/.config/nvim/plugged/elixir.nvim/rplugin/elixir/nvim_rplugin-0.0.1.ez', [
+      \ {'sync': 1, 'name': 'DocexGetBody', 'opts': {'eval': '[col(''.''),getline(''.''),expand(''%:p:h''),line(''.'')]'}, 'type': 'function'},
+      \ {'sync': 1, 'name': 'ElixirComplete', 'opts': {'eval': '[col(''.''),getline(''.''),get(g:,''elixir_docpreview'',0),get(g:,''elixir_maxmenu'',70),get(g:,''elixir_maxpreviews'',150),expand(''%:p:h''),line(''.''),get(g:,''elixir_comp_minlen'',0)]'}, 'type': 'function'},
+      \ {'sync': 1, 'name': 'ElixirExec', 'opts': {'bang': '', 'range': '%', 'eval': '[expand(''%:p:h'')]'}, 'type': 'command'},
+      \ {'sync': 0, 'name': 'ElixirQuickBuild', 'opts': {'eval': '[line(''$''),expand(''%:p:h'')]'}, 'type': 'command'},
+      \ {'sync': 0, 'name': 'MixLoad', 'opts': {'eval': '[expand(''%:p:h'')]'}, 'type': 'command'},
+      \ {'sync': 0, 'name': 'MixStart', 'opts': {'nargs': '*'}, 'type': 'command'},
+      \ {'sync': 0, 'name': 'MixStop', 'opts': {'nargs': '*'}, 'type': 'command'},
+     \ ])
+
+
 " python3 plugins
 call remote#host#RegisterPlugin('python3', '/home/ryan/.config/nvim/plugged/deoplete.nvim/rplugin/python3/deoplete', [
       \ {'sync': v:true, 'name': '_deoplete', 'type': 'function', 'opts': {}},
