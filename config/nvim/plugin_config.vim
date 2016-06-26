@@ -195,7 +195,7 @@ let g:neomake_elixir_mix_maker = {
       \ 'errorformat':
       \   '%Wwarning: %m,' .
       \   '%C%f:%l,' .
-      \   '%E** (CompileError) %f:%l: %m,' .
+      \   '%E** (%s) %f:%l: %m,' .
       \   '%-Z%.%#'
       \ }
 
