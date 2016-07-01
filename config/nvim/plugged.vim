@@ -85,8 +85,10 @@ Plug 'Matt-Deacalion/vim-systemd-syntax'
 
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'thinca/vim-ref', { 'for': 'elixir' }
-Plug 'awetzel/elixir.nvim', { 'for': 'elixir', 'do': 'yes \| ./install.sh' }
+" Plug 'thinca/vim-ref', { 'for': 'elixir' }
+" Plug 'awetzel/elixir.nvim', { 'for': 'elixir', 'do': 'yes \| ./install.sh' }
+Plug 'slashmili/alchemist.vim'
+Plug 'powerman/vim-plugin-AnsiEsc'
 
 " Js plugins...
 Plug 'othree/yajs.vim'

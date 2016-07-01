@@ -340,3 +340,6 @@ let g:deoplete#ignore_sources={}
 let g:deoplete#ignore_sources.elixir=['member']
 let g:elixir_autobuild=1
 let g:elixir_showerror=0
+au FileType elixir nmap <Leader>d :ExDoc<CR>
+au FileType elixir nmap <Leader>l :ExDef<CR>
+au FileType elixir nmap <Leader>r :ElixirExec<CR>
