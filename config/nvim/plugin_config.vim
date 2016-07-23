@@ -25,7 +25,7 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''_built'' --ignore ''built'' --ignore ''typings'' --hidden -g ""'
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''_built'' --ignore ''built'' --ignore ''typings'' --ignore ''_build'' --hidden -g ""'
 endif
 
 " if executable("sift")
@@ -188,16 +188,24 @@ else
   let g:neomake_rust_enabled_makers = ['rustc']
 endif
 
+
 let g:neomake_elixir_mix_maker = {
-      \ 'exe': 'mix',
+      \ 'exe': 'mixy',
       \ 'args': ['compile'],
       \ 'append_file': 0,
       \ 'errorformat':
       \   '%Wwarning: %m,' .
-      \   '%C%f:%l,' .
+      \   '%C%f:%l%.%#,' .
       \   '%E** (%s) %f:%l: %m,' .
+      \   '%C%.%#,' .
+      \   '%E** (%s) %m,' .
+      \   '%C%.%#,' .
+      \   '%C%f:%l%.%#,' .
       \   '%-Z%.%#'
       \ }
+
+" Insert on line 199
+
 
 let g:neomake_elixir_enabled_makers = ['mix']
 
