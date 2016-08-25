@@ -10,6 +10,11 @@ source ~/.dotfiles/zsh/load-antigen.zsh
 source ~/.dotfiles/zsh/private-env.crypt.sh &> /dev/null
 
 export NVM_DIR="/home/ryan/.nvm"
+
+if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
+  source "/usr/share/nvm/init-nvm.sh"
+fi
+
 [[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
 
 unalias grep

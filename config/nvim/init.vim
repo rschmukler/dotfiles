@@ -17,6 +17,7 @@ nmap <leader><leader> :b#<CR>
 map <silent> <leader>p :set paste!<CR>
 
 
+set termguicolors
 set hidden
 set nowrap
 set lazyredraw

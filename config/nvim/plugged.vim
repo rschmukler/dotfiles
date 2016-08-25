@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'gmarik/vundle'
 
 " Themes
+Plug 'jacoborus/tender'
 Plug 'cseelus/sleepwalker-vim'
 Plug 'ap/vim-css-color'
 Plug 'chriskempson/base16-vim'
