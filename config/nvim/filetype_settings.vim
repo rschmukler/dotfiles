@@ -1,3 +1,8 @@
+" All Files
+
+" Remove trailing whitespaces on lines
+autocmd BufWritePre * %s/\s\+$//e
+
 " JS Related File types
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.es6 set ft=javascript

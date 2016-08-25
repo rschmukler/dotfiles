@@ -45,6 +45,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish'
 Plug 'Valloric/YouCompleteMe', { 'for': 'typescript' }
 Plug 'rizzatti/dash.vim'
+Plug 'janko-m/vim-test'
 
 
 Plug 'Shougo/deoplete.nvim'

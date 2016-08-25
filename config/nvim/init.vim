@@ -29,10 +29,12 @@ set directory=~/.nvim-tmp//
 source ~/.config/nvim/plugged.vim
 source ~/.config/nvim/plugin_config.vim
 source ~/.config/nvim/filetype_settings.vim
+source ~/.config/nvim/extensions.vim
 
 " Color Theming Stuff
 let g:enable_bold_font = 1
-color OceanicNext
+color hybrid_material
+let g:airline_theme = "hybrid"
 set background=dark
 hi Normal ctermbg=none
 " set background=light

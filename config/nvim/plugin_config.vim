@@ -1,4 +1,4 @@
-set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings,vendor,_build
+set wildignore=*.class,*.o,*~,*.pyc,.git,node_modules,lib-cov,public,bower_components,dist,built,typings,vendor,_build,deps,rel
 
 """""""""""""""""""""""""""
 " Deoplete
@@ -25,7 +25,7 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
     set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''_built'' --ignore ''built'' --ignore ''typings'' --ignore ''_build'' --hidden -g ""'
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''_built'' --ignore ''built'' --ignore ''typings'' --ignore ''deps'' --ignore ''_build'' --ignore ''rel'' --hidden -g ""'
 endif
 
 " if executable("sift")
@@ -351,3 +351,13 @@ let g:elixir_showerror=0
 au FileType elixir nmap <Leader>d :ExDoc<CR>
 au FileType elixir nmap <Leader>l :ExDef<CR>
 au FileType elixir nmap <Leader>r :ElixirExec<CR>
+
+"""""""""""""""""""""""
+" vim-test
+"""""""""""""""""""""""
+
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tT :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
