@@ -204,37 +204,67 @@ let g:neomake_elixir_mix_maker = {
       \   '%-Z%.%#'
       \ }
 
-" Insert on line 199
+let g:neomake_elixir_credo_maker = {
+      \ 'exe': 'mix',
+      \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
+      \ 'errorformat':
+      \   '%W[F] %. %f:%l:%c %m,' .
+      \   '%W[F] %. %f:%l %m,' .
+      \   '%W[R] %. %f:%l:%c %m,' .
+      \   '%W[R] %. %f:%l %m,' .
+      \   '%I[C] %. %f:%l:%c %m,' .
+      \   '%I[C] %. %f:%l %m,' .
+      \   '%-Z%.%#'
+      \ }
 
 
-let g:neomake_elixir_enabled_makers = ['mix']
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+
+augroup my_error_signs
+  au!
+  autocmd ColorScheme * hi NeomakeErrorSign ctermfg=203 guifg=#ff5f5f
+  autocmd ColorScheme * hi NeomakeWarningSign ctermfg=209 guifg=#ffaf00
+  autocmd ColorScheme * hi NeomakeInfoSign ctermfg=183 guifg=#dfafff
+  autocmd ColorScheme * hi NeomakeMessageSign ctermfg=27 guifg=#0087ff
+augroup END
+
 
 let g:neomake_error_sign = {
             \ 'text': '>>',
-            \ 'texthl': 'ErrorMsg',
+            \ 'texthl': 'NeoMakeErrorSign',
             \ }
 
-hi MyWarningMsg ctermbg=3 ctermfg=0
+
 let g:neomake_warning_sign = {
             \ 'text': '>>',
-            \ 'texthl': 'Question',
+            \ 'texthl': 'NeoMakeWarningSign',
             \ }
 
-function! <SID>LocationPrevious()                       
-  try                                                   
-    lprev                                               
-  catch /^Vim\%((\a\+)\)\=:E553/                        
-    llast                                               
-  endtry                                                
-endfunction                                             
+let g:neomake_info_sign = {
+            \ 'text': '>>',
+            \ 'texthl': 'NeoMakeInfoSign',
+            \ }
 
-function! <SID>LocationNext()                           
-  try                                                   
-    lnext                                               
-  catch /^Vim\%((\a\+)\)\=:E553/                        
-    lfirst                                              
-  endtry                                                
-endfunction                                             
+let g:neomake_message_sign = {
+            \ 'text': '>>',
+            \ 'texthl': 'NeoMakeMessageSign',
+            \ }
+
+function! <SID>LocationPrevious()
+  try
+    lprev
+  catch /^Vim\%((\a\+)\)\=:E553/
+    llast
+  endtry
+endfunction
+
+function! <SID>LocationNext()
+  try
+    lnext
+  catch /^Vim\%((\a\+)\)\=:E553/
+    lfirst
+  endtry
+endfunction
 
 nnoremap <Leader>[ :call <SID>LocationPrevious()<CR>
 nnoremap <Leader>] :call <SID>LocationNext()<CR>
