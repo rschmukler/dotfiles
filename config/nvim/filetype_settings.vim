@@ -14,3 +14,10 @@ autocmd BufReadPre *.md setlocal spell spelllang=en_us
 " Text File Settings
 autocmd BufReadPre *.txt setlocal textwidth=80
 autocmd BufReadPre *.txt setlocal spell spelllang=en_us
+
+au BufReadPre * setlocal tabstop=2
+au BufReadPre * setlocal shiftwidth=2
+
+au BufReadPre *.elm setlocal tabstop=4
+au BufReadPre *.elm setlocal shiftwidth=4
+

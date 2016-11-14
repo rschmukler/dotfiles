@@ -59,6 +59,7 @@ let g:indent_guides_enable_on_vim_startup=1
 " NerdTree
 """""""""""""""""""""""""""
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>N :NERDTreeFind<CR>
 let NERDTreeHijackNetrw = 0
 autocmd vimenter * if !argc() | NERDTree | wincmd l | endif
 let NERDTreeIgnore=['^components/', '^node_modules/', '^bower_components/', '^dist/', '^_built/']
@@ -391,3 +392,12 @@ nmap <silent> <leader>tT :TestFile<CR>
 nmap <silent> <leader>ta :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
+
+""""""""""""""""""""""""""""
+" Elm
+""""""""""""""""""""""""""""
+au FileType elm nmap <leader>d :ElmShowDocs <CR>
+let g:elm_detailed_complete = 1
+let g:ycm_semantic_triggers = {
+     \ 'elm' : ['.'],
+     \}

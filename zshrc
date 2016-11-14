@@ -9,10 +9,12 @@ bindkey -v
 source ~/.dotfiles/zsh/load-antigen.zsh
 source ~/.dotfiles/zsh/private-env.crypt.sh &> /dev/null
 
-export NVM_DIR="/home/ryan/.nvm"
+export NVM_DIR="$HOME/.nvm"
 
 if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
   source "/usr/share/nvm/init-nvm.sh"
+elif [[ -f "$NVM_DIR/nvm.sh" ]]; then
+  source "$NVM_DIR/nvm.sh"
 fi
 
 [[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
@@ -84,7 +86,6 @@ if [[ "$os" == 'Darwin' ]]; then
   alias updatedb='sudo /usr/libexec/locate.updatedb'
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
-
   export PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:${PATH}"
 
 
@@ -262,7 +263,7 @@ function upgradeRust() {
   rm -rf /usr/local/src/rust/nightly && \
   mkdir -p /usr/local/src/rust/nightly && \
   tar -xzf /tmp/rust-nightly.tar.gz -C /usr/local/src/rust/nightly --strip-components=2 rustc-nightly/src && \
-  rm -rf /tmp/rust-nightly.tar.gz 
+  rm -rf /tmp/rust-nightly.tar.gz
 }
 
 

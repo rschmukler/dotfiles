@@ -43,7 +43,7 @@ Plug 'The-NERD-Commenter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-abolish'
-Plug 'Valloric/YouCompleteMe', { 'for': 'typescript' }
+Plug 'Valloric/YouCompleteMe', { 'for': ['typescript', 'elm'] }
 Plug 'rizzatti/dash.vim'
 Plug 'janko-m/vim-test'
 
@@ -104,6 +104,9 @@ Plug 'facebook/vim-flow'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Quramy/tsuquyomi', { 'do': 'make' }
 Plug 'leafgarland/typescript-vim'
+
+" Elm
+Plug 'ElmCast/elm-vim'
 
 
 " Other plugins

@@ -1,7 +1,3 @@
-" Basic color stuff
-" set t_Co=256
-" let g:hybrid_use_Xresources = 1
-
 " Global replace by default
 set gdefault
 
@@ -17,10 +13,11 @@ nmap <leader><leader> :b#<CR>
 map <silent> <leader>p :set paste!<CR>
 
 
-set termguicolors
 set hidden
 set nowrap
 set lazyredraw
+set ttyfast
+set synmaxcol=128
 
 " Store Temp Files Elsewhere
 set backupdir=~/.nvim-tmp//
