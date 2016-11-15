@@ -397,6 +397,7 @@ nmap <silent> <leader>tg :TestVisit<CR>
 " Elm
 """"""""""""""""""""""""""""
 au FileType elm nmap <leader>d :ElmShowDocs <CR>
+autocmd! BufWritePost *.elm silent exec "!ctags"
 let g:elm_detailed_complete = 1
 let g:ycm_semantic_triggers = {
      \ 'elm' : ['.'],
