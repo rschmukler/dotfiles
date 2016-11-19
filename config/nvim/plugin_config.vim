@@ -21,7 +21,7 @@ let g:airline_theme='oceanicnext'
 """""""""""""""""""""""""""
 " CtrlP + Ack
 """""""""""""""""""""""""""
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+" let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 if executable("ag")
     set grepprg=ag\ --nogroup\ --nocolor

@@ -37,7 +37,7 @@ Plug 'janko-m/vim-test'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher', { 'do': '~/.config/nvim/plugged/ctrlp-cmatcher/install.sh' }
+" Plug 'JazzCore/ctrlp-cmatcher', { 'do': '~/.config/nvim/plugged/ctrlp-cmatcher/install.sh' }
 Plug 'ervandew/supertab', { 'for': [ 'javascript', 'go', 'rust', 'html', 'css', 'elixir' ] }
 Plug 'The-NERD-Commenter'
 Plug 'junegunn/goyo.vim'
