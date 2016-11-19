@@ -4,4 +4,4 @@ config/nvim/plugged/*
 nvim/view
 config/nvim/.*
 config/nvim/.netrwhist
-config/nvim/.init.vim-rplugin~
+config/nvim/.init.vim*
