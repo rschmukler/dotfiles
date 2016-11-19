@@ -1,6 +1,7 @@
 [user]
 	name = Ryan Schmukler
 	email = rschmukler@gmail.com
+	signingkey = CE4061A6406FBD44
 [color]
   branch = auto
   diff = auto

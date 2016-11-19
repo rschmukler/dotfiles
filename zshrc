@@ -21,7 +21,7 @@ fi
 
 unalias grep
 
-export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:~/Library/Python/2.7/bin:$PATH
 
 if hash node 2>/dev/null; then
   export PATH=./node_modules/.bin:/usr/local/bin:$PATH
