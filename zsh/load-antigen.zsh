@@ -12,8 +12,9 @@ antigen bundle Tarrasch/zsh-autoenv
 # antigen bundle brew-cask
 # antigen bundle osx
 # antigen bundle rvm
-# antigen bundle docker
-# antigen bundle git
+antigen bundle docker
+antigen bundle git
+antigen bundle autojump
 # antigen bundle bower
 # antigen bundle sudo
 

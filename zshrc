@@ -10,6 +10,7 @@ source ~/.dotfiles/zsh/load-antigen.zsh
 source ~/.dotfiles/zsh/private-env.crypt.sh &> /dev/null
 
 export NVM_DIR="$HOME/.nvm"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
   source "/usr/share/nvm/init-nvm.sh"
