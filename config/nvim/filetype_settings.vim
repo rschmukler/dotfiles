@@ -21,3 +21,4 @@ au BufReadPre * setlocal shiftwidth=2
 au BufReadPre *.elm setlocal tabstop=4
 au BufReadPre *.elm setlocal shiftwidth=4
 
+au BufReadPre *.ex nnoremap <leader>t :call ExTestToggle()<CR>

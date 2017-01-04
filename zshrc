@@ -1,7 +1,7 @@
 autoload zmv
 
 export EDITOR=nvim
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 #Enable vim keybindings
 bindkey -v
@@ -29,7 +29,7 @@ if hash node 2>/dev/null; then
 fi
 
 if hash go 2>/dev/null; then
-  export GOPATH=~/Dev/go
+  export GOPATH=~/dev/go
   export PATH=`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
 fi
 
