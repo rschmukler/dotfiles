@@ -3,6 +3,10 @@ set gdefault
 
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 let mapleader=" "
 nmap <leader>v :vsplit<CR>
 nmap <leader>s :split<CR>
@@ -29,17 +33,12 @@ source ~/.config/nvim/filetype_settings.vim
 source ~/.config/nvim/extensions.vim
 
 " Color Theming Stuff
+syntax on
 let g:enable_bold_font = 1
-color hybrid_material
-let g:airline_theme = "hybrid"
 set background=dark
-hi Normal ctermbg=none
-" set background=light
-" let g:airline_theme='PaperColor'
-" colorscheme PaperColor
+colorscheme one
 
-
-
+let g:airline_theme='one'
 
 " Line Numbers
 set number
@@ -77,7 +76,6 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 filetype plugin indent on
-syntax on
 
 " Underline the current line with '='
 nmap <silent> <leader>ul :t.<CR>Vr=

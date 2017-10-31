@@ -33,6 +33,7 @@ if hash go 2>/dev/null; then
   export PATH=`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
 fi
 
+PATH="$HOME/.cargo/bin:$PATH"
 if hash cargo 2>/dev/null; then
   export PATH=/Users/ryan/.multirust/toolchains/nightly/cargo/bin:$PATH
   export RUST_SRC_PATH=/usr/local/src/rust/nightly/
@@ -82,12 +83,23 @@ os=`uname`
 
 if [[ "$os" == 'Darwin' ]]; then
 
-  alias ls="/usr/local/bin/gls --color=auto -hF"
+  alias ls="/usr/local/bin/exa"
   alias cleardns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed'
   alias updatedb='sudo /usr/libexec/locate.updatedb'
   alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
   alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
   export PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:${PATH}"
+
+
+  if [[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]]; then
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+  fi
+
+  if [[ -s "/usr/local/google-cloud-sdk/path.zsh.inc" ]]; then
+    source '/usr/local/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/google-cloud-sdk/completion.zsh.inc'
+  fi
 
 
 
@@ -137,6 +149,15 @@ function path() {
   type -p "$1" | cut -d ' ' -f 3
 }
 
+function du-it-live () {
+  directory=$1
+  while true
+  do
+    du -hc $directory | tail -n 1 | tr -d '\n' && echo -n ' ' && sleep 0.5
+    echo -n '.' && sleep 0.5 && echo -n '.' && sleep 0.5 && echo -n '.' && sleep 0.5 && echo -n '\b\b\b' && echo -n '   ' && echo -n '\r'
+  done
+}
+
 # Tmux Aliases
 function tn() {
   tmux new -s "$1"
@@ -145,8 +166,6 @@ function tn() {
 function ta() {
   tmux attach -t "$1"
 }
-
-tmux_search_paths=( ~/Dev ~/Dev/node ~/Dev/go/src/github.com/rschmukler ~/Dev/angular ~/Dev/consulting ~/Dev/offmarket )
 
 function tt() {
   sessionName=`echo "$1" | nip "return line.split('.').pop()"`
@@ -160,14 +179,7 @@ function tt() {
       tmux new -d -s $sessionName
       export TMUX=$oldTMUX
       unset oldTMUX
-      for searches in $tmux_search_paths; do
-        dir=$searches/$1
-        if [[ -d $dir ]]; then
-          tmux send-keys -t "${sessionName}" "cd $dir; clear" "C-m"
-          break
-        fi
-      done
-      unset searches
+      tmux send-keys -t "$sessionName" "j $sessionName; clear" "C-m"
       unset tmux_scripts
       unset dir
     fi
@@ -285,3 +297,54 @@ if [ -d '/usr/local/opt/google-cloud-sdk' ]; then
   source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Some Git Alias
+
+alias gcan="git commit --amend --no-edit"
+alias gpf="git push --force"
+alias gpu='git push -u origin "$(git symbolic-ref --short HEAD)"'
+
+# Some Elixir Aliases
+
+alias ism="iex -S mix"
+alias tism="MIX_ENV=test iex -S mix"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ryan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ryan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Some handy kubernetes aliases
+
+if command -v kubectl >/dev/null; then
+  # kubernetes aliases
+  alias kpods='kubectl get pods'
+  alias kdeploys='kubectl get deployments'
+
+  # the following functions rely on gcloud being installed
+  if command -v gcloud >/dev/null; then
+    function kedit {
+      deployment=$1
+      kubectl edit deployments $deployment
+    }
+
+    function kswitch {
+      environment=$1
+      gcloud container clusters get-credentials $environment
+    }
+  fi
+
+  # kubernetes functions
+  function kush {
+    name=$1
+    cmd=${2-/bin/bash}
+    kubectl exec -it $name -- $cmd
+  }
+fi
+
+neofetch

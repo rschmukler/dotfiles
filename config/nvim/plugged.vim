@@ -16,6 +16,8 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'trevordmiller/nova-vim'
+Plug 'rakr/vim-one'
 
 
 " Utilities

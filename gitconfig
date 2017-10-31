@@ -14,7 +14,7 @@
   grep = auto
 
 [color "status"]
-  header = black bold
+  header = yellow bold
   branch = cyan
   nobranch = red
   unmerged = red
