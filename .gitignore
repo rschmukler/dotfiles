@@ -1,5 +1,3 @@
-config/
-!config/nvim/
 config/nvim/plugged/*
 nvim/view
 config/nvim/.*
