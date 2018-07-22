@@ -1,8 +1,10 @@
-# reload config
-cmd + alt + ctrl - r : khd -e "reload"
+:: default     : chunkc border::color 0xfa069ab2
+:: select      : chunkc border::color 0xfaaf6c86 ; sleep 0.35 ; skhd -k escape
+:: passthrough : chunkc border::color 0xfa1a373f
 
-# open terminal, blazingly fast compared to iTerm/Hyper
-# cmd - return : open -na /Applications/Kitty.app
+ctrl - s ; select
+ctrl - v ; passthrough
+select, passthrough < escape ; default
 
 # focus window
 alt - h : chunkc tiling::window --focus west
@@ -134,35 +136,13 @@ ctrl + alt - a : chunkc tiling::desktop --layout bsp
 ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
 
-ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
+select < e : osascript -e "tell application \"Emacs\" to activate"; skhd -k "escape"
+select < f : osascript -e "tell application \"iTerm2\" to activate"; skhd -k "escape"
+select < k : osascript -e "tell application \"Slack\" to activate"; skhd -k "escape"
+select < g : osascript -e "tell application \"Google Chrome\" to activate"; skhd -k "escape"
+select < p : osascript -e "tell application \"Spotify\" to activate"; skhd -k "escape"
+select < m : osascript -e "tell application \"Messages\" to activate"; skhd -k "escape"
+select < w : osascript -e "tell application \"Workflowy\" to activate"; skhd -k "escape"
+select < c : osascript -e "tell application \"Calendar\" to activate"; skhd -k "escape"
+select < l : osascript -e "tell application \"LimeChat\" to activate"; skhd -k "escape"
 
-# remap caps-lock to escape for this config only !!!
-# macos sierra can also perform this remap for a given keyboard
-- capslock : khd -p "- escape"
-
-# key remap for norwegian layout \ { }
-cmd - 7 : khd -p "shift + alt - 7"
-cmd - 8 : khd -p "shift + alt - 8"
-cmd - 9 : khd -p "shift + alt - 9"
-
-
-ctrl - s : khd -e "mode activate select"
-select - e : osascript -e "tell application \"Emacs\" to activate"; khd -e "mode activate default"
-select - f : osascript -e "tell application \"iTerm2\" to activate"; khd -e "mode activate default"
-select - k : osascript -e "tell application \"Slack\" to activate"; khd -e "mode activate default"
-select - g : osascript -e "tell application \"Google Chrome\" to activate"; khd -e "mode activate default"
-select - p : osascript -e "tell application \"Spotify\" to activate"; khd -e "mode activate default"
-select - m : osascript -e "tell application \"Messages\" to activate"; khd -e "mode activate default"
-select - w : osascript -e "tell application \"Workflowy\" to activate"; khd -e "mode activate default"
-select - c : osascript -e "tell application \"Calendar\" to activate"; khd -e "mode activate default"
-select - l : osascript -e "tell application \"LimeChat\" to activate"; khd -e "mode activate default"
-
-ctrl - v : khd -e "mode activate escape"
-escape + ctrl - v : khd -e "mode activate default"
-khd void_unlisted_bind off
-
-khd mode select prefix on
-khd mode select timeout 0.35
-khd mode select on_enter chunkc border::color 0xfa76d3cc
-khd mode escape on_enter chunkc border::color 0xfac8cb75
-khd mode default on_enter chunkc border::color 0xfa78414d
