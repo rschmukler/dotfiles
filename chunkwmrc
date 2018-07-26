@@ -14,27 +14,21 @@ chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 
 chunkc core::hotload 1
 
+chunkc core::load tiling.so
+chunkc core::load ffm.so
+chunkc core::load border.so
+
 #
 # NOTE: the following are config variables for the chunkwm-tiling plugin.
 #
 
 chunkc set global_desktop_mode           bsp
-# chunkc set 2_desktop_mode                monocle
-# chunkc set 5_desktop_mode                float
-
-chunkc set 1_desktop_tree                ~/.chunkwm_layouts/dev_1
-
 
 chunkc set global_desktop_offset_top     32
 chunkc set global_desktop_offset_bottom  88
 chunkc set global_desktop_offset_left    32
 chunkc set global_desktop_offset_right   32
 chunkc set global_desktop_offset_gap     24
-
-# chunkc set 3_desktop_offset_top          190
-# chunkc set 3_desktop_offset_bottom       190
-# chunkc set 3_desktop_offset_left         190
-# chunkc set 3_desktop_offset_right        190
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0
@@ -57,25 +51,15 @@ chunkc set window_region_locked          1
 # chunkc set mouse_modifier              \"cmd shift\"
 chunkc set mouse_modifier                fn
 
-chunkc set preselect_border_color        0xfac8cb75
+chunkc set preselect_border_color        0xfa00a7bd
 chunkc set preselect_border_width        10
 chunkc set preselect_border_radius       4
-
-#
-# NOTE: these settings require chwm-sa.
-#       (https://github.com/koekeishiya/chwm-sa)
-#
-
-chunkc set window_float_topmost          0
-chunkc set window_fade_inactive          0
-chunkc set window_fade_alpha             0.85
-chunkc set window_fade_duration          0.5
 
 #
 # NOTE: the following are config variables for the chunkwm-border plugin.
 #
 
-chunkc set focused_border_color          0xfa78414d
+chunkc set focused_border_color          0xfa00a7bd
 chunkc set focused_border_width          8
 chunkc set focused_border_radius         4
 chunkc set focused_border_skip_floating  0
@@ -85,9 +69,6 @@ chunkc set focused_border_skip_floating  0
 #       if chunkc plugin_dir is not set, the absolutepath is necessary.
 #
 
-chunkc core::load tiling.so
-chunkc core::load ffm.so
-chunkc core::load border.so
 
 #
 # NOTE: shell commands require escaped quotes
@@ -95,5 +76,5 @@ chunkc core::load border.so
 #
 
 chunkc tiling::rule --owner \"System Preferences\" --subrole AXStandardWindow --state tile
-chunkc tiling::rule --owner "Emacs.*" --name "DOOM Emacs*" --state tile
+chunkc tiling::rule --owner "Emacs.*" --name "Doom" --subrole AXStandardWindow --state tile
 chunkc tiling::rule --owner Finder --name Copy --state float
