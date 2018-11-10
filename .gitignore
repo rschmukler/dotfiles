@@ -3,3 +3,4 @@ nvim/view
 config/nvim/.*
 config/nvim/.netrwhist
 config/nvim/.init.vim*
+zsh_plugins.sh
