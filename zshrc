@@ -57,10 +57,19 @@ function kport() {
 # Hero Command Line Tools
 ################################################################################
 
-alias ls=exa
-alias top=htop
-alias less=bat
-alias cat=bat
+if hash exa 2>/dev/null; then
+  alias ls=exa
+fi
+if hash htop 2>/dev/null; then
+  alias top=htop
+fi
+if hash bat 2>/dev/null; then
+  alias less=bat
+  alias cat=bat
+fi
+if hash nvim 2>/dev/null; then
+  alias vim=nvim
+fi
 
 
 ################################################################################
