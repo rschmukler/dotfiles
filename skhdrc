@@ -136,13 +136,15 @@ ctrl + alt - a : chunkc tiling::desktop --layout bsp
 ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
 
+select < c : osascript -e "tell application \"Calendar\" to activate"; skhd -k "escape"
+select < d : osascript -e "tell application \"Dash\" to activate"; skhd -k "escape"
 select < e : osascript -e "tell application \"Emacs\" to activate"; skhd -k "escape"
 select < f : osascript -e "tell application \"iTerm2\" to activate"; skhd -k "escape"
-select < k : osascript -e "tell application \"Slack\" to activate"; skhd -k "escape"
 select < g : osascript -e "tell application \"Google Chrome\" to activate"; skhd -k "escape"
-select < p : osascript -e "tell application \"Spotify\" to activate"; skhd -k "escape"
-select < m : osascript -e "tell application \"Messages\" to activate"; skhd -k "escape"
-select < w : osascript -e "tell application \"Workflowy\" to activate"; skhd -k "escape"
-select < c : osascript -e "tell application \"Calendar\" to activate"; skhd -k "escape"
+select < k : osascript -e "tell application \"Slack\" to activate"; skhd -k "escape"
 select < l : osascript -e "tell application \"LimeChat\" to activate"; skhd -k "escape"
+select < m : osascript -e "tell application \"Messages\" to activate"; skhd -k "escape"
+select < o : osascript -e "tell application \"Firefox\" to activate"; skhd -k "escape"
+select < p : osascript -e "tell application \"Spotify\" to activate"; skhd -k "escape"
+select < w : osascript -e "tell application \"Workflowy\" to activate"; skhd -k "escape"
 
