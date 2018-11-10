@@ -1,69 +1,48 @@
-autoload zmv
+################################################################################
+# Variables
+################################################################################
+os=`uname`
+export HISTSIZE=1000
+export SAVEHIST=1000
+export HISTFILE=~/.zsh_history
 
-export EDITOR=nvim
-# export TERM=xterm-256color
+################################################################################
+# ZSH Initialization
+################################################################################
+autoload -Uz compinit
+compinit
 
-#Enable vim keybindings
-bindkey -v
 
-source ~/.dotfiles/zsh/load-antigen.zsh
-source ~/.dotfiles/zsh/private-env.crypt.sh &> /dev/null
+################################################################################
+# Shell Extensions
+################################################################################
 
-export NVM_DIR="$HOME/.nvm"
-export XDG_CONFIG_HOME="$HOME/.config"
+# Antibody related config
+source ~/dev/dotfiles/zsh_plugins.sh
 
-if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
-  source "/usr/share/nvm/init-nvm.sh"
-elif [[ -f "$NVM_DIR/nvm.sh" ]]; then
-  source "$NVM_DIR/nvm.sh"
-fi
+# Autojump
+[ -s /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-[[ -s "/home/ryan/.gvm/scripts/gvm" ]] && source "/home/ryan/.gvm/scripts/gvm"
 
-unalias grep
+################################################################################
+# Path Fixes
+################################################################################
+export PATH=~/.local/bin:/usr/local/bin:$PATH
 
-export PATH=~/.local/bin:~/Library/Python/2.7/bin:$PATH
-
-if hash node 2>/dev/null; then
-  export PATH=./node_modules/.bin:/usr/local/bin:$PATH
-fi
-
-if hash go 2>/dev/null; then
-  export GOPATH=~/dev/go
-  export PATH=`go env GOROOT`/bin/:`go env GOPATH`/bin/:$PATH
-fi
-
-PATH="$HOME/.cargo/bin:$PATH"
-if hash cargo 2>/dev/null; then
-  export PATH=/Users/ryan/.multirust/toolchains/nightly/cargo/bin:$PATH
-  export RUST_SRC_PATH=/usr/local/src/rust/nightly/
-fi
-
-if hash htop 2>/dev/null; then
-  alias top='htop'
-fi
-
-if hash gpg2 2>/dev/null; then
-  alias gpg='gpg2'
-fi
-
-if hash nvim 2>/dev/null; then
-  alias 'vim'='nvim'
-  alias 'vi'='nvim'
-fi
-
-if hash source-highlight 2>/dev/null; then
-  export LESSOPEN="| src-hilite-lesspipe.sh %s"
-  export LESS=" -R "
-  alias less='less -m -g -i -J --underline-special --SILENT'
-  alias more='less'
+if [[ "$os" == 'Darwin' ]]; then
+  export PATH=~/Library/Python/3.6/bin:$PATH
 fi
 
 
+################################################################################
+# Spaceship Config
+################################################################################
+export SPACESHIP_CHAR_SYMBOL="λ "
 
-# export phantomjs
-export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 
+################################################################################
+# Port Related Utilities
+################################################################################
 
 function port() {
   lsof -i ":${1:-80}"
@@ -73,92 +52,70 @@ function kport() {
   kill -9 `port $1 | tail -n 1 | cut -d' ' -f 5`
 }
 
-#Additional Customizations
 
-export GITHUB_USER=rschmukler
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
+################################################################################
+# Hero Command Line Tools
+################################################################################
+
+alias ls=exa
+alias top=htop
+alias less=bat
+alias cat=bat
 
 
-os=`uname`
+################################################################################
+# Git Config
+################################################################################
+
+alias 'git clean'='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gsr='git setref'
+alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias gprom='git pull --rebase origin master'
+alias gcom='git checkout master'
+alias gre='git reset --hard'
+alias gcan="git commit --amend --no-edit"
+alias gpf="git push --force"
+alias gpu='git push -u origin "$(git symbolic-ref --short HEAD)"'
+
+
+################################################################################
+# Docker Config
+################################################################################
+
+alias dm='TERM=xterm docker-machine'
+alias dip='docker-machine ip'
+alias dls='docker-machine ls'
+alias dma='docker-machine active'
+alias dc='docker-compose'
+alias rc='rancher-compose'
+alias dps='docker ps'
+
+function dme() {
+  eval $(docker-machine env $1 $2)
+}
+
+function drm() {
+  docker stop "$1"; docker rm -v "$1";
+}
+
+
+################################################################################
+# Darwin Config
+################################################################################
 
 if [[ "$os" == 'Darwin' ]]; then
-
-  alias ls="/usr/local/bin/exa"
   alias cleardns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed'
-  alias updatedb='sudo /usr/libexec/locate.updatedb'
-  alias 'xc5'='sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
-  alias 'xc6'='sudo xcode-select --switch /Applications/Xcode6-Beta2.app/Contents/Developer'
-  export PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:${PATH}"
-
-
-  if [[ -s "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]]; then
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-  fi
-
-  if [[ -s "/usr/local/google-cloud-sdk/path.zsh.inc" ]]; then
-    source '/usr/local/google-cloud-sdk/path.zsh.inc'
-    source '/usr/local/google-cloud-sdk/completion.zsh.inc'
-  fi
-
-
-
-  # Add Homebrew Cask options
-  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-  # Set ulimit for component
-  ulimit -n 10240
-
-  # add docker support
-  # eval $(docker-machine env dev 2>/dev/null )
-
-  alias ssh='TERM=xterm ssh'
-
-  if [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]]; then
-    . $(brew --prefix)/etc/profile.d/autojump.sh
-  fi
-else
-  if [[ -s /etc/profile.d/autojump.zsh ]]; then
-    . /etc/profile.d/autojump.zsh
-  fi
 fi
 
-alias :q="exit"
-alias :wq="exit"
-alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-alias mg_start='sudo mongod run --config /usr/local/Cellar/mongodb/2.0.2-x86_64/mongod.conf'
-alias spec=rspec
-alias rehash='hash -r'
 
-# Disable autocorrect for things commonly found in ./
-alias mocha='nocorrect mocha'
-alias karma='nocorrect karma'
-alias gulp='nocorrect gulp'
 
-# Programming Aliases
+################################################################################
+# Tmux Config
+################################################################################
 
-alias 'letsgo'='cd ~/Dev/go/src/github.com/rschmukler'
+alias tls="tmux list-sessions";
 
-# Zeus Aliases
-alias zrr='zeus rake routes'
-alias zdb='zeus rake db:migrate; zeus rake db:test:prepare'
-alias zts='zeus test spec'
-
-function path() {
-  type -p "$1" | cut -d ' ' -f 3
-}
-
-function du-it-live () {
-  directory=$1
-  while true
-  do
-    du -hc $directory | tail -n 1 | tr -d '\n' && echo -n ' ' && sleep 0.5
-    echo -n '.' && sleep 0.5 && echo -n '.' && sleep 0.5 && echo -n '.' && sleep 0.5 && echo -n '\b\b\b' && echo -n '   ' && echo -n '\r'
-  done
-}
-
-# Tmux Aliases
 function tn() {
   tmux new -s "$1"
 }
@@ -170,7 +127,7 @@ function ta() {
 function tt() {
   sessionName=`echo "$1" | nip "return line.split('.').pop()"`
   if ! tmux has-session -t "$sessionName" 2> /dev/null; then
-    tmux_script=~/.dotfiles/files/tmux-scripts/$1
+    tmux_script=~/dev/dotfiles/files/tmux-scripts/$1
     if [[ -e $tmux_script ]]; then
       zsh "$tmux_script"
     else
@@ -213,138 +170,18 @@ function tm() {
   tmux new-session -t $1
 }
 
-compctl -K _tls tk
-compctl -K _tls tm
-compctl -K _tscripts tt
 
-alias tls="tmux list-sessions";
+################################################################################
+# GCloud SDK
+################################################################################
 
-# Git Aliases
-alias 'git clean'='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
-alias 'glp'="git log --graph --pretty=format:'%Cred%h%Creset -%Cblue %an %Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gsr='git setref'
-alias gdm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
-alias gprom='git pull --rebase origin master'
-alias gcom='git checkout master'
-alias gre='git reset --hard'
-
-# Docker Aliases
-alias dm='TERM=xterm docker-machine'
-alias dip='docker-machine ip'
-alias dls='docker-machine ls'
-alias dma='docker-machine active'
-alias dc='docker-compose'
-alias rc='rancher-compose'
-alias dps='docker ps'
-
-function dme() {
-  eval $(docker-machine env $1 $2)
-}
-
-function drm() {
-  docker stop "$1"; docker rm -v "$1";
-}
-
-# Mocha Aliases
-alias mtc='jscoverage lib lib-cov; TEST_COV=true mocha --reporter html-cov > lib-cov/report.html'
-
-export NODE_PATH=/usr/local/share/npm/lib/node_modules:./lib
-
-# Useful functions
-
-function port() {
- lsof -i ":${1:-80}"
-}
-
-function pk() {
-  local killport=`lsof -i ":${1:-80}" | tail -n1 | awk '{print $2}'`
-  kill -9 $killport
-}
-
-function upgradeNode() {
-  local oldVersion=`nvm current`;
-  nvm install $1;
-  nvm alias default $1;
-  nvm use default;
-  nvm reinstall-packages $oldVersion
-  nvm uninstall $oldVersion
-}
-
-function upgradeRust() {
-  multirust update nightly && \
-  curl https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz > /tmp/rust-nightly.tar.gz && \
-  rm -rf /usr/local/src/rust/nightly && \
-  mkdir -p /usr/local/src/rust/nightly && \
-  tar -xzf /tmp/rust-nightly.tar.gz -C /usr/local/src/rust/nightly --strip-components=2 rustc-nightly/src && \
-  rm -rf /tmp/rust-nightly.tar.gz
-}
+if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-
-if [ ! -z "$IS_DOCKER"]; then
-  cd /src
-  tmux new-session -A -s dev && exit
-fi
-
-if [ -d '/usr/local/opt/google-cloud-sdk' ]; then
-  # The next line updates PATH for the Google Cloud SDK.
-  source '/usr/local/opt/google-cloud-sdk/path.zsh.inc'
-
-  # The next line enables shell command completion for gcloud.
-  source '/usr/local/opt/google-cloud-sdk/completion.zsh.inc'
-fi
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Some Git Alias
-
-alias gcan="git commit --amend --no-edit"
-alias gpf="git push --force"
-alias gpu='git push -u origin "$(git symbolic-ref --short HEAD)"'
-
-# Some Elixir Aliases
-
-alias ism="iex -S mix"
-alias tism="MIX_ENV=test iex -S mix"
-
-export ERL_AFLAGS="-kernel shell_history enabled"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ryan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ryan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Some handy kubernetes aliases
-
-if command -v kubectl >/dev/null; then
-  # kubernetes aliases
-  alias kpods='kubectl get pods'
-  alias kdeploys='kubectl get deployments'
-
-  # the following functions rely on gcloud being installed
-  if command -v gcloud >/dev/null; then
-    function kedit {
-      deployment=$1
-      kubectl edit deployments $deployment
-    }
-
-    function kswitch {
-      environment=$1
-      gcloud container clusters get-credentials $environment
-    }
-  fi
-
-  # kubernetes functions
-  function kush {
-    name=$1
-    cmd=${2-/bin/bash}
-    kubectl exec -it $name -- $cmd
-  }
-fi
-
+################################################################################
+# Startup
+################################################################################
+clear
 neofetch
+

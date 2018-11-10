@@ -1,0 +1,2 @@
+denysdovhan/spaceship-prompt
+robbyrussell/oh-my-zsh folder:plugins/git
