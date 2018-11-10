@@ -1,2 +1,4 @@
 denysdovhan/spaceship-prompt
-robbyrussell/oh-my-zsh folder:plugins/git
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/git
+junegunn/fzf path:shell
