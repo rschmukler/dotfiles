@@ -192,6 +192,7 @@ if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 ################################################################################
 # Startup
 ################################################################################
-clear
-neofetch
-
+if hash neofetch 2>/dev/null; then
+  clear
+  neofetch
+fi
