@@ -11,6 +11,8 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
 export EDITOR=nvim
+bindkey -e # Explicitly set emacs-style key bindings since it switches to vim
+           # mode after setting the editor above.
 
 ################################################################################
 # ZSH Initialization
