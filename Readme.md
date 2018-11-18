@@ -22,4 +22,13 @@ curl -sL git.io/antibody | sh -s
 Installing new plugins:
 ```
 antibody bundle < zsh_plugins.txt > zsh_plugins.sh
+
+```
+
+## Google Cloud SDK
+
+Frequently used. Expecting it to be installed to `/usr/local/share`.
+
+```
+curl https://sdk.cloud.google.com | sudo bash
 ```
