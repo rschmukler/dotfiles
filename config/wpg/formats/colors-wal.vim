@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "firewatch_red_blue_green_2560x1440.jpg"
+let background = "#04142C"
+let foreground = "#d7d2ce"
+let cursor     = "#d7d2ce"
+
+" Colors
+let color0  = "#04142C"
+let color1  = "#ff5260"
+let color2  = "#2d998c"
+let color3  = "#ebad79"
+let color4  = "#2a6f98"
+let color5  = "#c16b86"
+let color6  = "#7fd1cd"
+let color7  = "#d7d2ce"
+let color8  = "#969390"
+let color9  = "#ff5260"
+let color10 = "#2d998c"
+let color11 = "#ebad79"
+let color12 = "#2a6f98"
+let color13 = "#c16b86"
+let color14 = "#7fd1cd"
+let color15 = "#d7d2ce"

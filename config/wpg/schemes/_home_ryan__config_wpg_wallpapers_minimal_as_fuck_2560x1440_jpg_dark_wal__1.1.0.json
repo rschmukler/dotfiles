@@ -1,0 +1,28 @@
+{
+    "wallpaper": "minimal_as_fuck_2560x1440.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#19414b",
+        "foreground": "#c7d8ce",
+        "cursor": "#c7d8ce"
+    },
+    "colors": {
+        "color0": "#19414b",
+        "color1": "#5B99A1",
+        "color2": "#659DA2",
+        "color3": "#74A9A6",
+        "color4": "#82B29E",
+        "color5": "#8CB8AA",
+        "color6": "#9BC1AD",
+        "color7": "#c7d8ce",
+        "color8": "#8b9790",
+        "color9": "#5B99A1",
+        "color10": "#659DA2",
+        "color11": "#74A9A6",
+        "color12": "#82B29E",
+        "color13": "#8CB8AA",
+        "color14": "#9BC1AD",
+        "color15": "#c7d8ce"
+    }
+}

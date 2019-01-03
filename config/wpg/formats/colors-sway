@@ -1,0 +1,21 @@
+set $wallpaper firewatch_red_blue_green_2560x1440.jpg
+
+set $background #04142C
+set $foreground #d7d2ce
+
+set $color0 #04142C
+set $color1 #ff5260
+set $color2 #2d998c
+set $color3 #ebad79
+set $color4 #2a6f98
+set $color5 #c16b86
+set $color6 #7fd1cd
+set $color7 #d7d2ce
+set $color8 #969390
+set $color9 #ff5260
+set $color10 #2d998c
+set $color11 #ebad79
+set $color12 #2a6f98
+set $color13 #c16b86
+set $color14 #7fd1cd
+set $color15 #d7d2ce
