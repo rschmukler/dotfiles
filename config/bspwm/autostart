@@ -1,0 +1,44 @@
+##run_once is a script in /usr/bin that prevents running script if it is running already
+##
+
+## Load appearance settings
+xsetroot -cursor_name left_ptr &
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
+xrdb merge .Xresources &
+## Wallpaper. Nitrogen just draws wallpaper, 
+## compositing. Required for shadows, transparency and stuff. 
+## Reduces flicker. Disabling saves resources.
+## enable local fonts in .fonts directory
+xset +fp /usr/share/fonts/local &
+xset +fp /usr/share/fonts/misc &
+xset +fp ~/.fonts &
+xset fp rehash &
+fc-cache -fv &
+## Automount removable media
+devmon &
+## powersaving options
+xset s off &
+xset s noblank &
+xset s noexpose &
+xset c on &
+xset -dpms &
+xset r rate 150 50 &
+## Run screenlock when suspending
+light-locker &
+## multimonitor support. Save monitor configurations with "autorandr.sh --save <profile>"
+srandrd atorandr.sh --change &
+## Notify about package updates
+update-checker 7200 &
+## Polkit agent
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+## Gnome keyring
+## gnome-keyring-daemon &
+pcmanfm -d &
+
+sxhkd &
+compton --vsync opengl &
+polybar --config=$HOME/.config/polybar/config wpgtk &
+bash "$HOME/.config/wpg/wp_init.sh" &
+setxkbmap -option caps:escape &
+xmodmap -e "keycode 37 = Control_R" &
+spotify &
