@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=WPGTK
+GenericName=Theme Manager
+Exec=wpg
+Type=Application
+Terminal=false
+Categories=Utility;
