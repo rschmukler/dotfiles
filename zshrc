@@ -30,6 +30,7 @@ source ~/dev/dotfiles/zsh_plugins.sh
 
 # Autojump
 [ -s /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -s /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
 
 
 ################################################################################
@@ -197,8 +198,21 @@ if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 
 ################################################################################
+# GraalVM
+################################################################################
+
+if [ -d '/usr/lib/jvm/java-8-graal/' ]; then
+  export GRAALVM_HOME=/usr/lib/jvm/java-8-graal/;
+fi
+
+
+################################################################################
 # Startup
 ################################################################################
+if [ -f "$HOME/.config/wpg/sequences" ]; then
+  (/bin/cat $HOME/.config/wpg/sequences &)
+fi
+
 if hash neofetch 2>/dev/null; then
   clear
   neofetch
