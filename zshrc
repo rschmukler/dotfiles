@@ -26,7 +26,7 @@ compinit
 ################################################################################
 
 # Antibody related config
-source ~/dev/dotfiles/zsh_plugins.sh
+source ~/dev/rschmukler/dotfiles/zsh_plugins.sh
 
 # Autojump
 [ -s /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -80,6 +80,9 @@ if hash nvim 2>/dev/null; then
   alias vim=nvim
 fi
 
+if hash keychain 2>/dev/null; then
+  eval `keychain --eval id_rsa`
+fi
 
 ################################################################################
 # Git Config
@@ -145,7 +148,7 @@ function ta() {
 function tt() {
   sessionName=`echo "$1" | nip "return line.split('.').pop()"`
   if ! tmux has-session -t "$sessionName" 2> /dev/null; then
-    tmux_script=~/dev/dotfiles/files/tmux-scripts/$1
+    tmux_script=~/dev/rschmukler/dotfiles/files/tmux-scripts/$1
     if [[ -e $tmux_script ]]; then
       zsh "$tmux_script"
     else
@@ -172,7 +175,7 @@ function _tls() {
 
 function _tscripts() {
   reply=( $(tmux list-sessions 2> /dev/null | cut -d: -f1) )
-  reply+=( $(ls ~/.dotfiles/files/tmux-scripts) )
+  reply+=( $(ls ~/dev/rschmukler/dotfiles/files/tmux-scripts) )
   for dir in $tmux_search_paths; do
     reply+=( $(ls $dir/*/) )
   done
