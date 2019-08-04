@@ -36,7 +36,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#<COLOR0>" nil       nil            ))
-   (bg-alt     (doom-lighten bg 0.10))
+   (bg-alt     (doom-lighten bg 0.03))
    (base0      (doom-lighten bg 0.05))
    (base1      (doom-lighten bg 0.13))
    (base2      (doom-lighten bg 0.21))

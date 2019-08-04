@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-wpg -rs firewatch_red_blue_green_2560x1440.jpg firewatch_red_blue_green_2560x1440.jpg
+wpg -rs new-york-city-3840x2160-neon-nightscape-cgi-4k-12048.jpg new-york-city-3840x2160-neon-nightscape-cgi-4k-12048.jpg

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/ryan/.config/wpg/wallpapers/new-york-city-3840x2160-neon-nightscape-cgi-4k-12048.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#071c27",
+        "foreground": "#c1c6c9",
+        "cursor": "#c1c6c9"
+    },
+    "colors": {
+        "color0": "#071c27",
+        "color1": "#2690c5",
+        "color2": "#1d56af",
+        "color3": "#3339aa",
+        "color4": "#1d1eaa",
+        "color5": "#6831ac",
+        "color6": "#ad4e9a",
+        "color7": "#c1c6c9",
+        "color8": "#45545d",
+        "color9": "#2690c5",
+        "color10": "#1d56af",
+        "color11": "#3339aa",
+        "color12": "#1d1eaa",
+        "color13": "#6831ac",
+        "color14": "#ad4e9a",
+        "color15": "#c1c6c9"
+    }
+}

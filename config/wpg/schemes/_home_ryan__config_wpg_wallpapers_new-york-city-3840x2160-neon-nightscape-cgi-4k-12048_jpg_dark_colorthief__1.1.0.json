@@ -1,0 +1,28 @@
+{
+    "wallpaper": "new-york-city-3840x2160-neon-nightscape-cgi-4k-12048.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#000002",
+        "foreground": "#9a9a9e",
+        "cursor": "#9a9a9e"
+    },
+    "colors": {
+        "color0": "#000002",
+        "color1": "#12114f",
+        "color2": "#5b1f68",
+        "color3": "#28338b",
+        "color4": "#274c71",
+        "color5": "#3061c6",
+        "color6": "#bb64a7",
+        "color7": "#9a9a9e",
+        "color8": "#36363e",
+        "color9": "#12114f",
+        "color10": "#5b1f68",
+        "color11": "#28338b",
+        "color12": "#274c71",
+        "color13": "#3061c6",
+        "color14": "#bb64a7",
+        "color15": "#9a9a9e"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "wallpaper": "firewatch_red_blue_green_2560x1440.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#01070c",
+        "foreground": "#9ba7b2",
+        "cursor": "#9ba7b2"
+    },
+    "colors": {
+        "color0": "#01070c",
+        "color1": "#165578",
+        "color2": "#654961",
+        "color3": "#27758d",
+        "color4": "#a04c62",
+        "color5": "#2e8fad",
+        "color6": "#53b0bc",
+        "color7": "#9ba7b2",
+        "color8": "#384f66",
+        "color9": "#165578",
+        "color10": "#654961",
+        "color11": "#27758d",
+        "color12": "#a04c62",
+        "color13": "#2e8fad",
+        "color14": "#53b0bc",
+        "color15": "#9ba7b2"
+    }
+}

@@ -7,12 +7,47 @@ inactive = #<COLORIN>
 highlight = ${xrdb:color2:#<COLOR2>}
 error = ${xrdb:color9:#<COLOR9>}
 
-[bar/wpgtk]
+[bar/wpgtk-monitor-secondary]
 width = 100%
 height = 24
 offset-y = 0%
 radius = 0.0
 fixed-center = true
+monitor = DP-2
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+label-line-color = #f00
+
+border-top-size = 8
+border-left-size = 12
+border-right-size = 12
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = menlo:fontformat=truetype:size=8;1
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
+font-2 = "Font Awesome 5 Free Solid:style=Regular:pixelsize=10;2"
+font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=10;2"
+
+modules-left = bspwm xwindow
+tray-position = none
+
+[bar/wpgtk-monitor-primary]
+width = 100%
+height = 28
+offset-y = 0%
+radius = 0.0
+fixed-center = true
+monitor = DP-4
+dpi = 128
 
 background = ${colors.background}
 foreground = ${colors.foreground}
