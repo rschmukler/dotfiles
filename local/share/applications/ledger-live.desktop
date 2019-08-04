@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Ledger Live
+GenericName=Crypto Wallet
+Exec=ledger-live-desktop-1.3.4-linux-x86_64.AppImage
+Type=Application
+Terminal=false
+Categories=Utility;

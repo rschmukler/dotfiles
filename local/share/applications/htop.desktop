@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Htop
+Icon=htop
+GenericName=Process Viewer
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+Exec=alacritty -t htop -e /bin/zsh -c '/bin/cat ~/.config/wpg/sequences && htop'
+Type=Application
+Terminal=false
+Categories=ConsoleOnly;System;
+StartupWMClass=Htop
+Keywords=system;process;task
