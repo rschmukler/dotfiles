@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-        alacritty # --working-directory "$(readlink -e /proc/"$(pgrep -P "$(xdo pid)" | tail -n 1)"/cwd)"
+        alacritty --working-directory "$(xcwd)"
 
 # program launcher
 super + @space
@@ -27,7 +27,14 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
-	bspc quit
+	betterlockscreen -s dimblur
+
+
+super + ctrl + alt + Escape
+        shutdown -r now
+
+super + ctrl + alt + shift + Escape
+        shutdown -h now
 
 # close and kill
 super + {_,shift + }w
@@ -47,12 +54,18 @@ super + g
 
 alt + r
     bspc node @/ -R 90
+
+alt + shift + r
+    bspc node @parent -R 90
+
+alt + super + Return
+    bspc node -m next -f
 #
 # state/flags
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
@@ -79,8 +92,7 @@ super + {_,shift + }c
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
-super + {grave,Tab}
+# focus the last node/desktop super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
@@ -90,28 +102,12 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-alt + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+alt + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^1{1-9}'
 
-#
-# preselect
-#
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# mirror to second monitor
+super + alt + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
 
 #
 # move/resize
@@ -134,3 +130,12 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioPause
+    playerctl play-pause
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl prev

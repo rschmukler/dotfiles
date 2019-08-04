@@ -1,11 +1,12 @@
 #! /bin/sh
 
-bspc monitor -d code-1 code-2 web-1 web-2 music chat-1 chat-2 misc-1 misc-2 misc-3
+bspc monitor DP-2 -d code-0-1 code-0-2 web-0-1 web-0-2 chat-0-1 chat-0-2 misc-0-1 misc-0-2 misc-0-3
+bspc monitor DP-4 -d code-1-1 code-1-2 web-1-1 web-1-2 music-1-1 chat-1-1 chat-1-2 misc-1-1 misc-1-2 misc-1-3
 
 bspc config border_width         4
 bspc config window_gap          12
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
@@ -14,6 +15,6 @@ bspc config focus_follows_pointer true
 bash "$HOME/.config/bspwm/bspwm_colors.sh"
 
 bspc rule -a Emacs state=tiled
-bspc rule -a Spotify desktop=music
-bspc rule -a Slack desktop=chat-1
-bspc rule -a Discord desktop=chat-2
+bspc rule -a Spotify desktop=music-1-1
+bspc rule -a Slack desktop=chat-1-1
+bspc rule -a discord desktop=chat-1-1

@@ -5,6 +5,8 @@ os=`uname`
 export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=~/.zsh_history
+export DEVPATH=~/dev
+export GOPATH=~/dev/golang
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
@@ -36,17 +38,26 @@ source ~/dev/rschmukler/dotfiles/zsh_plugins.sh
 ################################################################################
 # Path Fixes
 ################################################################################
-export PATH=~/.local/bin:/usr/local/bin:$PATH
+export PATH=~/.cargo/bin:~/.local/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
 if [[ "$os" == 'Darwin' ]]; then
   export PATH=~/Library/Python/3.6/bin:$PATH
 fi
 
-
 ################################################################################
 # Spaceship Config
 ################################################################################
 export SPACESHIP_CHAR_SYMBOL="λ "
+
+
+
+################################################################################
+# Dev Functions
+################################################################################
+
+function clone() {
+  mkdir -p $DEVPATH/$1 && hub clone $1 $DEVPATH/$1 && cd $DEVPATH/$1
+}
 
 
 ################################################################################
@@ -80,8 +91,16 @@ if hash nvim 2>/dev/null; then
   alias vim=nvim
 fi
 
+if hash ag 2>/dev/null; then
+  alias grep=ag
+fi
+
 if hash keychain 2>/dev/null; then
-  eval `keychain --eval id_rsa`
+  eval `keychain --eval id_rsa --systemd`
+fi
+
+if hash litecli 2>/dev/null; then
+  alias sqlite3=litecli
 fi
 
 ################################################################################
@@ -196,8 +215,17 @@ function tm() {
 # GCloud SDK
 ################################################################################
 
-if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
+## if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+################################################################################
+# Extended tab completion
+################################################################################
+
+if hash kubectl 2>/dev/null; then
+  $(eval `kubectl completions zsh`)
+fi
 
 
 ################################################################################
@@ -220,3 +248,6 @@ if hash neofetch 2>/dev/null; then
   clear
   neofetch
 fi
+
+# opam configuration
+test -r /home/ryan/.opam/opam-init/init.zsh && . /home/ryan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
