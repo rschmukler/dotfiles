@@ -21,7 +21,6 @@ if [ "$1" = period-changed ]; then
 			ddcutil --display=2 setvcp 10 $brightness_transition
 			;;
 		daytime)
-			xbacklight -set $brightness_day -time $fade_time
 			ddcutil --display=1 setvcp 10 $brightness_day
 			ddcutil --display=2 setvcp 10 $brightness_day
 			;;
