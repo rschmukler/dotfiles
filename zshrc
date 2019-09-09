@@ -241,6 +241,14 @@ if [ -d '/usr/lib/jvm/java-8-graal/' ]; then
   export GRAALVM_HOME=/usr/lib/jvm/java-8-graal/;
 fi
 
+################################################################################
+# Nix
+################################################################################
+
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  source "$HOME/.nix-profile/etc/profile.d/nix.sh";
+fi
+
 
 ################################################################################
 # Startup
