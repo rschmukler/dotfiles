@@ -13,7 +13,8 @@ height = 24
 offset-y = 0%
 radius = 0.0
 fixed-center = true
-monitor = DP-2
+monitor = DP-4
+enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -46,7 +47,7 @@ height = 28
 offset-y = 0%
 radius = 0.0
 fixed-center = true
-monitor = DP-4
+monitor = DP-2
 dpi = 128
 
 background = ${colors.background}
@@ -74,6 +75,7 @@ font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=10;2"
 modules-left = bspwm xwindow
 modules-center = date
 modules-right = volume
+enable-ipc = true
 
 ; tray-position = none
 ; tray-padding = 10

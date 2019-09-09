@@ -29,6 +29,9 @@ super + Escape
 super + alt + Escape
 	betterlockscreen -s dimblur
 
+super + alt + ctrl + l
+	$HOME/dev/rschmukler/dotfiles/scripts/lock.sh
+
 
 super + ctrl + alt + Escape
         shutdown -r now

@@ -18,3 +18,4 @@ bspc rule -a Emacs state=tiled
 bspc rule -a Spotify desktop=music-1-1
 bspc rule -a Slack desktop=chat-1-1
 bspc rule -a discord desktop=chat-1-1
+bspc rule -a Farge state=floating
