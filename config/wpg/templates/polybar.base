@@ -1,11 +1,11 @@
 [colors]
 background = #0000000
-; background = ${xrdb:color8:#<COLOR8>}
-foreground = ${xrdb:color15:#<COLOR15>}
-active = #<COLORACT>
-inactive = #<COLORIN>
-highlight = ${xrdb:color2:#<COLOR2>}
-error = ${xrdb:color9:#<COLOR9>}
+; background = {color8}
+foreground = {color15}
+active = {active}
+inactive = {inactive}
+highlight = {color2}
+error = {color9}
 
 [bar/wpgtk-monitor-secondary]
 width = 100%
@@ -16,8 +16,8 @@ fixed-center = true
 monitor = DP-4
 enable-ipc = true
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${{colors.background}}
+foreground = ${{colors.foreground}}
 
 line-size = 0
 label-line-color = #f00
@@ -50,8 +50,8 @@ fixed-center = true
 monitor = DP-2
 dpi = 128
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${{colors.background}}
+foreground = ${{colors.foreground}}
 
 line-size = 0
 label-line-color = #f00
@@ -74,16 +74,16 @@ font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=10;2"
 
 modules-left = bspwm xwindow
 modules-center = date
-modules-right = volume
+modules-right = pomo volume
 enable-ipc = true
 
 ; tray-position = none
 ; tray-padding = 10
-; tray-background = ${colors.inactive}
+; tray-background = ${{colors.inactive}}
 
 [module/xwindow]
 type = internal/xwindow
-format-background = ${colors.active}
+format-background = ${{colors.active}}
 label = %title:0:45: ...%
 format-padding = 4
 format-margin = 2
@@ -102,19 +102,19 @@ enable-scroll = true
 fuzzy-match = true
 
 label-focused = %icon% %index%
-label-focused-background = ${colors.active}
+label-focused-background = ${{colors.active}}
 label-focused-padding = 2
 
 label-occupied = %icon% %index%
-label-occupied-background = ${colors.inactive}
+label-occupied-background = ${{colors.inactive}}
 label-occupied-padding = 2
 
 label-urgent = %index%!
-label-urgent-background = ${colors.active}
+label-urgent-background = ${{colors.active}}
 label-urgent-padding = 2
 
 label-empty =
-label-empty-foreground = ${colors.foreground}
+label-empty-foreground = ${{colors.foreground}}
 
 [module/i3]
 type = internal/i3
@@ -133,19 +133,19 @@ ws-icon-3 = 10;
 ws-icon-default = 
 
 label-mode-padding = 1
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.highlight}
+label-mode-foreground = ${{colors.foreground}}
+label-mode-background = ${{colors.highlight}}
 
-label-focused-background = ${colors.active}
+label-focused-background = ${{colors.active}}
 label-focused-padding = 1
 
 label-unfocused-padding = 1
-label-unfocused-background = ${colors.inactive}
+label-unfocused-background = ${{colors.inactive}}
 
-label-visible-background = ${colors.highlight}
+label-visible-background = ${{colors.highlight}}
 label-visible-padding = 1
 
-label-urgent-background = ${colors.highlight}
+label-urgent-background = ${{colors.highlight}}
 label-urgent-padding = 1
 
 [module/mpd]
@@ -161,7 +161,7 @@ icon-next = ⏭
 label-song-maxlen = 25
 label-song-ellipsis = true
 format-playing-padding = 2
-format-playing-background = ${colors.highlight}
+format-playing-background = ${{colors.highlight}}
 
 [module/wlan]
 type = internal/network
@@ -171,12 +171,12 @@ interval = 3.0
 format-connected-padding = 1
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-format-connected-background = ${colors.active}
+format-connected-background = ${{colors.active}}
 
 format-disconnected =
 
 ramp-signal-0 = 
-ramp-signal-foreground = ${colors.foreground}
+ramp-signal-foreground = ${{colors.foreground}}
 
 [module/eth]
 type = internal/network
@@ -185,7 +185,7 @@ interval = 3.0
 
 format-connected =  <label-connected>
 format-connected-padding = 1
-format-connected-background = ${colors.active}
+format-connected-background = ${{colors.active}}
 label-connected = %local_ip%
 
 
@@ -197,7 +197,7 @@ date = "%d %b %Y, "
 time = %I:%M %p
 
 format-padding = 1
-format-background = ${colors.background}
+format-background = ${{colors.background}}
 
 label = %date%%time%
 
@@ -206,16 +206,16 @@ type = internal/alsa
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
-format-volume-background = ${colors.active}
+format-volume-background = ${{colors.active}}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
-ramp-volume-foreground = ${colors.foreground}
+ramp-volume-foreground = ${{colors.foreground}}
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.background}
-format-muted-background = ${colors.error}
+format-muted-foreground = ${{colors.background}}
+format-muted-background = ${{colors.error}}
 label-muted = MUTED
 format-muted-padding = 1
 
@@ -231,24 +231,33 @@ format-discharging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <label-full> <ramp-capacity>
 format-full-padding = 1
-format-full-background = ${colors.active}
+format-full-background = ${{colors.active}}
 
 ramp-capacity-0 = 
 ramp-capacity-1 =  
 ramp-capacity-2 =  
 ramp-capacity-3 = 
 ramp-capacity-4 =  
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-foreground = ${{colors.foreground}}
 
-animation-charging-foreground = ${colors.foreground}
+animation-charging-foreground = ${{colors.foreground}}
 animation-charging-framerate = 500
 animation-charging-0 = 
 animation-charging-1 =  
 animation-charging-2 =  
 animation-charging-3 = 
 animation-charging-4 =  
-format-charging-background = ${colors.highlight}
-format-discharging-background = ${colors.active}
+format-charging-background = ${{colors.highlight}}
+format-discharging-background = ${{colors.active}}
+
+[module/pomo]
+type = custom/script
+interval = 1
+exec = $HOME/.local/bin/pomo status
+format-padding = 4
+format-margin = 2
+format-background = ${{colors.active}}
+
 
 [settings]
 screenchange-reload = true
