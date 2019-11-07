@@ -96,7 +96,7 @@ if hash ag 2>/dev/null; then
 fi
 
 if hash keychain 2>/dev/null; then
-  eval `keychain --eval id_rsa --systemd`
+  eval `keychain --eval id_rsa --systemd` && emacsclient -e '(keychain-refresh-environment)' > /dev/null
 fi
 
 if hash litecli 2>/dev/null; then
