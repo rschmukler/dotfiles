@@ -1,4 +1,6 @@
 denysdovhan/spaceship-prompt
 robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/kubectl
+robbyrussell/oh-my-zsh path:plugins/git
+spwhitt/nix-zsh-completions
 junegunn/fzf path:shell

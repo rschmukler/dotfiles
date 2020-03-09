@@ -43,7 +43,7 @@ source ~/dev/rschmukler/dotfiles/zsh_plugins.sh
 export PATH=~/.cargo/bin:~/.local/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
 if [[ "$os" == 'Darwin' ]]; then
-  export PATH=~/Library/Python/3.6/bin:$PATH
+  export PATH=~/Library/Python/3.6/bin:~/Library/Python/3.7/bin:$PATH
 fi
 
 ################################################################################
@@ -93,9 +93,9 @@ if hash nvim 2>/dev/null; then
   alias vim=nvim
 fi
 
-if hash ag 2>/dev/null; then
-  alias grep=ag
-fi
+# if hash ag 2>/dev/null; then
+#   alias grep=ag
+# fi
 
 if hash keychain 2>/dev/null; then
   eval `keychain --eval id_rsa --systemd` && emacsclient -e '(keychain-refresh-environment)' > /dev/null &
@@ -234,6 +234,12 @@ fi
 ################################################################################
 source $HOME/dev/rschmukler/dotfiles/zsh/private-env.crypt.sh
 
+################################################################################
+# Direnv
+################################################################################
+if hash direnv 2>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
 
 ################################################################################
 # GraalVM
@@ -241,6 +247,9 @@ source $HOME/dev/rschmukler/dotfiles/zsh/private-env.crypt.sh
 
 if [ -d '/usr/lib/jvm/java-8-graal/' ]; then
   export GRAALVM_HOME=/usr/lib/jvm/java-8-graal/;
+fi
+if [ -d '/Library/Java/JavaVirtualMachines/graalvm-ce-java11-19.3.0/Contents/Home' ]; then
+  export GRAALVM_HOME=/Library/Java/JavaVirtualMachines/graalvm-ce-java11-19.3.0/Contents/Home;
 fi
 
 if [ -d '/usr/lib/jvm/java-11-graalvm/' ]; then
@@ -273,6 +282,7 @@ if [ -d "/opt/gerbil-scheme-git" ]; then
   export GERBIL_GSC=/usr/bin/gambitc;
   export PATH=$GERBIL_HOME/bin:$PATH;
 fi
+
 
 
 ################################################################################
