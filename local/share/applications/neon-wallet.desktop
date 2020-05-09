@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Neon
 GenericName=Crypto Wallet
-Exec=Neon-2.0.0-x86_64.Linux.AppImage
+Exec=Neon-2.4.0-x86_64.Linux.AppImage
 Type=Application
 Terminal=false
 Categories=Utility;

@@ -96,7 +96,7 @@ if hash ag 2>/dev/null; then
 fi
 
 if hash keychain 2>/dev/null; then
-  eval `keychain --eval id_rsa --systemd` && emacsclient -e '(keychain-refresh-environment)' > /dev/null
+  eval `keychain --eval id_rsa --systemd` && emacsclient -e '(keychain-refresh-environment)' > /dev/null &
 fi
 
 if hash litecli 2>/dev/null; then
@@ -224,7 +224,7 @@ if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 ################################################################################
 
 if hash kubectl 2>/dev/null; then
-  $(eval `kubectl completions zsh`)
+  $(eval `kubectl completion zsh`)
 fi
 
 ################################################################################
@@ -239,6 +239,10 @@ source $HOME/dev/rschmukler/dotfiles/zsh/private-env.crypt.sh
 
 if [ -d '/usr/lib/jvm/java-8-graal/' ]; then
   export GRAALVM_HOME=/usr/lib/jvm/java-8-graal/;
+fi
+
+if [ -d '/usr/lib/jvm/java-11-graalvm/' ]; then
+  export GRAALVM_HOME=/usr/lib/jvm/java-11-graalvm/;
 fi
 
 ################################################################################

@@ -14,8 +14,9 @@ bspc config focus_follows_pointer true
 
 bash "$HOME/.config/bspwm/bspwm_colors.sh"
 
-bspc rule -a Emacs state=tiled
-bspc rule -a Spotify desktop=music-1-1
-bspc rule -a Slack desktop=chat-1-1
-bspc rule -a discord desktop=chat-1-1
-bspc rule -a Farge state=floating
+# bspc rule -a Emacs state=tiled
+# bspc rule -a Spotify desktop=music-1-1
+# bspc rule -a Slack desktop=chat-1-1
+# bspc rule -a discord desktop=chat-1-1
+# bspc rule -a Farge state=floating
+bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"

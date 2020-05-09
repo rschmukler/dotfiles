@@ -1,0 +1,19 @@
+#!/bin/env bb
+
+(let [[query] *command-line-args*]
+  (if-not query
+    (println "Usage: clone <url>")
+    (let [query         (-> query
+                            (str/replace #"http(s)?://github.com/" "")
+                            (str/replace "git@github.com" "")
+                            (str/replace #"\.git$" ""))
+          [org project] (str/split query #"/")
+          out-path      (str "/home/ryan/dev/" org "/" project)
+          src-path      (str "https://github.com/" org "/" project ".git")]
+      (if-not (and org project)
+        (println "Misunderstood query. Goodbye.")
+        (do (println "Cloning" src-path "to" out-path)
+            (let [result (shell/sh "git" "clone" src-path out-path)]
+              (binding [*out* *err*]
+                (println (:err result)))
+              (println (:out result))))))))
