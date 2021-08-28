@@ -7,7 +7,9 @@ export SAVEHIST=1000
 export HISTFILE=~/.zsh_history
 export DEVPATH=~/dev
 export GOPATH=~/dev/golang
+export GPG_TTY=$(tty)
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
@@ -246,11 +248,30 @@ if [ -d '/usr/lib/jvm/java-11-graalvm/' ]; then
 fi
 
 ################################################################################
+# Confluent
+################################################################################
+
+if [ -d "$HOME/.confluent/" ]; then
+  export CONFLUENT_HOME=$HOME/.confluent;
+  export PATH=$CONFLUENT_HOME/bin:$PATH;
+fi
+
+################################################################################
 # Nix
 ################################################################################
 
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   source "$HOME/.nix-profile/etc/profile.d/nix.sh";
+fi
+
+################################################################################
+# Gerbil Scheme
+################################################################################
+
+if [ -d "/opt/gerbil-scheme-git" ]; then
+  export GERBIL_HOME=/opt/gerbil-scheme-git;
+  export GERBIL_GSC=/usr/bin/gambitc;
+  export PATH=$GERBIL_HOME/bin:$PATH;
 fi
 
 
@@ -268,3 +289,12 @@ fi
 
 # opam configuration
 test -r /home/ryan/.opam/opam-init/init.zsh && . /home/ryan/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+
+################################################################################
+# Direnv / Lorri
+################################################################################
+
+if hash direnv 2>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi

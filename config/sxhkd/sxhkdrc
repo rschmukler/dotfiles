@@ -15,6 +15,12 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 
+super + b
+        firefox-developer-edition
+
+super + p
+        1password
+
 #ctrl + s; {b, e, f, p, k}
 #       wmctrl -a {Brave, Emacs, Alacritty, Spotify, Slack}
 #       if [ $? -ne 0 ]; then
@@ -38,6 +44,10 @@ super + ctrl + alt + Escape
 
 super + ctrl + alt + shift + Escape
         shutdown -h now
+
+# Toggle Mute
+ctrl + alt + m
+        amixer set Capture toggle
 
 # close and kill
 super + {_,shift + }w

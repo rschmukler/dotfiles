@@ -17,9 +17,12 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
+
   dimensions:
     columns: 80
     lines: 24
+
+  dynamic_title: true
 
   # Window padding (changes require restart)
   #
@@ -206,7 +209,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -246,7 +249,7 @@ mouse:
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: false
 
-  url:
+  mouse:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.
@@ -266,8 +269,6 @@ selection:
   # the selection clipboard. Otherwise, it will only be copied to the selection
   # clipboard.
   save_to_clipboard: false
-
-dynamic_title: true
 
 cursor:
   # Cursor style
@@ -381,7 +382,7 @@ key_bindings:
   - { key: Insert,   mods: Shift,   action: PasteSelection               }
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
-  - { key: Subtract, mods: Control, action: DecreaseFontSize             }
+  - { key: NumpadSubtract, mods: Control, action: DecreaseFontSize             }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
