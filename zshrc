@@ -43,7 +43,8 @@ source ~/dev/rschmukler/dotfiles/zsh_plugins.sh
 export PATH=~/.cargo/bin:~/.local/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
 if [[ "$os" == 'Darwin' ]]; then
-  export PATH=~/Library/Python/3.6/bin:~/Library/Python/3.7/bin:$PATH
+  export PATH=~/Library/Python/3.9/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 fi
 
 ################################################################################
