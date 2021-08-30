@@ -218,8 +218,7 @@ function tm() {
 # GCloud SDK
 ################################################################################
 
-## if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ryan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
 
 
 ################################################################################
