@@ -94,6 +94,7 @@ if hash nvim 2>/dev/null; then
   alias vim=nvim
 fi
 
+
 # if hash ag 2>/dev/null; then
 #   alias grep=ag
 # fi
@@ -130,7 +131,7 @@ alias dm='TERM=xterm docker-machine'
 alias dip='docker-machine ip'
 alias dls='docker-machine ls'
 alias dma='docker-machine active'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias rc='rancher-compose'
 alias dps='docker ps'
 
@@ -239,6 +240,13 @@ source $HOME/dev/rschmukler/dotfiles/zsh/private-env.crypt.sh
 ################################################################################
 if hash direnv 2>/dev/null; then
   eval "$(direnv hook zsh)"
+fi
+
+################################################################################
+# Kafkactl
+################################################################################
+if hash kafkactl 2>/dev/null; then
+  source <(kafkactl completion zsh)
 fi
 
 ################################################################################
