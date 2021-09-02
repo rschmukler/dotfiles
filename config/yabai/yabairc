@@ -1,0 +1,27 @@
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+yabai -m config layout bsp
+yabai -m config window_gap     8
+yabai -m config top_padding    12
+yabai -m config bottom_padding 12
+yabai -m config left_padding   12
+yabai -m config right_padding  12
+yabai -m config focus_follows_mouse off
+yabai -m config window_shadow float
+
+yabai -m config window_border on
+yabai -m config window_border_width 6
+yabai -m config active_window_border_color 0xfa00a7bd
+yabai -m config mouse_modifier fn
+
+# Rules
+
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app=Emacs title=posframe manage=off
+yabai -m rule --add app=Emacs title="*doom*" manage=on space=1
+yabai -m rule --add app="Firefox*" manage=on space=3
+yabai -m rule --add app=Slack space=5
+yabai -m rule --add app=Discord space=6
+yabai -m rule --add app=Calendar space=7
+yabai -m rule --add app=Spotify space=8
