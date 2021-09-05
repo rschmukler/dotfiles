@@ -44,7 +44,7 @@ export PATH=~/.cargo/bin:~/.local/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
 if [[ "$os" == 'Darwin' ]]; then
   export PATH=~/Library/Python/3.9/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+  export LD_LIBRARY_PATH=/usr/local/opt/sqlite/lib:/usr/local/lib:$LD_LIBRARY_PATH
 fi
 
 ################################################################################
