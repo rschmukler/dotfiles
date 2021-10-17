@@ -44,7 +44,7 @@ export PATH=~/.cargo/bin:~/.local/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
 if [[ "$os" == 'Darwin' ]]; then
   export PATH=~/Library/Python/3.9/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/opt/sqlite/lib:/usr/local/lib:$LD_LIBRARY_PATH
+  export LD_LIBRARY_PATH=/usr/local/opt/openssl@1.1/lib:/usr/local/opt/sqlite/lib:/usr/local/lib:$LD_LIBRARY_PATH
 fi
 
 ################################################################################
@@ -105,6 +105,10 @@ fi
 
 if hash litecli 2>/dev/null; then
   alias sqlite3=litecli
+fi
+
+if hash pyenv 2>/dev/null; then
+  export PATH=$(pyenv root)/shims:$PATH
 fi
 
 ################################################################################
