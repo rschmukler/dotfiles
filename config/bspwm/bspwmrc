@@ -1,7 +1,6 @@
 #! /bin/sh
 
-bspc monitor DP-2 -d code-0-1 code-0-2 web-0-1 web-0-2 web-0-3 stocks-0-1 stocks-0-2 misc-0-1 misc-0-2 misc-0-3
-bspc monitor DP-4 -d code-1-1 code-1-2 web-1-1 web-1-2 music-1-1 chat-1-1 stocks-1-1 misc-1-1 misc-1-2 misc-1-3
+bspc monitor HDMI-0 -d code-0-1 code-0-2 web-0-1 web-0-2 music-0-1 chat-0-1 stocks-0-1 stocks-0-2 misc-0-1 misc-0-2 misc-0-3
 
 bspc config border_width         4
 bspc config window_gap          12
@@ -16,12 +15,18 @@ bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 
-bash "$HOME/.config/bspwm/bspwm_colors.sh"
+bspc config focused_border_color \#FE4B65
+bspc config normal_border_color \#CB5858
 
 bspc rule -a Emacs state=tiled
-bspc rule -a Spotify desktop=music-1-1
-bspc rule -a Slack desktop=chat-1-1
-bspc rule -a discord desktop=chat-1-1
+bspc rule -a discord desktop=chat-0-1
+bspc rule -a Spotify state=tiling manage=on layer=normal desktop=music-0-1
+bspc rule -a Cider state=tiling manage=on layer=normal desktop=music-0-1
+bspc rule -a Slack state=tiling manage=on layer=normal desktop=chat-0-1
 bspc rule -a Farge state=floating
 bspc rule -a Peek manage=off
+bspc rule -a "zoom:zoom:Zoom Meeting" manage=on
+bspc rule -a "zoom:zoom:Settings" manage=on
+bspc rule -a "zoom:zoom:zoom" manage=off
 # bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
+bash $HOME/.config/bspwm/autostart

@@ -116,7 +116,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 alt + {_,shift + }{1-9}
-	bspc {desktop -f,node -d} '^1{1-9}'
+	bspc {desktop -f,node -d} '^{1-9}'
 
 # mirror to second monitor
 super + alt + {_,shift + }{1-9}
@@ -151,4 +151,4 @@ XF86AudioPause
 XF86AudioNext
     playerctl next
 XF86AudioPrev
-    playerctl prev
+    playerctl previous

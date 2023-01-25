@@ -1,9 +1,8 @@
 [colors]
-background = #0000000
-; background = #232653
+background = #00000000
 foreground = #f2f9fd
-active = #b9338b
-inactive = #7f2360
+active = #CE34C6
+inactive = #00000000
 highlight = #5736eb
 error = #f372c7
 
@@ -48,7 +47,7 @@ height = 28
 offset-y = 0%
 radius = 0.0
 fixed-center = true
-monitor = DP-2
+monitor = HDMI-0
 dpi = 128
 ;; override-redirect = true
 wm-restack = bspwm
@@ -71,13 +70,13 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = menlo:fontformat=truetype:size=8;1
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
-font-2 = "Font Awesome 5 Free Solid:style=Regular:pixelsize=10;2"
-font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=10;2"
+font-1 = "Font Awesome 6 Free:style=Regular:pixelsize=10;2"
+font-2 = "Font Awesome 6 Free Solid:style=Regular:pixelsize=10;2"
+font-3 = "Font Awesome 6 Brands:style=Regular:pixelsize=10;2"
 
 modules-left = bspwm xwindow
 modules-center = date
-modules-right = pomo volume mic-volume
+modules-right = volume mic-volume wlan
 enable-ipc = true
 
 ; tray-position = none
@@ -86,7 +85,7 @@ enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
-format-background = ${colors.active}
+format-background = ${colors.inactive}
 label = %title:0:45: ...%
 format-padding = 4
 format-margin = 2
@@ -209,7 +208,7 @@ label = %date%%time%
 type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
-format-volume-background = ${colors.active}
+format-volume-background = ${colors.background}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
@@ -226,7 +225,7 @@ format-muted-padding = 1
 type = custom/script
 interval = 1
 format = Mic: <label>
-format-background = ${colors.active}
+format-background = ${colors.background}
 format-margin = 2
 format-padding = 4
 exec = bash ~/.config/polybar/polybar-mic-volume/mic-volume/mic-volume.sh show-vol
