@@ -8,6 +8,7 @@ export HISTFILE=~/.zsh_history
 export DEVPATH=~/dev
 export GOPATH=~/dev/golang
 export GPG_TTY=$(tty)
+export XDG_CONFIG_HOME=$HOME/.config
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
@@ -23,7 +24,6 @@ bindkey -e # Explicitly set emacs-style key bindings since it switches to vim
 ################################################################################
 autoload -Uz compinit
 compinit
-
 
 ################################################################################
 # Shell Extensions
@@ -52,6 +52,45 @@ fi
 ################################################################################
 export SPACESHIP_CHAR_SYMBOL="λ "
 
+export SPACESHIP_PROMPT_ORDER=(
+  time          # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  hg            # Mercurial section (hg_branch  + hg_status)
+  package       # Package version
+  gradle        # Gradle section
+  maven         # Maven section
+  node          # Node.js section
+  ruby          # Ruby section
+  elixir        # Elixir section
+  xcode         # Xcode section
+  swift         # Swift section
+  golang        # Go section
+  php           # PHP section
+  rust          # Rust section
+  haskell       # Haskell Stack section
+  julia         # Julia section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  #gcloud        # Google Cloud Platform section
+  venv          # virtualenv section
+  conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  dotnet        # .NET section
+  ember         # Ember.js section
+  kubectl       # Kubectl context section
+  terraform     # Terraform workspace section
+  ibmcloud      # IBM Cloud section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
 
 
 ################################################################################
@@ -59,7 +98,7 @@ export SPACESHIP_CHAR_SYMBOL="λ "
 ################################################################################
 
 function clone() {
-  mkdir -p $DEVPATH/$1 && hub clone $1 $DEVPATH/$1 && cd $DEVPATH/$1
+  mkdir -p $DEVPATH/$1 && gh repo clone $1 $DEVPATH/$1 && cd $DEVPATH/$1
 }
 
 
@@ -83,6 +122,9 @@ function kport() {
 if hash exa 2>/dev/null; then
   alias ls=exa
 fi
+if hash dua 2>/dev/null; then
+  alias du=dua
+fi
 if hash htop 2>/dev/null; then
   alias top=htop
 fi
@@ -94,13 +136,12 @@ if hash nvim 2>/dev/null; then
   alias vim=nvim
 fi
 
-
-# if hash ag 2>/dev/null; then
-#   alias grep=ag
-# fi
+if hash rg 2>/dev/null; then
+  alias grep=rg
+fi
 
 if hash keychain 2>/dev/null; then
-  eval `keychain --eval id_rsa --systemd` && emacsclient -e '(keychain-refresh-environment)' > /dev/null &
+  eval `keychain --eval --systemd --agents ssh,gpg id_ed25519 8B8A78D65E9DD33EBC0FD04FCE4061A6406FBD44` && emacsclient -e '(keychain-refresh-environment)' > /dev/null
 fi
 
 if hash litecli 2>/dev/null; then
@@ -108,7 +149,12 @@ if hash litecli 2>/dev/null; then
 fi
 
 if hash pyenv 2>/dev/null; then
+  eval "$(pyenv init -)"
   export PATH=$(pyenv root)/shims:$PATH
+fi
+
+if hash procs 2>/dev/null; then
+  alias ps=procs
 fi
 
 ################################################################################
@@ -126,6 +172,13 @@ alias gcan="git commit --amend --no-edit"
 alias gpf="git push --force"
 alias gpu='git push -u origin "$(git symbolic-ref --short HEAD)"'
 
+################################################################################
+# DOOM
+################################################################################
+
+if [ -d "$HOME/.emacs.d/bin" ]; then
+  PATH=~/.emacs.d/bin:$PATH
+fi
 
 ################################################################################
 # Docker Config
@@ -225,6 +278,11 @@ function tm() {
 
 if [ -f '/usr/local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/share/google-cloud-sdk/path.zsh.inc'; fi
 
+################################################################################
+# NVM
+################################################################################
+
+if [ -f '/usr/share/nvm/init-nvm.sh' ]; then . '/usr/share/nvm/init-nvm.sh'; fi
 
 ################################################################################
 # Extended tab completion
@@ -251,6 +309,18 @@ fi
 ################################################################################
 if hash kafkactl 2>/dev/null; then
   source <(kafkactl completion zsh)
+fi
+
+################################################################################
+# Babashka
+################################################################################
+if hash bb 2>/dev/null; then
+  _bb_tasks() {
+      local matches=(`bb tasks |tail -n +3 |cut -f1 -d ' '`)
+      compadd -a matches
+      _files # autocomplete filenames as well
+  }
+  compdef _bb_tasks bb
 fi
 
 ################################################################################
@@ -283,7 +353,10 @@ fi
 
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
   source "$HOME/.nix-profile/etc/profile.d/nix.sh";
+elif [ -d "$HOME/.nix-profile/bin" ]; then
+  export PATH=$HOME/.nix-profile/bin:$PATH;
 fi
+
 
 ################################################################################
 # Gerbil Scheme
