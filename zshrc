@@ -15,7 +15,8 @@ setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
-export EDITOR=nvim
+alias ecw="emacsclient --c"
+export EDITOR=emacsclient
 bindkey -e # Explicitly set emacs-style key bindings since it switches to vim
            # mode after setting the editor above.
 
@@ -32,11 +33,6 @@ compinit
 # Antibody related config
 source ~/dev/rschmukler/dotfiles/zsh_plugins.sh
 
-# Autojump
-[ -s /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-[ -s /etc/profile.d/autojump.sh ] && . /etc/profile.d/autojump.sh
-
-
 ################################################################################
 # Path Fixes
 ################################################################################
@@ -44,7 +40,9 @@ export PATH=~/.cargo/bin:~/.local/bin:/usr/local/bin:$GOPATH/bin:$PATH
 
 if [[ "$os" == 'Darwin' ]]; then
   export PATH=~/Library/Python/3.9/bin:$PATH
+  export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
   export LD_LIBRARY_PATH=/usr/local/opt/openssl@1.1/lib:/usr/local/opt/sqlite/lib:/usr/local/lib:$LD_LIBRARY_PATH
+  export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 fi
 
 ################################################################################
@@ -60,8 +58,6 @@ export SPACESHIP_PROMPT_ORDER=(
   git           # Git section (git_branch + git_status)
   hg            # Mercurial section (hg_branch  + hg_status)
   package       # Package version
-  gradle        # Gradle section
-  maven         # Maven section
   node          # Node.js section
   ruby          # Ruby section
   elixir        # Elixir section
@@ -77,16 +73,13 @@ export SPACESHIP_PROMPT_ORDER=(
   #gcloud        # Google Cloud Platform section
   venv          # virtualenv section
   conda         # conda virtualenv section
-  pyenv         # Pyenv section
   dotnet        # .NET section
-  ember         # Ember.js section
   kubectl       # Kubectl context section
   terraform     # Terraform workspace section
   ibmcloud      # IBM Cloud section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
-  vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   exit_code     # Exit code section
   char          # Prompt character
@@ -122,6 +115,9 @@ function kport() {
 if hash exa 2>/dev/null; then
   alias ls=exa
 fi
+if hash eza 2>/dev/null; then
+  alias ls=eza
+fi
 if hash dua 2>/dev/null; then
   alias du=dua
 fi
@@ -155,6 +151,14 @@ fi
 
 if hash procs 2>/dev/null; then
   alias ps=procs
+fi
+
+if hash autojump 2>/dev/null; then
+  if [ -f /opt/homebrew/etc/profile.d/autojump.sh ]; then
+    source /opt/homebrew/etc/profile.d/autojump.sh
+  else
+    alias j=autojump
+  fi
 fi
 
 ################################################################################
